@@ -19,7 +19,7 @@ public class GoogleSearchChromeTest {
     public void setUp() {
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\ivopd\\IdeaProjects\\SeleniumCookbook\\src\\test\\resources\\drivers\\chromedriver.exe");
+                "./src/test/resources/drivers/chromedriver.exe");
 
         // Launch a new Chrome instance
         driver = new ChromeDriver();

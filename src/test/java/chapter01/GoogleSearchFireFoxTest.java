@@ -19,7 +19,7 @@ public class GoogleSearchFireFoxTest {
     public void setUp() {
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.gecko.driver",
-                "C:\\Users\\ivopd\\IdeaProjects\\SeleniumCookbook\\src\\test\\resources\\drivers\\geckodriver.exe");
+                "./src/test/resources/drivers/geckodriver.exe");
 
         // Launch a new Firefox instance
         driver = new FirefoxDriver();
