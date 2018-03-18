@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,10 +24,10 @@ public class GoogleSearchTest {
                 "C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver\\geckodriver.exe");
 
         // Launch a new Chrome instance
-        driver = new ChromeDriver();
+        // driver = new ChromeDriver();
 
         // Launch a new Firefox instance
-        // driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
 
         // Maximize the browser window
         driver.manage().window().maximize();
