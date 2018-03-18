@@ -17,15 +17,18 @@ public class GoogleSearchTest {
 
     @Before
     public void setUp() {
-        // setting up Browser Desired Capabilities
+        // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Program Files (x86)\\Google\\Chrome\\chromedriver_win32\\chromedriver.exe");
-        // Launch a new Chrome instance
-        driver = new ChromeDriver();
         System.setProperty("webdriver.gecko.driver",
                 "C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver\\geckodriver.exe");
+
+        // Launch a new Chrome instance
+        driver = new ChromeDriver();
+
         // Launch a new Firefox instance
         // driver = new FirefoxDriver();
+
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to Google
