@@ -6,28 +6,23 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
-public class GoogleSearchTest {
+public class GoogleSearchChromeTest {
     private WebDriver driver;
 
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Program Files (x86)\\Google\\Chrome\\chromedriver_win32\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver",
-                "C:\\Program Files (x86)\\Mozilla Firefox\\geckodriver\\geckodriver.exe");
+                "C:\\Users\\ivopd\\IdeaProjects\\SeleniumCookbook\\src\\test\\resources\\drivers\\chromedriver.exe");
 
         // Launch a new Chrome instance
-        // driver = new ChromeDriver();
-
-        // Launch a new Firefox instance
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
         // Maximize the browser window
         driver.manage().window().maximize();
