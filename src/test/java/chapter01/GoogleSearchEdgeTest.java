@@ -2,6 +2,7 @@ package chapter01;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,6 +35,7 @@ public class GoogleSearchEdgeTest {
         driver.get("http://www.google.com");
     }
 
+    @Ignore
     @Test
     public void testGoogleSearch() {
         // Find the text input element by its name
