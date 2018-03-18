@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,11 +21,8 @@ public class GoogleSearchEdgeTest {
         System.setProperty("webdriver.edge.driver",
                 "./src/test/resources/drivers/MicrosoftWebDriver.exe");
 
-        EdgeOptions options = new EdgeOptions();
-        options.setPageLoadStrategy("eager");
-
         // Launch a new Edge instance
-        driver = new EdgeDriver(options);
+        driver = new EdgeDriver();
 
         // Maximize the browser window
         driver.manage().window().maximize();
