@@ -18,8 +18,9 @@ public class GoogleSearchChromeTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.chrome.driver",
-                "./src/test/resources/drivers/chromedriver.exe");
+        // Add dependency in pom file
+        // System.setProperty("webdriver.chrome.driver",
+        // "./src/test/resources/drivers/chromedriver.exe");
 
         // Launch a new Chrome instance
         driver = new ChromeDriver();
@@ -27,7 +28,7 @@ public class GoogleSearchChromeTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to Google
-        driver.get("http://www.google.com");
+        driver.get("http://www.google.com/ncr");
     }
 
     @Test
@@ -49,7 +50,7 @@ public class GoogleSearchChromeTest {
             }
         });
 
-        assertEquals("Selenium testing tools cookbook - Google Търсене",
+        assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
     }
 

@@ -20,8 +20,9 @@ public class GoogleSearchEdgeTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
+        // Add dependency in pom file
         System.setProperty("webdriver.edge.driver",
-                "./src/test/resources/drivers/MicrosoftWebDriver.exe");
+        "./src/test/resources/drivers/MicrosoftWebDriver.exe");
 
         EdgeOptions options = new EdgeOptions();
         options.setPageLoadStrategy("eager");
@@ -32,7 +33,7 @@ public class GoogleSearchEdgeTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to Google
-        driver.get("http://www.google.com");
+        driver.get("http://www.google.com/ncr");
     }
 
     @Ignore

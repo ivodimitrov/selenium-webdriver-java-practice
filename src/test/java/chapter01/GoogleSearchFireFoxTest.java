@@ -18,8 +18,9 @@ public class GoogleSearchFireFoxTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.gecko.driver",
-                "./src/test/resources/drivers/geckodriver.exe");
+        // Add dependency in pom file
+        // System.setProperty("webdriver.gecko.driver",
+        // "./src/test/resources/drivers/geckodriver.exe");
 
         // Launch a new Firefox instance
         driver = new FirefoxDriver();
@@ -27,7 +28,7 @@ public class GoogleSearchFireFoxTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to Google
-        driver.get("http://www.google.com");
+        driver.get("http://www.google.com/ncr");
     }
 
     @Test
@@ -49,7 +50,7 @@ public class GoogleSearchFireFoxTest {
             }
         });
 
-        assertEquals("Selenium testing tools cookbook - Google Търсене",
+        assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
     }
 
