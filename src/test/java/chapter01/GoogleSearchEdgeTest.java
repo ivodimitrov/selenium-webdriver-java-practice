@@ -2,7 +2,6 @@ package chapter01;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,15 +19,16 @@ public class GoogleSearchEdgeTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        // Add dependency in pom file
         System.setProperty("webdriver.edge.driver",
-        "./src/test/resources/drivers/MicrosoftWebDriver.exe");
+                ".\\src\\test\\resources\\drivers\\MicrosoftWebDriver.exe");
 
         EdgeOptions options = new EdgeOptions();
         options.setPageLoadStrategy("eager");
 
         // Launch a new Edge instance
+        System.out.println("Starting driver...");
         driver = new EdgeDriver(options);
+        System.out.println("Started driver.");
 
         // Maximize the browser window
         driver.manage().window().maximize();
@@ -36,7 +36,6 @@ public class GoogleSearchEdgeTest {
         driver.get("http://www.google.com/ncr");
     }
 
-    @Ignore
     @Test
     public void testGoogleSearch() {
         // Find the text input element by its name
@@ -58,6 +57,7 @@ public class GoogleSearchEdgeTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
+        System.out.println("Test passed.");
     }
 
     @After
