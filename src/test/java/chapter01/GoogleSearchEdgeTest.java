@@ -20,7 +20,7 @@ public class GoogleSearchEdgeTest {
     public void setUp() {
         // Microsoft WebDriver Release 15063
         // Version: 4.15063 | Edge version supported: 15.15063
-        // More drivers: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+        // More driver versions: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.edge.driver",
                 ".\\src\\test\\resources\\drivers\\microsoftwebdriver.exe");
