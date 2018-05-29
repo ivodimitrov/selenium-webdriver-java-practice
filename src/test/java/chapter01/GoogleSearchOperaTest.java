@@ -68,7 +68,7 @@ public class GoogleSearchOperaTest {
         driver.quit();
         // Opera browser does not close. Solution for windows:
         Runtime.getRuntime().exec("taskkill /f /im opera.exe");
-        // For Macos:
+        // For MacOS:
         // Runtime.getRuntime().exec("pgrep 'Opera' | xargs kill");
     }
 }
