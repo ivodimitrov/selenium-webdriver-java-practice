@@ -20,7 +20,6 @@ public class GoogleSearchOperaTest {
 
     @Before
     public void setUp() {
-
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.opera.driver",
                 ".\\src\\test\\resources\\drivers\\operadriver.exe");
@@ -61,7 +60,6 @@ public class GoogleSearchOperaTest {
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
         System.out.println("Test passed.");
-
     }
 
     @After

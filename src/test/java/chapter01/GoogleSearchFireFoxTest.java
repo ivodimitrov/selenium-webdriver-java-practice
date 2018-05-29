@@ -18,12 +18,13 @@ public class GoogleSearchFireFoxTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        // Add dependency in pom file
-        // System.setProperty("webdriver.gecko.driver",
-        // "./src/test/resources/drivers/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver",
+                "./src/test/resources/drivers/geckodriver.exe");
 
         // Launch a new Firefox instance
+        System.out.println("Starting driver...");
         driver = new FirefoxDriver();
+        System.out.println("Started driver.");
 
         // Maximize the browser window
         driver.manage().window().maximize();
@@ -52,10 +53,11 @@ public class GoogleSearchFireFoxTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
+        System.out.println("Test passed.");
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         // Close the browser
         driver.quit();
     }

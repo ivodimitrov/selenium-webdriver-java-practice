@@ -20,7 +20,7 @@ public class GoogleSearchEdgeTest {
     public void setUp() {
         // Setting up Browser Desired Capabilities
         System.setProperty("webdriver.edge.driver",
-                ".\\src\\test\\resources\\drivers\\MicrosoftWebDriver.exe");
+                ".\\src\\test\\resources\\drivers\\microsoftwebdriver.exe");
 
         EdgeOptions options = new EdgeOptions();
         options.setPageLoadStrategy("eager");
@@ -61,7 +61,7 @@ public class GoogleSearchEdgeTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         // Close the browser
         driver.quit();
     }

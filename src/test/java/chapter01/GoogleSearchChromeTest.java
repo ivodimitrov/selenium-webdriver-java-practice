@@ -18,12 +18,13 @@ public class GoogleSearchChromeTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        // Add dependency in pom file
-        // System.setProperty("webdriver.chrome.driver",
-        // "./src/test/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver",
+                "./src/test/resources/drivers/chromedriver.exe");
 
         // Launch a new Chrome instance
+        System.out.println("Starting driver...");
         driver = new ChromeDriver();
+        System.out.println("Started driver.");
 
         // Maximize the browser window
         driver.manage().window().maximize();
@@ -52,10 +53,11 @@ public class GoogleSearchChromeTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
+        System.out.println("Test passed.");
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         // Close the browser
         driver.quit();
     }
