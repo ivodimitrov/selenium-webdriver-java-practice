@@ -16,6 +16,7 @@ import java.io.File;
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchOperaTest {
+
     private WebDriver driver;
 
     @Before

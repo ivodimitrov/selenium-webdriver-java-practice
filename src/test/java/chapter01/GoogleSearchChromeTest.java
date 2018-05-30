@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchChromeTest {
+
     private WebDriver driver;
 
     @Before

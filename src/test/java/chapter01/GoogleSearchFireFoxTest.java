@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchFireFoxTest {
+
     private WebDriver driver;
 
     @Before
