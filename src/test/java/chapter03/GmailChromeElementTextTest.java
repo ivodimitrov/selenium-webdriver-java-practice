@@ -1,4 +1,4 @@
-package chapter02;
+package chapter03;
 
 import org.junit.After;
 import org.junit.Before;
@@ -8,11 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
-public class GmailChromeTest {
+public class GmailChromeElementTextTest {
 
     private WebDriver driver;
 
@@ -36,18 +34,22 @@ public class GmailChromeTest {
     }
 
     @Test
-    public void testFindElements() {
-        //Get all the links displayed on Page
-        List<WebElement> links = driver.findElements(By.tagName("a"));
-        //Iterate though the list of links and print
-        //target for each link
-        for (WebElement link : links) {
-            System.out.println(link.getAttribute("href"));
-        }
-        //Verify there are 22 links displayed on the page
-        System.out.println(links.size());
+    public void testElementText() {
+        // Get the Create An Account Element
+        WebElement createAnAccountLink = driver.findElement(By.cssSelector(".hero_home__link__desktop"));
+        // Get the message element's text
+        String createAnAccountLinkText = createAnAccountLink.getText();
+        // Verify message element's text
+        assertEquals("CREATE AN ACCOUNT", createAnAccountLinkText);
 
-        assertEquals(22, links.size());
+        System.out.println("Test passed.");
+
+        // Get the Sign In Element
+        WebElement signInLink = driver.findElement(By.cssSelector("a.gmail-nav__nav-link:nth-child(2)"));
+        // Get the message element's text
+        String signInLinkText = signInLink.getText();
+        // Verify message element's text
+        assertEquals("SIGN IN", signInLinkText);
 
         System.out.println("Test passed.");
     }

@@ -11,6 +11,8 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.annotation.Nonnull;
+
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchEdgeTest {
@@ -31,7 +33,9 @@ public class GoogleSearchEdgeTest {
 
         // Launch a new Edge instance
         System.out.println("Starting driver...");
+
         driver = new EdgeDriver(options);
+
         System.out.println("Started driver.");
 
         // Maximize the browser window
@@ -53,7 +57,7 @@ public class GoogleSearchEdgeTest {
         // Google's search is rendered dynamically with JavaScript.
         // wait for the page to load, timeout after 10 seconds
         new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d) {
+            public Boolean apply(@Nonnull WebDriver d) {
                 return d.getTitle().toLowerCase()
                         .startsWith("selenium testing tools cookbook");
             }
@@ -61,6 +65,7 @@ public class GoogleSearchEdgeTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
+
         System.out.println("Test passed.");
     }
 
