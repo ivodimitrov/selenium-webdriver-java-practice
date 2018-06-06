@@ -41,13 +41,19 @@ public class GmailChromeTest {
         List<WebElement> links = driver.findElements(By.tagName("a"));
         //Iterate though the list of links and print
         //target for each link
+        int linksCounter = 0;
         for (WebElement link : links) {
-            System.out.println(link.getAttribute("href"));
-        }
-        //Verify there are 22 links displayed on the page
-        System.out.println(links.size());
+            System.out.println("Link displayed on the page is number: " + linksCounter);
 
-        assertEquals(22, links.size());
+            System.out.println(link.getAttribute("href"));
+
+            linksCounter++;
+        }
+        //Verify there are links displayed on the page
+        System.out.println("Numbers of links displayed on the page are: " + links.size());
+
+        assertEquals("Verify numbers of links displayed on the page",
+                linksCounter, links.size());
 
         System.out.println("Test passed.");
     }
