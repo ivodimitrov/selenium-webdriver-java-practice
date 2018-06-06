@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -44,24 +46,25 @@ public class GmailChromeDropdownTest {
         // Verify Dropdown does not support multiple selection
         assertFalse(languages.isMultiple());
         //Get all the languages displayed on the Page
-        List<WebElement> languagesValues = driver.findElements(By.cssSelector(".language option"));
+        List<WebElement> languagesOptions = driver.findElements(By.cssSelector(".language option"));
 
         int languagesCounter = 0;
 
         //Iterate though the list of languages and count each language
-        for (WebElement languagesValue : languagesValues) {
+        for (WebElement languagesOption : languagesOptions) {
             System.out.println("Number of the language is: "
                     + (languagesCounter + 1));
 
-            System.out.println(languagesValue.getText());
+            System.out.println(languagesOption.getText().trim());
 
             languagesCounter++;
         }
 
         // Verify Dropdown has many options for selection
         assertEquals("Verify Dropdown has many options for selection",
-                languagesCounter, languagesValues.size());
+                languagesCounter, languagesOptions.size());
 
+        System.out.println();
         System.out.println("Number of all the languages displayed on the Page are: "
                 + languagesCounter);
 
@@ -70,7 +73,7 @@ public class GmailChromeDropdownTest {
     }
 
     @Test
-    public void selectAnOptionInDropdownText() {
+    public void testAnOptionIsSelectedInDropdownLanguages() {
         // Get the Dropdown as a Select
         Select languages = new Select(driver.findElement(By.cssSelector(".language")));
         // With Select class we can select an option in Dropdown using Visible text
@@ -81,6 +84,30 @@ public class GmailChromeDropdownTest {
 
         assertEquals("English (United States)",
                 languages.getFirstSelectedOption().getText().trim());
+
+        System.out.println();
+        System.out.println("Test passed.");
+    }
+
+    @Test
+    public void testAnOptionsAreContainedInDropdownLanguages() {
+        // Get the Dropdown as a Select
+        Select languages = new Select(driver.findElement(By.cssSelector(".language")));
+        // Verify Dropdown has expected values as listed in array
+        List<String> expectedOptions = Arrays.asList("English (United Kingdom)",
+                "English (India)",
+                "English (United States)");
+
+        List<String> actualOptions = new ArrayList<String>();
+
+        // Retrieve the option values from Dropdown using getOptions() method
+        for (WebElement option : languages.getOptions()) {
+            actualOptions.add(option.getText());
+        }
+
+
+        // Verify expected options array and actual options array match
+        // TO DO
 
         System.out.println();
         System.out.println("Test passed.");
