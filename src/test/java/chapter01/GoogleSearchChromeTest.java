@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.annotation.Nonnull;
 
+import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchChromeTest {
@@ -39,6 +40,8 @@ public class GoogleSearchChromeTest {
 
     @Test
     public void testGoogleSearch() {
+        printCurrentExecutableTestName();
+
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
         // Clear the existing text value
