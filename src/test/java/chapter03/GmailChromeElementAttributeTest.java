@@ -10,8 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
 
-public class GmailChromeElementTextTest {
-
+public class GmailChromeElementAttributeTest {
     private WebDriver driver;
 
     @Before
@@ -34,27 +33,24 @@ public class GmailChromeElementTextTest {
     }
 
     @Test
-    public void testCreateAnAccountElementText() {
+    public void testElementAttributeValue() {
         // Get the Create An Account Element
         WebElement createAnAccountLink = driver.findElement(By.cssSelector(".hero_home__link__desktop"));
-        // Get the message element's text
-        String createAnAccountLinkText = createAnAccountLink.getText();
-        // Verify message element's text
-        assertEquals("Verify message element's text",
-                "CREATE AN ACCOUNT", createAnAccountLinkText);
+        // Verify an element's attribute value
+        assertEquals("Verify an element's attribute value",
+                "Get Gmail", createAnAccountLink.getAttribute("data-g-label"));
 
         System.out.println("Test passed.");
     }
 
     @Test
-    public void testSignInElementText() {
-        // Get the Sign In Element
-        WebElement signInLink = driver.findElement(By.cssSelector("a.gmail-nav__nav-link:nth-child(2)"));
-        // Get the message element's text
-        String signInLinkText = signInLink.getText();
-        // Verify message element's text
-        assertEquals("Verify message element's text",
-                "SIGN IN", signInLinkText);
+    public void testElementStyle() {
+        // Get the Create An Account Element
+        WebElement createAnAccountLink = driver.findElement(By.cssSelector(".hero_home__link__desktop"));
+        // CSS value
+        String textAlign = createAnAccountLink.getCssValue("text-align");
+        // Verify an element's CSS value
+        assertEquals("Verify an element's CSS value", "center", textAlign);
 
         System.out.println("Test passed.");
     }
