@@ -35,7 +35,8 @@ public class GmailChromeElementAttributeTest {
     @Test
     public void testElementAttributeValue() {
         // Get the Create An Account Element
-        WebElement createAnAccountLink = driver.findElement(By.cssSelector(".hero_home__link__desktop"));
+        WebElement createAnAccountLink = driver.findElement(By.
+                cssSelector(".hero_home__link__desktop"));
         // Verify an element's attribute value
         assertEquals("Verify an element's attribute value",
                 "Get Gmail", createAnAccountLink.getAttribute("data-g-label"));
