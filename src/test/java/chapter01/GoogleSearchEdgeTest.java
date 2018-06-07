@@ -76,5 +76,8 @@ public class GoogleSearchEdgeTest {
     public void tearDown() {
         // Close the browser
         driver.quit();
+
+        System.out.println();
+        System.out.println("Driver is quited.");
     }
 }

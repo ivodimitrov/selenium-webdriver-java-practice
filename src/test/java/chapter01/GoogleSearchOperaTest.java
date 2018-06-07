@@ -74,6 +74,9 @@ public class GoogleSearchOperaTest {
     public void tearDown() throws Exception {
         // Close the browser
         driver.quit();
+
+        System.out.println();
+        System.out.println("Driver is quited.");
         // Opera browser does not close. Solution for windows:
         Runtime.getRuntime().exec("taskkill /f /im opera.exe");
         // For MacOS:

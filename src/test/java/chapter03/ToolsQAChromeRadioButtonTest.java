@@ -12,7 +12,7 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class ToolsQARadioButtonTest {
+public class ToolsQAChromeRadioButtonTest {
 
     private WebDriver driver;
 
@@ -79,6 +79,8 @@ public class ToolsQARadioButtonTest {
     public void tearDown() {
         // Close the browser
         driver.quit();
+
+        System.out.println();
         System.out.println("Driver is quited.");
     }
 }
