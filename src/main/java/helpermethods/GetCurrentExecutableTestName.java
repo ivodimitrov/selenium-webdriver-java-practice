@@ -2,9 +2,10 @@ package helpermethods;
 
 public class GetCurrentExecutableTestName {
 
-    // Helper method for getting the name of the current method dynamically
+    // Helper method for getting the name of the current executed test dynamically
     private static String getMethodName() {
-        return Thread.currentThread().getStackTrace()[3].getMethodName();
+        return Thread.currentThread()
+                .getStackTrace()[3].getMethodName();
     }
 
     public static void printCurrentExecutableTestName() {

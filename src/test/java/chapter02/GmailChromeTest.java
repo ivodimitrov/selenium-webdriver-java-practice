@@ -31,7 +31,7 @@ public class GmailChromeTest {
 
         // Maximize the browser window
         driver.manage().window().maximize();
-        // Navigate to Google
+        // Navigate to page
         driver.get("https://www.google.com/gmail/about/#");
     }
 
