@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ToolsQaAutomationPracticeFormBaseTest {
+public class GmailBaseTest {
 
     public WebDriver driver;
 
@@ -25,7 +25,7 @@ public class ToolsQaAutomationPracticeFormBaseTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("http://toolsqa.com/automation-practice-form/");
+        driver.get("https://www.google.com/gmail/about/#");
     }
 
     @After

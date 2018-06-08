@@ -1,13 +1,10 @@
 package chapter03;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import tests.GmailBaseTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,31 +12,10 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class GmailChromeDropdownTest {
-
-    private WebDriver driver;
-
-    @Before
-    public void setUp() {
-        // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.chrome.driver",
-                "./src/test/resources/drivers/chromedriver.exe");
-
-        // Launch a new Chrome instance
-        System.out.println("Starting driver...");
-
-        driver = new ChromeDriver();
-
-        System.out.println("Started driver.");
-
-        // Maximize the browser window
-        driver.manage().window().maximize();
-        // Navigate to page
-        driver.get("https://www.google.com/gmail/about/#");
-    }
+public class DropdownTest extends GmailBaseTest {
 
     private void getAllLanguageOptionsOnTheWeb() {
-        //Get all the languages displayed on the Page
+        // Get all the languages displayed on the Page
         List<WebElement> languagesOptions = driver.findElements(By.cssSelector(".language option"));
 
         //Iterate though the list of languages and count each language
@@ -78,9 +54,6 @@ public class GmailChromeDropdownTest {
         System.out.println();
         System.out.println("Number of all the languages displayed on the Page are: "
                 + languagesCounter);
-
-        System.out.println();
-        System.out.println("Test passed.");
     }
 
     @Test
@@ -95,9 +68,6 @@ public class GmailChromeDropdownTest {
 
         assertEquals("English (United States)",
                 languages.getFirstSelectedOption().getText().trim());
-
-        System.out.println();
-        System.out.println("Test passed.");
     }
 
     @Test
@@ -129,17 +99,5 @@ public class GmailChromeDropdownTest {
         // Verify expected options array and actual options array match
         assertArrayEquals(expectedOptions.toArray(), actualOptions.
                 toArray());
-
-        System.out.println();
-        System.out.println("Test passed.");
-    }
-
-    @After
-    public void tearDown() {
-        // Close the browser
-        driver.quit();
-
-        System.out.println();
-        System.out.println("Driver is quited.");
     }
 }
