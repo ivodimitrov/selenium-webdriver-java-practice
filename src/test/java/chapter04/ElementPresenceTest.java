@@ -9,7 +9,7 @@ import tests.ToolsQaAutomationPracticeFormBaseTest;
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.fail;
 
-public class ToolsQAChromeElementPresenceTest extends ToolsQaAutomationPracticeFormBaseTest {
+public class ElementPresenceTest extends ToolsQaAutomationPracticeFormBaseTest {
 
     private boolean isElementPresent(By by) {
         try {

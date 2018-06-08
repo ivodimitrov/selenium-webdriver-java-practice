@@ -9,7 +9,7 @@ import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableT
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class ToolsQAChromeCheckboxesTest extends ToolsQaAutomationPracticeFormBaseTest {
+public class CheckboxesTest extends ToolsQaAutomationPracticeFormBaseTest {
 
     @Test
     public void testCheckBox() {
