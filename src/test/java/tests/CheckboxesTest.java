@@ -3,13 +3,13 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.ToolsQaAutomationPracticeFormBaseTest;
+import tests.basetests.ToolsQaBaseTest;
 
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class CheckboxesTest extends ToolsQaAutomationPracticeFormBaseTest {
+public class CheckboxesTest extends ToolsQaBaseTest {
 
     @Test
     public void testCheckBox() {

@@ -3,13 +3,13 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.ToolsQaAutomationPracticeFormBaseTest;
+import tests.basetests.ToolsQaBaseTest;
 
 import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class RadioButtonTest extends ToolsQaAutomationPracticeFormBaseTest {
+public class RadioButtonTest extends ToolsQaBaseTest {
 
     @Test
     public void testRadioButton() {

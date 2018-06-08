@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ToolsQaWebTableBaseTest {
+public class ToolsQaBaseTest {
 
     public WebDriver driver;
 
@@ -25,7 +25,7 @@ public class ToolsQaWebTableBaseTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("http://toolsqa.com/automation-practice-table/");
+        driver.get("http://toolsqa.com/automation-practice-form/");
     }
 
     @After
@@ -37,6 +37,6 @@ public class ToolsQaWebTableBaseTest {
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quited.");
+        System.out.println("Driver is quit.");
     }
 }
