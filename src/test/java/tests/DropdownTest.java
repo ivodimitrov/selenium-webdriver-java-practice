@@ -1,10 +1,10 @@
-package chapter03;
+package tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import tests.GmailBaseTest;
+import tests.basetests.GmailBaseTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,8 @@ public class DropdownTest extends GmailBaseTest {
 
     private void getAllLanguageOptionsOnTheWeb() {
         // Get all the languages displayed on the Page
-        List<WebElement> languagesOptions = driver.findElements(By.cssSelector(".language option"));
+        List<WebElement> languagesOptions = driver.findElements(By.
+                cssSelector(".language option"));
 
         //Iterate though the list of languages and count each language
         for (WebElement languagesOption : languagesOptions) {
@@ -29,11 +30,13 @@ public class DropdownTest extends GmailBaseTest {
     @Test
     public void testDropdownLanguages() {
         // Get the Dropdown as a Select
-        Select languages = new Select(driver.findElement(By.cssSelector(".language")));
+        Select languages = new Select(driver.findElement(By.
+                cssSelector(".language")));
         // Verify Dropdown does not support multiple selection
         assertFalse(languages.isMultiple());
         //Get all the languages displayed on the Page
-        List<WebElement> languagesOptions = driver.findElements(By.cssSelector(".language option"));
+        List<WebElement> languagesOptions = driver.findElements(By.
+                cssSelector(".language option"));
 
         int languagesCounter = 0;
 
@@ -59,7 +62,8 @@ public class DropdownTest extends GmailBaseTest {
     @Test
     public void testAnOptionIsSelectedInDropdownLanguages() {
         // Get the Dropdown as a Select
-        Select languages = new Select(driver.findElement(By.cssSelector(".language")));
+        Select languages = new Select(driver.findElement(By.
+                cssSelector(".language")));
         // With Select class we can select an option in Dropdown using Visible text
         languages.selectByVisibleText("English (United States)");
 
@@ -73,7 +77,8 @@ public class DropdownTest extends GmailBaseTest {
     @Test
     public void testAnOptionsAreContainedInDropdownLanguages() {
         // Get the Dropdown as a Select
-        Select languages = new Select(driver.findElement(By.cssSelector(".language")));
+        Select languages = new Select(driver.findElement(By.
+                cssSelector(".language")));
         // Verify Dropdown has expected values as listed in array
         List<String> expectedOptions = Arrays.asList("አማርኛ", "العربية", "azərbaycan dili",
                 "български", "বাংলা", "català", "čeština", "dansk", "Deutsch", "Ελληνικά",

@@ -1,42 +1,19 @@
-package chapter01;
+package tests;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.basetests.GoogleBaseTest;
 
 import javax.annotation.Nonnull;
 
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
-import static org.junit.Assert.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class GoogleSearchFireFoxTest {
-
-    private WebDriver driver;
-
-    @Before
-    public void setUp() {
-        // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.gecko.driver",
-                "./src/test/resources/drivers/geckodriver.exe");
-
-        // Launch a new Firefox instance
-        System.out.println("Starting driver...");
-
-        driver = new FirefoxDriver();
-
-        System.out.println("Started driver.");
-
-        // Maximize the browser window
-        driver.manage().window().maximize();
-        // Navigate to page
-        driver.get("http://www.google.com/ncr");
-    }
+public class GoogleSearchChromeTest extends GoogleBaseTest {
 
     @Test
     public void testGoogleSearch() {
@@ -61,16 +38,5 @@ public class GoogleSearchFireFoxTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
-
-        System.out.println("Test passed.");
-    }
-
-    @After
-    public void tearDown() {
-        // Close the browser
-        driver.quit();
-
-        System.out.println();
-        System.out.println("Driver is quited.");
     }
 }

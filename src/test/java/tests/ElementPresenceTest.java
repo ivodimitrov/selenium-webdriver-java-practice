@@ -1,10 +1,10 @@
-package chapter04;
+package tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import tests.ToolsQaAutomationPracticeFormBaseTest;
+import tests.basetests.ToolsQaAutomationPracticeFormBaseTest;
 
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.fail;
@@ -26,7 +26,8 @@ public class ElementPresenceTest extends ToolsQaAutomationPracticeFormBaseTest {
         printCurrentExecutableTestName();
 
         // Check if element with locator criteria exists on Page
-        if (isElementPresent(By.cssSelector("#profession-0"))) {
+        if (isElementPresent(By.
+                cssSelector("#profession-0"))) {
             // Get the checkbox and select it
             WebElement profession = driver.findElement(By.
                     cssSelector("#profession-0"));

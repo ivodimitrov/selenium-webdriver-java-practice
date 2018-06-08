@@ -1,11 +1,11 @@
-package tests;
+package tests.basetests;
 
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GmailBaseTest {
+public class GoogleBaseTest {
 
     public WebDriver driver;
 
@@ -25,7 +25,7 @@ public class GmailBaseTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("https://www.google.com/gmail/about/#");
+        driver.get("http://www.google.com/ncr");
     }
 
     @After
@@ -37,6 +37,6 @@ public class GmailBaseTest {
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quit.");
+        System.out.println("Driver is quited.");
     }
 }

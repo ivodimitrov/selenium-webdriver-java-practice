@@ -1,9 +1,9 @@
-package chapter03;
+package tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.ToolsQaAutomationPracticeFormBaseTest;
+import tests.basetests.ToolsQaAutomationPracticeFormBaseTest;
 
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.assertTrue;
