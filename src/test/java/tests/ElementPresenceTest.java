@@ -6,7 +6,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import tests.basetests.ToolsQaBaseTest;
 
-import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.fail;
 
 public class ElementPresenceTest extends ToolsQaBaseTest {
@@ -22,9 +21,6 @@ public class ElementPresenceTest extends ToolsQaBaseTest {
 
     @Test
     public void testIsElementPresent() {
-        // Print the name of the current executed test
-        printCurrentExecutableTestName();
-
         // Check if element with locator criteria exists on Page
         if (isElementPresent(By.
                 cssSelector("#profession-0"))) {

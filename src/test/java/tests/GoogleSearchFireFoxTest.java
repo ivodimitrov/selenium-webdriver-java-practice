@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.annotation.Nonnull;
 
-import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchFireFoxTest {
@@ -40,8 +39,6 @@ public class GoogleSearchFireFoxTest {
 
     @Test
     public void testGoogleSearch() {
-        printCurrentExecutableTestName();
-
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
         // Clear the existing text value
@@ -61,16 +58,17 @@ public class GoogleSearchFireFoxTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
-
-        System.out.println("Test passed.");
     }
 
     @After
     public void tearDown() {
+        System.out.println();
+        System.out.println("Test passed.");
+
         // Close the browser
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quited.");
+        System.out.println("Driver is quit.");
     }
 }

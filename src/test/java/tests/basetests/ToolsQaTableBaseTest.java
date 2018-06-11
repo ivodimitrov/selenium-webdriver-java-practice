@@ -37,6 +37,6 @@ public class ToolsQaTableBaseTest {
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quited.");
+        System.out.println("Driver is quit.");
     }
 }

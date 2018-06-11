@@ -68,16 +68,17 @@ public class GoogleSearchEdgeTest {
 
         assertEquals("Selenium testing tools cookbook - Google Search",
                 driver.getTitle());
-
-        System.out.println("Test passed.");
     }
 
     @After
     public void tearDown() {
+        System.out.println();
+        System.out.println("Test passed.");
+
         // Close the browser
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quited.");
+        System.out.println("Driver is quit.");
     }
 }

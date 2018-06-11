@@ -10,15 +10,12 @@ import tests.basetests.GoogleBaseTest;
 
 import javax.annotation.Nonnull;
 
-import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class GoogleSearchChromeTest extends GoogleBaseTest {
 
     @Test
     public void testGoogleSearch() {
-        printCurrentExecutableTestName();
-
         // Find the text input element by its name
         WebElement element = driver.findElement(By.name("q"));
         // Clear the existing text value

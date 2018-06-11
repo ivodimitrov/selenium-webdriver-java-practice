@@ -19,7 +19,7 @@ public class DropdownTest extends GmailBaseTest {
         List<WebElement> languagesOptions = driver.findElements(By.
                 cssSelector(".language option"));
 
-        //Iterate though the list of languages and count each language
+        // Iterate though the list of languages and print each language
         for (WebElement languagesOption : languagesOptions) {
             if (languagesOption != null) {
                 System.out.print("\"" + languagesOption.getText().trim() + "\"" + ", ");
@@ -34,13 +34,13 @@ public class DropdownTest extends GmailBaseTest {
                 cssSelector(".language")));
         // Verify Dropdown does not support multiple selection
         assertFalse(languages.isMultiple());
-        //Get all the languages displayed on the Page
+        // Get all the languages displayed on the Page
         List<WebElement> languagesOptions = driver.findElements(By.
                 cssSelector(".language option"));
 
         int languagesCounter = 0;
 
-        //Iterate though the list of languages and count each language
+        // Iterate though the list of languages and count each language
         for (WebElement languagesOption : languagesOptions) {
             System.out.println("Number of the language is: "
                     + (languagesCounter + 1));

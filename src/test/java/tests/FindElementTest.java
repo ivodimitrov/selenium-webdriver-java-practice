@@ -18,8 +18,8 @@ public class FindElementTest extends GmailBaseTest {
 
         int linksCounter = 0;
 
-        //Iterate though the list of links and print
-        //target for each link
+        // Iterate though the list of links and print
+        // target for each link
         for (WebElement link : links) {
             System.out.println("Link displayed on the page is number: " + (linksCounter + 1));
 
@@ -27,7 +27,7 @@ public class FindElementTest extends GmailBaseTest {
 
             linksCounter++;
         }
-        //Verify there are many links displayed on the page
+        // Verify there are many links displayed on the page
         System.out.println();
         System.out.println("Numbers of links displayed on the page are: " + links.size());
 
