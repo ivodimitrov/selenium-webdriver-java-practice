@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import tests.basetests.GmailBaseTest;
+import utils.GmailBaseTest;
 
 import java.util.ArrayList;
 import java.util.Arrays;

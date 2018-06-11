@@ -1,11 +1,11 @@
-package tests.basetests;
+package utils;
 
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GoogleBaseTest {
+public class ToolsQaTableBaseTest {
 
     public WebDriver driver;
 
@@ -25,7 +25,7 @@ public class GoogleBaseTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("http://www.google.com/ncr");
+        driver.get("http://toolsqa.com/automation-practice-table/");
     }
 
     @After

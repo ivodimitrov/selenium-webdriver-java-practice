@@ -3,7 +3,7 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.ToolsQaTableBaseTest;
+import utils.ToolsQaTableBaseTest;
 
 import java.util.List;
 

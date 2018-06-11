@@ -3,7 +3,7 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.ToolsQaBaseTest;
+import utils.ToolsQaBaseTest;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -13,7 +13,7 @@ public class CheckboxesTest extends ToolsQaBaseTest {
     @Test
     public void testCheckBox() {
         //Get the Checkbox as WebElement using it's value attribute
-        WebElement profession = driver.findElement(By.
+        WebElement profession = getWebDriver().findElement(By.
                 cssSelector("#profession-0"));
 
         //Check if its already selected? Otherwise select the Checkbox

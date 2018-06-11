@@ -3,7 +3,7 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.GmailBaseTest;
+import utils.GmailBaseTest;
 
 import static org.junit.Assert.assertEquals;
 

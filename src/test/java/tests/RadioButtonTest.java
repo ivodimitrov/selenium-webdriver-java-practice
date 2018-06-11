@@ -3,7 +3,7 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import tests.basetests.ToolsQaBaseTest;
+import utils.ToolsQaBaseTest;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class RadioButtonTest extends ToolsQaBaseTest {
     @Test
     public void testRadioButton() {
         // Get the Radio Button as WebElement using it's value attribute
-        WebElement yearsOfExperience = driver.findElement(By.
+        WebElement yearsOfExperience = getWebDriver().findElement(By.
                 xpath("//*[@id=\"exp-0\"]"));
         // Check if its already selected? otherwise select the Radio Button
         // by calling click() method
@@ -29,7 +29,7 @@ public class RadioButtonTest extends ToolsQaBaseTest {
     public void testRadioGroup() {
         // Get all the Radio buttons from a Radio Group in a list
         // using findElements() method along with Radio Group identifier
-        List<WebElement> yearsOfExperience = driver.findElements(By.
+        List<WebElement> yearsOfExperience = getWebDriver().findElements(By.
                 cssSelector("div.control-group:nth-child(23)"));
         for (WebElement yearOfExperience : yearsOfExperience) {
             // Search for Radio Button in the Radio Group and select it
