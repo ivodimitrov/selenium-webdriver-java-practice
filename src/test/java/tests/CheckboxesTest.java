@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import tests.basetests.ToolsQaBaseTest;
 
-import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
@@ -13,8 +12,6 @@ public class CheckboxesTest extends ToolsQaBaseTest {
 
     @Test
     public void testCheckBox() {
-        // Print the name of the current executed test
-        printCurrentExecutableTestName();
         //Get the Checkbox as WebElement using it's value attribute
         WebElement profession = driver.findElement(By.
                 cssSelector("#profession-0"));
