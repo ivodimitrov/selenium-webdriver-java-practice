@@ -4,11 +4,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import utils.ToolsQaBaseTest;
+import utils.BaseTest;
 
 import static junit.framework.TestCase.fail;
 
-public class ElementPresenceTest extends ToolsQaBaseTest {
+public class ElementPresenceTest extends BaseTest {
 
     private boolean isElementPresent(By by) {
         try {

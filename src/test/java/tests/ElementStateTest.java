@@ -3,11 +3,11 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.ToolsQaBaseTest;
+import utils.BaseTest;
 
 import static junit.framework.TestCase.fail;
 
-public class ElementStateTest extends ToolsQaBaseTest {
+public class ElementStateTest extends BaseTest {
 
     @Test
     public void testElementIsEnabled() {

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.Page;
 
-public class ToolsQaBaseTest {
+public class BaseTest {
 
     private static Page homePage;
     private static WebDriver webDriver;
@@ -18,9 +18,11 @@ public class ToolsQaBaseTest {
     // Setting up Browser Desired Capabilities
     private static void setChromeDriverProperty() {
         if (System.getProperty("os.name").contains("Windows")) {
-            System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver",
+                    "./src/test/resources/drivers/chromedriver.exe");
         } else {
-            System.setProperty("webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver",
+                    "./src/test/resources/drivers/chromedriver.exe");
         }
     }
 
@@ -29,11 +31,9 @@ public class ToolsQaBaseTest {
         setChromeDriverProperty();
         // Launch a new Chrome instance
         System.out.println("Starting driver...");
-
         webDriver = new ChromeDriver();
-
         System.out.println("Started driver.");
-
+        webDriver.manage().window().maximize();
         webDriver.get(Links.HOME);
 
         homePage = new Page(webDriver);

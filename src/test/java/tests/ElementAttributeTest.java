@@ -3,31 +3,31 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.GmailBaseTest;
+import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
 
-public class ElementAttributeTest extends GmailBaseTest {
+public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementAttributeValue() {
-        // Get the Create An Account Element
-        WebElement createAnAccountLink = driver.findElement(By.
-                cssSelector(".hero_home__link__desktop"));
+        // Get the Partial Link Test Element
+        WebElement partialLink = getWebDriver().findElement(By.
+                cssSelector("div.control-group:nth-child(5) > a:nth-child(1)"));
         // Verify an element's attribute value
         assertEquals("Verify an element's attribute value",
-                "Get Gmail", createAnAccountLink.getAttribute("data-g-label"));
+                "Automation Practice Form", partialLink.getAttribute("title"));
     }
 
     @Test
     public void testElementStyle() {
-        // Get the Create An Account Element
-        WebElement createAnAccountLink = driver.findElement(By.
-                cssSelector(".hero_home__link__desktop"));
+        // Get the Partial Link Test Element
+        WebElement partialLink = getWebDriver().findElement(By.
+                cssSelector("div.control-group:nth-child(5) > a:nth-child(1)"));
         // CSS value
-        String textAlign = createAnAccountLink.getCssValue("text-align");
+        String marginBottom = partialLink.getCssValue("margin-bottom");
         // Verify an element's CSS value
         assertEquals("Verify an element's CSS value",
-                "center", textAlign);
+                "0px", marginBottom);
     }
 }

@@ -3,12 +3,12 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.ToolsQaBaseTest;
+import utils.BaseTest;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-public class CheckboxesTest extends ToolsQaBaseTest {
+public class CheckboxTest extends BaseTest {
 
     @Test
     public void testCheckBox() {
