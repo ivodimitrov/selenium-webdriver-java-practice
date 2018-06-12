@@ -12,16 +12,16 @@ public class ElementStateTest extends BaseTest {
     @Test
     public void testElementIsEnabled() {
         // Get the Checkbox as WebElement using it's name attribute
-        WebElement profession = getWebDriver().findElement(By.
+        WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.
                 cssSelector("#profession-0"));
         // Check if its enabled before selecting it
-        if (profession.isEnabled()) {
+        if (professionManualTesterCheckBox.isEnabled()) {
             // Check if its already selected? otherwise select the Checkbox
-            if (!profession.isSelected()) {
-                profession.click();
+            if (!professionManualTesterCheckBox.isSelected()) {
+                professionManualTesterCheckBox.click();
             }
         } else {
-            fail("Checkbox is disabled!");
+            fail("Profession Manual tester Checkbox is disabled!");
         }
     }
 }

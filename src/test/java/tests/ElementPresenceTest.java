@@ -25,13 +25,13 @@ public class ElementPresenceTest extends BaseTest {
         if (isElementPresent(By.
                 cssSelector("#profession-0"))) {
             // Get the checkbox and select it
-            WebElement profession = getWebDriver().findElement(By.
+            WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.
                     cssSelector("#profession-0"));
-            if (!profession.isSelected()) {
-                profession.click();
+            if (!professionManualTesterCheckBox.isSelected()) {
+                professionManualTesterCheckBox.click();
             }
         } else {
-            fail("Profession Checkbox doesn't exists!!");
+            fail("Profession Manual tester Checkbox doesn't exists!!");
         }
     }
 }
