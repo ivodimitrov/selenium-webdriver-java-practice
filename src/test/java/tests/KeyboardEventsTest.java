@@ -52,9 +52,6 @@ public class KeyboardEventsTest extends BaseTest {
                 .build().perform();
 
         // Verify Selected Row table shows two rows selected
-//        List<WebElement> rows = getWebDriver().findElements(By.
-//                cssSelector("#select-result"));
-//        assertEquals(1, rows.size());
         List<WebElement> rows = getWebDriver().findElements(By.
                 cssSelector(".ui-selected"));
         assertEquals(2, rows.size());
