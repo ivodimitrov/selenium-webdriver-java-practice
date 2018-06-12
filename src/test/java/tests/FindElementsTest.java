@@ -3,18 +3,18 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.GmailBaseTest;
+import utils.BaseTest;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class FindElementTest extends GmailBaseTest {
+public class FindElementsTest extends BaseTest {
 
     @Test
     public void testFindElements() {
         //Get all the links displayed on the Page
-        List<WebElement> links = driver.findElements(By.tagName("a"));
+        List<WebElement> links = getWebDriver().findElements(By.tagName("a"));
 
         int linksCounter = 0;
 
@@ -32,6 +32,6 @@ public class FindElementTest extends GmailBaseTest {
         System.out.println("Numbers of links displayed on the page are: " + links.size());
 
         assertEquals("Verify numbers of links displayed on the page",
-                linksCounter, links.size());
+                219, links.size());
     }
 }
