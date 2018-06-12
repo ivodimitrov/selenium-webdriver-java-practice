@@ -3,13 +3,13 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.ToolsQaTableBaseTest;
+import utils.TableBaseTest;
 
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class WebTableTest extends ToolsQaTableBaseTest {
+public class WebTableTest extends TableBaseTest {
 
     @Test
     public void testWebTable() {

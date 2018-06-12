@@ -3,33 +3,23 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.GmailBaseTest;
+import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
 
-public class ElementTextTest extends GmailBaseTest {
+public class ElementTextTest extends BaseTest {
 
     @Test
-    public void testCreateAnAccountElementText() {
-        // Get the Create An Account Element
-        WebElement createAnAccountLink = driver.findElement(By.
-                cssSelector(".hero_home__link__desktop"));
-        // Get the message element's text
-        String createAnAccountLinkText = createAnAccountLink.getText();
-        // Verify message element's text
-        assertEquals("Verify message element's text",
-                "CREATE AN ACCOUNT", createAnAccountLinkText);
-    }
+    public void testFirstNameElementText() {
+        // Get the First name Element
+        WebElement firstNameText = getWebDriver().findElement(By.
+                cssSelector("div.control-group:nth-child(11)"));
+        // Get the element's text
+        String firstNameElementText = firstNameText.getText();
 
-    @Test
-    public void testSignInElementText() {
-        // Get the Sign In Element
-        WebElement signInLink = driver.findElement(By.
-                cssSelector("a.gmail-nav__nav-link:nth-child(2)"));
-        // Get the message element's text
-        String signInLinkText = signInLink.getText();
+        System.out.println("Element's text is: " + firstNameElementText);
         // Verify message element's text
         assertEquals("Verify message element's text",
-                "SIGN IN", signInLinkText);
+                "First name:", firstNameElementText);
     }
 }
