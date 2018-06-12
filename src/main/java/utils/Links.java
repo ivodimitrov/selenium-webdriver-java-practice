@@ -4,6 +4,8 @@ public class Links {
 
     //if multiple environments, store in properties files
 
+    // Selectable page
+    public static final String SELECTABLE_PAGE = "http://demoqa.com/selectable/";
     // Automation Practice Table page
     public static final String TABLE_PAGE = "http://toolsqa.com/automation-practice-table/";
     // Drag and Drop page
