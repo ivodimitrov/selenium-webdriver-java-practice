@@ -48,7 +48,7 @@ public class GoogleSearchChromeTest {
         // Now submit the form
         element.submit();
         // Google's search is rendered dynamically with JavaScript.
-        // wait for the page to load, timeout after 10 seconds
+        // Wait for the page to load, timeout after 10 seconds
         new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(@Nonnull WebDriver d) {
                 return d.getTitle().toLowerCase()

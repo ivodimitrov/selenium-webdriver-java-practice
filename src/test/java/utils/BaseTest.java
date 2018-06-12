@@ -9,6 +9,7 @@ import pages.Page;
 public class BaseTest {
 
     private static Page homePage;
+
     private static WebDriver webDriver;
 
     protected static WebDriver getWebDriver() {
@@ -34,16 +35,13 @@ public class BaseTest {
         webDriver = new ChromeDriver();
         System.out.println("Started driver.");
         webDriver.manage().window().maximize();
-        webDriver.get(Links.HOME);
+        webDriver.get(Links.HOME_PAGE);
 
         homePage = new Page(webDriver);
     }
 
     @After
     public void tearDown() {
-        System.out.println();
-        System.out.println("Test passed.");
-
         // Close the browser
         webDriver.quit();
 

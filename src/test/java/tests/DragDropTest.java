@@ -1,59 +1,39 @@
 package tests;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.BaseTest;
+import utils.Links;
+
+import javax.annotation.Nonnull;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class DragDropTest {
-
-    private WebDriver driver;
-
-    @Before
-    public void setUp() {
-        // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.chrome.driver",
-                "./src/test/resources/drivers/chromedriver.exe");
-
-        // Launch a new Chrome instance
-        System.out.println("Starting driver...");
-
-        driver = new ChromeDriver();
-
-        System.out.println("Started driver.");
-
-        // Maximize the browser window
-        driver.manage().window().maximize();
-        // Navigate to page
-        driver.get("http://demoqa.com/droppable/");
-    }
+public class DragDropTest extends BaseTest {
 
     @Test
     public void testDragDrop() {
+        //Go to page
+        getWebDriver().get(Links.DRAG_DROP_PAGE);
 
-        WebElement source = driver.findElement(By.id("draggableview"));
-        WebElement target = driver.findElement(By.id("droppableview"));
+        // Wait for the page to load, timeout after 10 seconds
+        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(@Nonnull WebDriver d) {
+                return d.getTitle().toLowerCase()
+                        .startsWith("droppable");
+            }
+        });
 
-        Actions builder = new Actions(driver);
+        WebElement source = getWebDriver().findElement(By.id("draggableview"));
+        WebElement target = getWebDriver().findElement(By.id("droppableview"));
+
+        Actions builder = new Actions(getWebDriver());
         builder.dragAndDrop(source, target).perform();
         assertEquals("Dropped!", target.getText());
-    }
-
-    @After
-    public void tearDown() {
-        System.out.println();
-        System.out.println("Test passed.");
-
-        // Close the browser
-        driver.quit();
-
-        System.out.println();
-        System.out.println("Driver is quit.");
     }
 }
