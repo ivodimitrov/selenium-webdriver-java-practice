@@ -30,21 +30,17 @@ public class KeyboardEventsTest extends BaseTest {
                         .startsWith("selectable");
             }
         });
+
         // Wait for the link to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<WebElement>() {
             public WebElement apply(@Nonnull WebDriver d) {
                 return d.findElement(By.
-                        cssSelector("#ui-id-3"));
+                        cssSelector("#selectable"));
             }
         });
-        // click Serialize Element
-        WebElement serializeLink = getWebDriver().findElement(By.
-                cssSelector("#ui-id-3"));
-
-        serializeLink.click();
 
         List<WebElement> tableRows = getWebDriver().findElements(By.
-                cssSelector("#selectable-serialize li.ui-widget-content"));
+                cssSelector("#selectable li.ui-widget-content"));
 
         // Select second and fourth row from table using Control Key.
         // Row Index start at 0
@@ -56,9 +52,12 @@ public class KeyboardEventsTest extends BaseTest {
                 .build().perform();
 
         // Verify Selected Row table shows two rows selected
+//        List<WebElement> rows = getWebDriver().findElements(By.
+//                cssSelector("#select-result"));
+//        assertEquals(1, rows.size());
         List<WebElement> rows = getWebDriver().findElements(By.
-                cssSelector("#select-result"));
-        assertEquals(1, rows.size());
+                cssSelector(".ui-selected"));
+        assertEquals(2, rows.size());
     }
 }
 
