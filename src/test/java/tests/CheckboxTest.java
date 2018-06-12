@@ -13,25 +13,25 @@ public class CheckboxTest extends BaseTest {
     @Test
     public void testCheckBox() {
         //Get the Checkbox as WebElement using it's value attribute
-        WebElement profession = getWebDriver().findElement(By.
+        WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.
                 cssSelector("#profession-0"));
 
         //Check if its already selected? Otherwise select the Checkbox
         //by calling click() method
-        if (!profession.isSelected()) {
-            profession.click();
+        if (!professionManualTesterCheckBox.isSelected()) {
+            professionManualTesterCheckBox.click();
         }
 
         //Verify Checkbox is Selected
-        assertTrue(profession.isSelected());
+        assertTrue(professionManualTesterCheckBox.isSelected());
 
         //Check Checkbox if selected? If yes, deselect it
         //by calling click() method
-        if (profession.isSelected()) {
-            profession.click();
+        if (professionManualTesterCheckBox.isSelected()) {
+            professionManualTesterCheckBox.click();
         }
 
         //Verify Checkbox is Deselected
-        assertFalse(profession.isSelected());
+        assertFalse(professionManualTesterCheckBox.isSelected());
     }
 }

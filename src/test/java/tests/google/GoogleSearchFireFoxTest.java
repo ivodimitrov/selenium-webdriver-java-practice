@@ -1,4 +1,4 @@
-package tests;
+package tests.google;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,33 +6,28 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.annotation.Nonnull;
-import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 
-public class GoogleSearchOperaTest {
+public class GoogleSearchFireFoxTest {
 
     private WebDriver driver;
 
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.opera.driver",
-                ".\\src\\test\\resources\\drivers\\operadriver.exe");
-        OperaOptions options = new OperaOptions();
-        options.setBinary(new File("C:\\Program Files\\Opera\\launcher.exe"));
+        System.setProperty("webdriver.gecko.driver",
+                "./src/test/resources/drivers/geckodriver.exe");
 
-
-        // Launch a new Opera instance
+        // Launch a new Firefox instance
         System.out.println("Starting driver...");
 
-        driver = new OperaDriver(options);
+        driver = new FirefoxDriver();
 
         System.out.println("Started driver.");
 
@@ -66,7 +61,7 @@ public class GoogleSearchOperaTest {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         System.out.println();
         System.out.println("Test passed.");
 
@@ -74,10 +69,6 @@ public class GoogleSearchOperaTest {
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quited.");
-        // Opera browser does not close. Solution for windows:
-        Runtime.getRuntime().exec("taskkill /f /im opera.exe");
-        // For MacOS:
-        // Runtime.getRuntime().exec("pgrep 'Opera' | xargs kill");
+        System.out.println("Driver is quit.");
     }
 }

@@ -1,4 +1,4 @@
-package tests;
+package tests.google;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,28 +6,33 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.annotation.Nonnull;
+import java.io.File;
 
 import static org.junit.Assert.assertEquals;
 
-public class GoogleSearchFireFoxTest {
+public class GoogleSearchOperaTest {
 
     private WebDriver driver;
 
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.gecko.driver",
-                "./src/test/resources/drivers/geckodriver.exe");
+        System.setProperty("webdriver.opera.driver",
+                ".\\src\\test\\resources\\drivers\\operadriver.exe");
+        OperaOptions options = new OperaOptions();
+        options.setBinary(new File("C:\\Program Files\\Opera\\launcher.exe"));
 
-        // Launch a new Firefox instance
+
+        // Launch a new Opera instance
         System.out.println("Starting driver...");
 
-        driver = new FirefoxDriver();
+        driver = new OperaDriver(options);
 
         System.out.println("Started driver.");
 
@@ -61,7 +66,7 @@ public class GoogleSearchFireFoxTest {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws Exception {
         System.out.println();
         System.out.println("Test passed.");
 
@@ -69,6 +74,10 @@ public class GoogleSearchFireFoxTest {
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quit.");
+        System.out.println("Driver is quited.");
+        // Opera browser does not close. Solution for windows:
+        Runtime.getRuntime().exec("taskkill /f /im opera.exe");
+        // For MacOS:
+        // Runtime.getRuntime().exec("pgrep 'Opera' | xargs kill");
     }
 }
