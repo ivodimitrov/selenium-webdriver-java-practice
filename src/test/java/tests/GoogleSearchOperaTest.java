@@ -49,7 +49,7 @@ public class GoogleSearchOperaTest {
         // Clear the existing text value
         element.clear();
         // Enter something to search for
-        element.sendKeys("Selenium testing tools cookbook");
+        element.sendKeys("Selenium");
         // Now submit the form
         element.submit();
         // Google's search is rendered dynamically with JavaScript.
@@ -57,11 +57,11 @@ public class GoogleSearchOperaTest {
         new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(@Nonnull WebDriver d) {
                 return d.getTitle().toLowerCase()
-                        .startsWith("selenium testing tools cookbook");
+                        .startsWith("selenium");
             }
         });
 
-        assertEquals("Selenium testing tools cookbook - Google Search",
+        assertEquals("Selenium - Google Search",
                 driver.getTitle());
     }
 
