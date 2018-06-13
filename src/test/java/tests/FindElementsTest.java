@@ -8,11 +8,15 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.HOME_PAGE;
 
 public class FindElementsTest extends BaseTest {
 
     @Test
     public void testFindElements() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         //Get all the links displayed on the Page
         List<WebElement> links = getWebDriver().findElements(By.tagName("a"));
 

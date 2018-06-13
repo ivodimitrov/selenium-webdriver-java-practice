@@ -4,7 +4,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Page;
+
+import javax.annotation.Nonnull;
 
 public class BaseTest {
 
@@ -27,15 +31,30 @@ public class BaseTest {
         }
     }
 
+    protected static void goToPageAndWaitPageToLoad(final String page) {
+        // Go to page
+        getWebDriver().get(page);
+        // Wait for the page to load, timeout after 10 seconds
+        new WebDriverWait(getWebDriver(), 10).
+                until(new ExpectedCondition<Boolean>() {
+                    public Boolean apply(@Nonnull WebDriver d) {
+                        return d.getTitle().toLowerCase()
+                                .contains(Links.getPages()
+                                        .get(page));
+                    }
+                });
+    }
+
     @Before
     public void setUp() {
+        // Setting up Browser
         setChromeDriverProperty();
         // Launch a new Chrome instance
         System.out.println("Starting driver...");
         webDriver = new ChromeDriver();
         System.out.println("Started driver.");
+
         webDriver.manage().window().maximize();
-        webDriver.get(Links.HOME_PAGE);
 
         homePage = new Page(webDriver);
     }

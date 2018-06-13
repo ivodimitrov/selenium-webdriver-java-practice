@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static junit.framework.TestCase.fail;
+import static utils.Links.HOME_PAGE;
 
 public class ElementPresenceTest extends BaseTest {
 
@@ -21,6 +22,9 @@ public class ElementPresenceTest extends BaseTest {
 
     @Test
     public void testIsElementPresent() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Check if element with locator criteria exists on Page
         if (isElementPresent(By.
                 cssSelector("#profession-0"))) {

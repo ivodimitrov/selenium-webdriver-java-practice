@@ -2,32 +2,20 @@ package tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseTest;
-import utils.Links;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static utils.Links.TABLE_PAGE;
 
 public class WebTableTest extends BaseTest {
 
     @Test
     public void testWebTable() {
         // Go to page
-        getWebDriver().get(Links.TABLE_PAGE);
-
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("demo table");
-            }
-        });
+        goToPageAndWaitPageToLoad(TABLE_PAGE);
 
         WebElement simpleTable = getWebDriver().findElement(By.id("content"));
 

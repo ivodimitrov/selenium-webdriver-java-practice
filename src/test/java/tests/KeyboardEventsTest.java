@@ -9,27 +9,19 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseTest;
-import utils.Links;
 
 import javax.annotation.Nonnull;
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static utils.Links.SELECTABLE_PAGE;
 
 public class KeyboardEventsTest extends BaseTest {
 
     @Test
     public void testRowSelectionUsingControlKey() {
         // Go to page
-        getWebDriver().get(Links.SELECTABLE_PAGE);
-
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("selectable");
-            }
-        });
+        goToPageAndWaitPageToLoad(SELECTABLE_PAGE);
 
         // Wait for the link to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<WebElement>() {

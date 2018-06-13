@@ -5,11 +5,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import utils.BaseTest;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static utils.Links.HOME_PAGE;
 
 public class JavascriptExecutorTest extends BaseTest {
 
     @Test
     public void testJavaScriptCalls() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
 
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
 

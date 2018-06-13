@@ -11,11 +11,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static utils.Links.HOME_PAGE;
 
 public class DropdownTest extends BaseTest {
 
     @Test
     public void testDropdownContinents() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
                 cssSelector("#continents")));
@@ -47,6 +51,9 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
                 cssSelector("#continents")));
@@ -62,6 +69,9 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
                 cssSelector("#continents")));

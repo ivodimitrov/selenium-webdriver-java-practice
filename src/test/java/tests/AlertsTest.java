@@ -3,31 +3,20 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseTest;
-import utils.Links;
-
-import javax.annotation.Nonnull;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.ALERTS_PAGE;
 
 public class AlertsTest extends BaseTest {
 
     @Test
     public void testSimpleAlert() {
         // Go to page
-        getWebDriver().get(Links.ALERTS_PAGE);
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("toolsqa");
-            }
-        });
+        goToPageAndWaitPageToLoad(ALERTS_PAGE);
 
         // Click Simple button to show an Alert box
         WebElement simpleAlertButton = getWebDriver().findElement(By.
@@ -50,14 +39,7 @@ public class AlertsTest extends BaseTest {
     @Test
     public void testConfirmAccept() {
         // Go to page
-        getWebDriver().get(Links.ALERTS_PAGE);
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("toolsqa");
-            }
-        });
+        goToPageAndWaitPageToLoad(ALERTS_PAGE);
 
         // Click Confirm button to show Confirmation Alert box
         WebElement confirmPopUpButton = getWebDriver().findElement(By.
@@ -76,14 +58,7 @@ public class AlertsTest extends BaseTest {
     @Test
     public void testPrompt() {
         // Go to page
-        getWebDriver().get(Links.ALERTS_PAGE);
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("toolsqa");
-            }
-        });
+        goToPageAndWaitPageToLoad(ALERTS_PAGE);
 
         // Click Confirm button to show Prompt Alert box
         getWebDriver().findElement(By.

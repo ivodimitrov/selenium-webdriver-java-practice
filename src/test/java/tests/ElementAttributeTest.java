@@ -6,11 +6,15 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.HOME_PAGE;
 
 public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementAttributeValue() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Partial Link Test Element
         WebElement partialLink = getWebDriver().findElement(By.
                 cssSelector("div.control-group:nth-child(5) > a:nth-child(1)"));
@@ -21,6 +25,9 @@ public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementStyle() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Partial Link Test Element
         WebElement partialLink = getWebDriver().findElement(By.
                 cssSelector("div.control-group:nth-child(5) > a:nth-child(1)"));

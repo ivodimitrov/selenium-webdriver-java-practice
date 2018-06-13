@@ -8,11 +8,15 @@ import utils.BaseTest;
 import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
+import static utils.Links.HOME_PAGE;
 
 public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testRadioButton() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get the Radio Button as WebElement using it's value attribute
         WebElement yearsOfExperience = getWebDriver().findElement(By.
                 xpath("//*[@id=\"exp-0\"]"));
@@ -27,6 +31,9 @@ public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testRadioGroup() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
+
         // Get all the Radio buttons from a Radio Group in a list
         // using findElements() method along with Radio Group identifier
         List<WebElement> yearsOfExperience = getWebDriver().findElements(By.

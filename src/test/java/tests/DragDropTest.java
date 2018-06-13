@@ -13,21 +13,14 @@ import utils.Links;
 import javax.annotation.Nonnull;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static utils.Links.DRAG_DROP_PAGE;
 
 public class DragDropTest extends BaseTest {
 
     @Test
     public void testDragDrop() {
         //Go to page
-        getWebDriver().get(Links.DRAG_DROP_PAGE);
-
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("droppable");
-            }
-        });
+        goToPageAndWaitPageToLoad(DRAG_DROP_PAGE);
 
         WebElement source = getWebDriver().findElement(By.id("draggableview"));
         WebElement target = getWebDriver().findElement(By.id("droppableview"));

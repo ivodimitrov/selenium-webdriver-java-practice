@@ -9,11 +9,14 @@ import utils.BaseTest;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static utils.Links.HOME_PAGE;
 
 public class CheckboxTest extends BaseTest {
 
     @Test
     public void testCheckBox() {
+        // Go to page
+        goToPageAndWaitPageToLoad(HOME_PAGE);
 
         WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
         wait.until(ExpectedConditions.titleContains("Demo"));
