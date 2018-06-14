@@ -37,8 +37,8 @@ public class BaseTest {
         // Wait for the page to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).
                 until(new ExpectedCondition<Boolean>() {
-                    public Boolean apply(@Nonnull WebDriver d) {
-                        return d.getTitle().toLowerCase()
+                    public Boolean apply(@Nonnull WebDriver driver) {
+                        return driver.getTitle().toLowerCase()
                                 .contains(Links.getPages()
                                         .get(page));
                     }
