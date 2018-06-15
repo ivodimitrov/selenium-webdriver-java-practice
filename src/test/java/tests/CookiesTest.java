@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
@@ -12,6 +13,7 @@ import static utils.Links.GMAIL_PAGE;
 
 public class CookiesTest extends BaseTest {
 
+    @Ignore
     @Test
     public void testCookies() {
         // Go to page
