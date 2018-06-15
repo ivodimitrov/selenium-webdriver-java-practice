@@ -74,6 +74,8 @@ public class FramesTest extends BaseTest {
 
     @Test
     public void testFrameByContents() {
+        goToPageAndWaitPageToLoad(IFRAME_PAGE);
+
         // Get all iframes on the Page, created with <frame> tag
         List<WebElement> iframes = getWebDriver().findElements(By.
                 tagName("iframe"));

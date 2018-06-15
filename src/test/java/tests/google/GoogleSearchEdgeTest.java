@@ -2,6 +2,7 @@ package tests.google;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import javax.annotation.Nonnull;
 
 import static helpermethods.GetCurrentExecutableTestName.printCurrentExecutableTestName;
 import static org.junit.Assert.assertEquals;
@@ -45,6 +44,7 @@ public class GoogleSearchEdgeTest {
         driver.get("http://www.google.com/ncr");
     }
 
+    @Ignore
     @Test
     public void testGoogleSearch() {
         printCurrentExecutableTestName();
@@ -59,12 +59,8 @@ public class GoogleSearchEdgeTest {
         element.submit();
         // Google's search is rendered dynamically with JavaScript.
         // wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("selenium");
-            }
-        });
+        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) d -> d.getTitle().toLowerCase()
+                .startsWith("selenium"));
 
         assertEquals("Selenium - Google Search",
                 driver.getTitle());
@@ -72,13 +68,10 @@ public class GoogleSearchEdgeTest {
 
     @After
     public void tearDown() {
-        System.out.println();
-        System.out.println("Test passed.");
-
         // Close the browser
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quit.");
+        System.out.println("Driver quit.");
     }
 }

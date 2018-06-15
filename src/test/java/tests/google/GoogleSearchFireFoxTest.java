@@ -10,8 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.annotation.Nonnull;
-
 import static org.junit.Assert.assertEquals;
 
 public class GoogleSearchFireFoxTest {
@@ -49,12 +47,8 @@ public class GoogleSearchFireFoxTest {
         element.submit();
         // Google's search is rendered dynamically with JavaScript.
         // wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(driver, 10).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(@Nonnull WebDriver d) {
-                return d.getTitle().toLowerCase()
-                        .startsWith("selenium");
-            }
-        });
+        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) d -> d.getTitle().toLowerCase()
+                .startsWith("selenium"));
 
         assertEquals("Selenium - Google Search",
                 driver.getTitle());
@@ -62,13 +56,10 @@ public class GoogleSearchFireFoxTest {
 
     @After
     public void tearDown() {
-        System.out.println();
-        System.out.println("Test passed.");
-
         // Close the browser
         driver.quit();
 
         System.out.println();
-        System.out.println("Driver is quit.");
+        System.out.println("Driver quit.");
     }
 }

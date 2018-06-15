@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.Page;
 
-import javax.annotation.Nonnull;
-
 public class BaseTest {
 
     private static Page homePage;
@@ -36,13 +34,9 @@ public class BaseTest {
         getWebDriver().get(page);
         // Wait for the page to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).
-                until(new ExpectedCondition<Boolean>() {
-                    public Boolean apply(@Nonnull WebDriver driver) {
-                        return driver.getTitle().toLowerCase()
-                                .contains(Links.getPages()
-                                        .get(page));
-                    }
-                });
+                until((ExpectedCondition<Boolean>) driver -> driver.getTitle().toLowerCase()
+                        .contains(Links.getPages()
+                                .get(page)));
     }
 
     @Before
@@ -65,6 +59,6 @@ public class BaseTest {
         webDriver.quit();
 
         System.out.println();
-        System.out.println("Driver is quit.");
+        System.out.println("Driver quit.");
     }
 }
