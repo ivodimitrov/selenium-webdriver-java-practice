@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static utils.Links.IFRAME_PAGE;
 
@@ -63,6 +65,34 @@ public class FramesTest extends BaseTest {
             assertEquals("Tab 1", tab1Tab.getText());
         } finally {
 
+            // Activate the Page, this will move context from frame back to the Page
+            getWebDriver().switchTo().defaultContent();
+        }
+    }
+
+    @Test
+    public void testFrameByContents() {
+        // Get all iframes on the Page, created with <frame> tag
+        List<WebElement> iframes = getWebDriver().findElements(By.
+                tagName("iframe"));
+        // Activate iframe and check if it has the desired content.
+        // If found perform the operations.
+        // If not, then switch back to the Page and continue checking next frame
+        try {
+            for (WebElement iframe : iframes) {
+                // switchTo().frame() also accepts frame elements apart from id,
+                // name or index
+                getWebDriver().switchTo().frame(iframe);
+                String title = getWebDriver().getTitle();
+                if (title.contains("Demo Form")) {
+                    WebElement buttonButton = getWebDriver().findElement(By.
+                            cssSelector("#submit"));
+                    assertEquals("Button", buttonButton.getText());
+                    break;
+                } else
+                    getWebDriver().switchTo().defaultContent();
+            }
+        } finally {
             // Activate the Page, this will move context from frame back to the Page
             getWebDriver().switchTo().defaultContent();
         }
