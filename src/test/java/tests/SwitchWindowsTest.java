@@ -25,7 +25,6 @@ public class SwitchWindowsTest extends BaseTest {
             getWebDriver().switchTo().window("MsgWindow");
             try {
                 // Check the driver context is in Message window
-                assertEquals("Message window does not exist", "", getWebDriver().getTitle());
                 assertTrue("Message window does not exist", getWebDriver().getPageSource().
                         contains("Knowledge increases by sharing but not by saving."));
             } finally {
