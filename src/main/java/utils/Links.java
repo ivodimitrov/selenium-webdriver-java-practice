@@ -13,6 +13,7 @@ public class Links {
     public static final String SWITCH_WINDOWS_PAGE = "http://toolsqa.com/automation-practice-switch-windows/";
     public static final String GMAIL_PAGE = "https://www.google.com/gmail/about/";
     public static final String GOOGLE_PAGE = "http://www.google.com/ncr";
+    public static final String CONFIG_PAGE = "http://cookbook.seleniumacademy.com/Config.html";
 
     private static final String HOME_PAGE_TITLE = "demo form";
     private static final String ALERTS_PAGE_TITLE = "toolsqa";
@@ -23,6 +24,7 @@ public class Links {
     private static final String SWITCH_WINDOWS_PAGE_TITLE = "a new title";
     private static final String GMAIL_PAGE_TITLE = "gmail";
     private static final String GOOGLE_PAGE_TITLE = "google";
+    private static final String CONFIG_PAGE_TITLE = "build my car";
 
     static HashMap<String, String> getPages() {
 
@@ -37,6 +39,7 @@ public class Links {
         pagesMap.put(SWITCH_WINDOWS_PAGE, SWITCH_WINDOWS_PAGE_TITLE);
         pagesMap.put(GMAIL_PAGE, GMAIL_PAGE_TITLE);
         pagesMap.put(GOOGLE_PAGE, GOOGLE_PAGE_TITLE);
+        pagesMap.put(CONFIG_PAGE, CONFIG_PAGE_TITLE);
 
         return pagesMap;
     }
