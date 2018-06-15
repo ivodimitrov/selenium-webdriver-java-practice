@@ -3,17 +3,15 @@ package tests;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseTest;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static utils.Links.SELECTABLE_PAGE;
 
 public class KeyboardEventsTest extends BaseTest {
@@ -24,12 +22,8 @@ public class KeyboardEventsTest extends BaseTest {
         goToPageAndWaitPageToLoad(SELECTABLE_PAGE);
 
         // Wait for the link to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10).until(new ExpectedCondition<WebElement>() {
-            public WebElement apply(@Nonnull WebDriver d) {
-                return d.findElement(By.
-                        cssSelector("#selectable"));
-            }
-        });
+        new WebDriverWait(getWebDriver(), 10).until((ExpectedCondition<WebElement>) d -> d.findElement(By.
+                cssSelector("#selectable")));
 
         List<WebElement> tableRows = getWebDriver().findElements(By.
                 cssSelector("#selectable li.ui-widget-content"));

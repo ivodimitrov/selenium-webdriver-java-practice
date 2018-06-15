@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import utils.BaseTest;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static utils.Links.HOME_PAGE;
 
 public class JavascriptExecutorTest extends BaseTest {

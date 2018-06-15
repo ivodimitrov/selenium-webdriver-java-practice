@@ -7,7 +7,7 @@ import utils.BaseTest;
 
 import java.util.List;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static utils.Links.TABLE_PAGE;
 
 public class WebTableTest extends BaseTest {
