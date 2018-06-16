@@ -8,6 +8,7 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.CONFIG_PAGE;
 import static utils.Links.IFRAME_PAGE;
 
 public class FramesTest extends BaseTest {
@@ -74,45 +75,23 @@ public class FramesTest extends BaseTest {
 
     @Test
     public void testFrameByContents() {
-        goToPageAndWaitPageToLoad(IFRAME_PAGE);
+        goToPageAndWaitPageToLoad(CONFIG_PAGE);
 
         // Get all iframes on the Page, created with <frame> tag
-        List<WebElement> iframes = getWebDriver().findElements(By.
-                tagName("iframe"));
+        List<WebElement> frames = getWebDriver().findElements(By.tagName("frame"));
 
         // Activate iframe and check if it has the desired content.
         // If found perform the operations.
         // If not, then switch back to the Page and continue checking next frame
         try {
-            for (WebElement iframe : iframes) {
+            for (WebElement frame : frames) {
                 // switchTo().frame() also accepts frame elements apart from id,
                 // name or index
-                getWebDriver().switchTo().frame(iframe);
+                getWebDriver().switchTo().frame(frame);
                 String title = getWebDriver().getTitle();
-                if (title.contains("Demo Form")) {
-                    WebElement buttonButton = getWebDriver().findElement(By.
-                            cssSelector("#submit"));
-                    assertEquals("Button is not found!",
-                            "Button", buttonButton.getText());
-                    break;
-                } else
-                    getWebDriver().switchTo().defaultContent();
-            }
-        } finally {
-            // Activate the Page, this will move context from frame back to the Page
-            getWebDriver().switchTo().defaultContent();
-        }
-        try {
-            for (WebElement iframe : iframes) {
-                // switchTo().frame() also accepts frame elements apart from id,
-                // name or index
-                getWebDriver().switchTo().frame(iframe);
-                String title = getWebDriver().getTitle();
-                if (title.contains("Demoqa")) {
-                    WebElement tab1Tab = getWebDriver().findElement(By.
-                            cssSelector("#ui-id-1"));
-                    assertEquals("Tab 1 is not found!",
-                            "Tab 1", tab1Tab.getText());
+                if (title.equals("Frame B")) {
+                    WebElement msg = getWebDriver().findElement(By.tagName("p"));
+                    assertEquals("This is Left Frame", msg.getText());
                     break;
                 } else
                     getWebDriver().switchTo().defaultContent();
