@@ -13,7 +13,7 @@ import static utils.Links.GMAIL_PAGE;
 
 public class CookiesTest extends BaseTest {
 
-    @Ignore
+    @Ignore("Because it is not finished yet")
     @Test
     public void testCookies() {
         // Go to page
