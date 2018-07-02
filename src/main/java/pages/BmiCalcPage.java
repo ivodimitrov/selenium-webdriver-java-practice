@@ -9,16 +9,43 @@ public class BmiCalcPage {
 
     private WebDriver driver;
 
-    private WebElement heightCMS;
-    private WebElement weightKg;
-    private WebElement Calculate;
-    private WebElement bmi;
+    @FindBy(id = "heightCMS")
+    private WebElement heightInput;
+
+    @FindBy(id = "weightKg")
+    private WebElement weightInput;
+
+    @FindBy(id = "Calculate")
+    private WebElement calculateButton;
+
+    @FindBy(id = "bmi")
+    private WebElement bmiInput;
 
     @FindBy(id = "bmi_category")
-    private WebElement bmiCategory;
+    private WebElement bmiCategoryInput;
 
     public BmiCalcPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
+
+    public void setHeight(String height) {
+        heightInput.sendKeys(height);
+    }
+
+    public void setWeight(String weight) {
+        weightInput.sendKeys(weight);
+    }
+
+    public void calculateBmi() {
+        calculateButton.click();
+    }
+
+    public String getBmi() {
+        return bmiInput.getAttribute("value");
+    }
+
+    public String getBmiCategory() {
+        return bmiCategoryInput.getAttribute("value");
     }
 }
