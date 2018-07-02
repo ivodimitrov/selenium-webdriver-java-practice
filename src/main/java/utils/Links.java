@@ -14,6 +14,7 @@ public class Links {
     public static final String GMAIL_PAGE = "https://www.google.com/gmail/about/";
     public static final String GOOGLE_PAGE = "http://www.google.com/ncr";
     public static final String CONFIG_PAGE = "http://cookbook.seleniumacademy.com/Config.html";
+    public static final String BMICALCULATOR_PAGE = "http://cookbook.seleniumacademy.com/bmicalculator.html";
 
     private static final String HOME_PAGE_TITLE = "demo form";
     private static final String ALERTS_PAGE_TITLE = "toolsqa";
@@ -25,10 +26,11 @@ public class Links {
     private static final String GMAIL_PAGE_TITLE = "gmail";
     private static final String GOOGLE_PAGE_TITLE = "google";
     private static final String CONFIG_PAGE_TITLE = "build my car";
+    private static final String BMICALCULATOR_PAGE_TITLE = "bmi calculator";
 
     static HashMap<String, String> getPages() {
 
-        HashMap<String, String> pagesMap = new HashMap<String, String>();
+        HashMap<String, String> pagesMap = new HashMap<>();
 
         pagesMap.put(HOME_PAGE, HOME_PAGE_TITLE);
         pagesMap.put(ALERTS_PAGE, ALERTS_PAGE_TITLE);
@@ -40,6 +42,7 @@ public class Links {
         pagesMap.put(GMAIL_PAGE, GMAIL_PAGE_TITLE);
         pagesMap.put(GOOGLE_PAGE, GOOGLE_PAGE_TITLE);
         pagesMap.put(CONFIG_PAGE, CONFIG_PAGE_TITLE);
+        pagesMap.put(BMICALCULATOR_PAGE, BMICALCULATOR_PAGE_TITLE);
 
         return pagesMap;
     }
