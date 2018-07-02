@@ -14,15 +14,15 @@ import static org.junit.Assert.assertEquals;
 import static utils.Links.BMICALCULATOR_PAGE;
 
 @RunWith(Parameterized.class)
-public class SimpleDDT extends BaseTest {
+public class SimpleDDTest extends BaseTest {
 
     private String height;
     private String weight;
     private String bmi;
     private String bmiCategory;
 
-    public SimpleDDT(String height, String weight, String bmi,
-                     String bmiCategory) {
+    public SimpleDDTest(String height, String weight, String bmi,
+                        String bmiCategory) {
         this.height = height;
         this.weight = weight;
         this.bmi = bmi;

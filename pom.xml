@@ -75,13 +75,13 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-        <!--<dependency>-->
-        <!--<groupId>org.testng</groupId>-->
-        <!--<artifactId>testng</artifactId>-->
-        <!--<version>${testng.version}</version>-->
-        <!--</dependency>-->
-        <!-- https://mvnrepository.com/artifact/javax.annotation/jsr250-api -->
+        <!--https://mvnrepository.com/artifact/org.testng/testng-->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
+        <!--https://mvnrepository.com/artifact/javax.annotation/jsr250-api-->
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
