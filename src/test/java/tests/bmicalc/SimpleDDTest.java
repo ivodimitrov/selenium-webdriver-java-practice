@@ -1,4 +1,4 @@
-package tests;
+package tests.bmicalc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -50,14 +50,9 @@ public class SimpleDDTest extends BaseTest {
         // Click on Calculate Button
         bmiCalcPage.calculateBmi();
         // Get the Bmi element and verify its value using bmi variable
-        // assertEquals(bmi, bmiCalcPage.getBmi());
-
-        // assertEquals(actual, expected)
-        // TODO
-
-        assertEquals("BMI calculation is not correct!", bmiCalcPage.getBmi(), bmi);
+        assertEquals("BMI calculation is not correct!", bmi, bmiCalcPage.getBmi());
         // Get the Bmi Category element and verify its value using bmiCategory variable
-        assertEquals(bmiCategory, bmiCalcPage.getBmiCategory());
+        assertEquals("BMI category is not correct!", bmiCategory, bmiCalcPage.getBmiCategory());
     }
 }
 

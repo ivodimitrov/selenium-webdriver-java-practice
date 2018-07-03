@@ -3,11 +3,12 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class BmiCalcPage {
+public class BmiCalcPage extends Page {
 
-    private WebDriver driver;
+    public BmiCalcPage(WebDriver driver) {
+        super(driver);
+    }
 
     @FindBy(id = "heightCMS")
     private WebElement heightInput;
@@ -23,11 +24,6 @@ public class BmiCalcPage {
 
     @FindBy(id = "bmi_category")
     private WebElement bmiCategoryInput;
-
-    public BmiCalcPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     public void setHeight(String height) {
         heightInput.clear();

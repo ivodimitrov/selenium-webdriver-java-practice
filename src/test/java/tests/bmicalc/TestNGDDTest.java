@@ -1,8 +1,6 @@
-package tests;
+package tests.bmicalc;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -51,18 +49,10 @@ public class TestNGDDTest extends BaseTest {
         bmiCalcPage.setWeight(weight);
         // Click on Calculate Button
         bmiCalcPage.calculateBmi();
-// Get the Bmi element and verify its value using bmi variable
-//        WebElement bmiLabel = driver.findElement(By.
-//                name("bmi"));
-//        assertEquals(bmiLabel.getAttribute("value"), bmi);
-
-        // TODO
-        assertEquals("BMI calculation is not correct!", bmiCalcPage.getBmi(), bmi);
+        // Get the Bmi element and verify its value using bmi variable
+        assertEquals(bmiCalcPage.getBmi(), bmi, "BMI calculation is not correct!");
         // Get the Bmi Category element and verify its value using bmiCategory variable
-        WebElement bmiCategoryLabel = driver.findElement(By
-                .name("bmi_category"));
-        assertEquals(bmiCategoryLabel.getAttribute("value"), category);
-        assertEquals(bmiCategoryLabel.getAttribute("value"), category);
+        assertEquals(bmiCalcPage.getBmiCategory(), category, "BMI category is not correct!");
     }
 
     @AfterTest

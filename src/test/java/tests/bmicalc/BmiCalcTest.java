@@ -1,4 +1,4 @@
-package tests;
+package tests.bmicalc;
 
 import org.junit.Test;
 import pages.BmiCalcPage;
@@ -22,7 +22,7 @@ public class BmiCalcTest extends BaseTest {
         // Click on Calculate button
         bmiCalcPage.calculateBmi();
         // Verify Bmi & Bmi Category values
-        assertEquals("24.4", bmiCalcPage.getBmi());
-        assertEquals("Normal", bmiCalcPage.getBmiCategory());
+        assertEquals("BMI calculation is not correct!", "24.4", bmiCalcPage.getBmi());
+        assertEquals("BMI category is not correct!", "Normal", bmiCalcPage.getBmiCategory());
     }
 }
