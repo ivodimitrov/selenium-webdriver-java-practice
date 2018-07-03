@@ -35,7 +35,13 @@ public class BmiCalcPage extends Page {
         weightInput.sendKeys(weight);
     }
 
-    public void calculateBmi() {
+    public void calculateBmi(String height, String weight) {
+        heightInput.clear();
+        heightInput.sendKeys(height);
+
+        weightInput.clear();
+        weightInput.sendKeys(weight);
+
         calculateButton.click();
     }
 

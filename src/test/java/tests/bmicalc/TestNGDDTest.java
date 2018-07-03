@@ -43,15 +43,9 @@ public class TestNGDDTest extends BaseTest {
 
         BmiCalcPage bmiCalcPage = new BmiCalcPage(driver);
 
-        // Get the Height element and set the value using height variable
-        bmiCalcPage.setHeight(height);
-        // Get the Weight element and set the value using weight variable
-        bmiCalcPage.setWeight(weight);
-        // Click on Calculate Button
-        bmiCalcPage.calculateBmi();
-        // Get the Bmi element and verify its value using bmi variable
+        bmiCalcPage.calculateBmi(height, weight);
+        // Verify Bmi & Bmi Category values
         assertEquals(bmiCalcPage.getBmi(), bmi, "BMI calculation is not correct!");
-        // Get the Bmi Category element and verify its value using bmiCategory variable
         assertEquals(bmiCalcPage.getBmiCategory(), category, "BMI category is not correct!");
     }
 

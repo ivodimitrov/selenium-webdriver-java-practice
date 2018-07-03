@@ -15,12 +15,8 @@ public class BmiCalcTest extends BaseTest {
         goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
 
         BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
-        // Set Height
-        bmiCalcPage.setHeight("181");
-        // Set Weight
-        bmiCalcPage.setWeight("80");
-        // Click on Calculate button
-        bmiCalcPage.calculateBmi();
+
+        bmiCalcPage.calculateBmi("181", "80");
         // Verify Bmi & Bmi Category values
         assertEquals("BMI calculation is not correct!", "24.4", bmiCalcPage.getBmi());
         assertEquals("BMI category is not correct!", "Normal", bmiCalcPage.getBmiCategory());
