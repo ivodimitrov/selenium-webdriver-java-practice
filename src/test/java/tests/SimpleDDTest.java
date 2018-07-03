@@ -3,8 +3,7 @@ package tests;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import pages.BmiCalcPage;
 import utils.BaseTest;
 
 import java.util.Arrays;
@@ -42,34 +41,22 @@ public class SimpleDDTest extends BaseTest {
     public void testBMICalculator() {
         goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
 
+        BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
+
         // Get the Height element and set the value using height variable
-        WebElement heightField = getWebDriver().findElement(By.
-                name("heightCMS"));
-        heightField.clear();
-        heightField.sendKeys(height);
+        bmiCalcPage.setHeight(height);
 
         // Get the Weight element and set the value using weight variable
-        WebElement weightField = getWebDriver().findElement(By.
-                name("weightKg"));
-        weightField.clear();
-        weightField.sendKeys(weight);
+        bmiCalcPage.setWeight(weight);
 
         // Click on Calculate Button
-        WebElement calculateButton = getWebDriver().findElement(By.
-                id("Calculate"));
-        calculateButton.click();
+        bmiCalcPage.calculateBmi();
 
         // Get the Bmi element and verify its value using bmi variable
-        WebElement bmiLabel = getWebDriver().findElement(By.
-                name("bmi"));
-        assertEquals(bmi, bmiLabel.getAttribute("value"));
+        assertEquals(bmi, bmiCalcPage.getBmi());
 
-        // Get the Bmi Category element and verify its value using
-        // bmiCategory variable
-        WebElement bmiCategoryLabel = getWebDriver().findElement(By
-                .name("bmi_category"));
-        assertEquals(bmiCategory,
-                bmiCategoryLabel.getAttribute("value"));
+        // Get the Bmi Category element and verify its value using bmiCategory variable
+        assertEquals(bmiCategory, bmiCalcPage.getBmiCategory());
     }
 }
 

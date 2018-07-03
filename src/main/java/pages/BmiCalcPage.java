@@ -30,10 +30,12 @@ public class BmiCalcPage {
     }
 
     public void setHeight(String height) {
+        heightInput.clear();
         heightInput.sendKeys(height);
     }
 
     public void setWeight(String weight) {
+        weightInput.clear();
         weightInput.sendKeys(weight);
     }
 
