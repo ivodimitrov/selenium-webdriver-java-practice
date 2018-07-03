@@ -45,16 +45,17 @@ public class SimpleDDTest extends BaseTest {
 
         // Get the Height element and set the value using height variable
         bmiCalcPage.setHeight(height);
-
         // Get the Weight element and set the value using weight variable
         bmiCalcPage.setWeight(weight);
-
         // Click on Calculate Button
         bmiCalcPage.calculateBmi();
-
         // Get the Bmi element and verify its value using bmi variable
-        assertEquals(bmi, bmiCalcPage.getBmi());
+        // assertEquals(bmi, bmiCalcPage.getBmi());
 
+        // assertEquals(actual, expected)
+        // TODO
+
+        assertEquals("BMI calculation is not correct!", bmiCalcPage.getBmi(), bmi);
         // Get the Bmi Category element and verify its value using bmiCategory variable
         assertEquals(bmiCategory, bmiCalcPage.getBmiCategory());
     }
