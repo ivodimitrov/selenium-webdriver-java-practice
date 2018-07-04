@@ -40,7 +40,6 @@ public class TestNGDDTest extends BaseTest {
     @Test(dataProvider = "testData")
     public void testBMICalculator(String height, String
             weight, String bmi, String category) {
-
         BmiCalcPage bmiCalcPage = new BmiCalcPage(driver);
 
         bmiCalcPage.calculateBmi(height, weight);

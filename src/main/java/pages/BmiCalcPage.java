@@ -25,15 +25,15 @@ public class BmiCalcPage extends Page {
     @FindBy(id = "bmi_category")
     private WebElement bmiCategoryInput;
 
-    public void setHeight(String height) {
-        heightInput.clear();
-        heightInput.sendKeys(height);
-    }
-
-    public void setWeight(String weight) {
-        weightInput.clear();
-        weightInput.sendKeys(weight);
-    }
+//    public void setHeight(String height) {
+//        heightInput.clear();
+//        heightInput.sendKeys(height);
+//    }
+//
+//    public void setWeight(String weight) {
+//        weightInput.clear();
+//        weightInput.sendKeys(weight);
+//    }
 
     public void calculateBmi(String height, String weight) {
         heightInput.clear();

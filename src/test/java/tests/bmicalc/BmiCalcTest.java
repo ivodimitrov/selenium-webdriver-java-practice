@@ -11,10 +11,9 @@ public class BmiCalcTest extends BaseTest {
 
     @Test
     public void testBmiCalculation() {
+        BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
 
         goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
-
-        BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
 
         bmiCalcPage.calculateBmi("181", "80");
         // Verify Bmi & Bmi Category values

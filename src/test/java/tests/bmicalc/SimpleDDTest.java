@@ -39,9 +39,9 @@ public class SimpleDDTest extends BaseTest {
 
     @Test
     public void testBMICalculator() {
-        goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
-
         BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
+
+        goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
 
         bmiCalcPage.calculateBmi(height, weight);
         // Verify Bmi & Bmi Category values
