@@ -1,4 +1,4 @@
-package tests.bmicalc;
+package tests.seleniumacademybmicalculator;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +12,7 @@ import utils.BaseTest;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
-import static utils.Links.BMICALCULATOR_PAGE;
+import static utils.Links.SELENIUMACADEMY_BMICALCULATOR_PAGE;
 
 public class TestNGDDTest extends BaseTest {
 
@@ -34,7 +34,7 @@ public class TestNGDDTest extends BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(BMICALCULATOR_PAGE);
+        driver.get(SELENIUMACADEMY_BMICALCULATOR_PAGE);
     }
 
     @Test(dataProvider = "testData")

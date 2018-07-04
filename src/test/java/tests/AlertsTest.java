@@ -9,14 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.ALERTS_PAGE;
+import static utils.Links.TOOLSQA_ALERTS_PAGE;
 
 public class AlertsTest extends BaseTest {
 
     @Test
     public void testSimpleAlert() {
         // Go to page
-        goToPageAndWaitPageToLoad(ALERTS_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_ALERTS_PAGE);
 
         // Click Simple button to show an Alert box
         WebElement simpleAlertButton = getWebDriver().findElement(By.
@@ -39,7 +39,7 @@ public class AlertsTest extends BaseTest {
     @Test
     public void testConfirmAccept() {
         // Go to page
-        goToPageAndWaitPageToLoad(ALERTS_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_ALERTS_PAGE);
 
         // Click Confirm button to show Confirmation Alert box
         WebElement confirmPopUpButton = getWebDriver().findElement(By.
@@ -58,7 +58,7 @@ public class AlertsTest extends BaseTest {
     @Test
     public void testPrompt() {
         // Go to page
-        goToPageAndWaitPageToLoad(ALERTS_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_ALERTS_PAGE);
 
         // Click Confirm button to show Prompt Alert box
         getWebDriver().findElement(By.

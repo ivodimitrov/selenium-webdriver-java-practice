@@ -6,14 +6,14 @@ import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static utils.Links.CONFIG_PAGE;
-import static utils.Links.SWITCH_WINDOWS_PAGE;
+import static utils.Links.SELENIUMACADEMY_CONFIG_PAGE;
+import static utils.Links.TOOLSQA_SWITCH_WINDOWS_PAGE;
 
 public class SwitchWindowsTest extends BaseTest {
 
     @Test
     public void testWindowUsingName() {
-        goToPageAndWaitPageToLoad(SWITCH_WINDOWS_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_SWITCH_WINDOWS_PAGE);
 
         // Store WindowHandle of parent browser window
         String parentWindowId = getWebDriver().getWindowHandle();
@@ -43,7 +43,7 @@ public class SwitchWindowsTest extends BaseTest {
 
     @Test
     public void testWindowUsingContents() {
-        goToPageAndWaitPageToLoad(CONFIG_PAGE);
+        goToPageAndWaitPageToLoad(SELENIUMACADEMY_CONFIG_PAGE);
 
         // Store WindowHandle of parent browser window
         String currentWindowId = getWebDriver().getWindowHandle();

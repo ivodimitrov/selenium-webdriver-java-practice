@@ -8,14 +8,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
 public class FindElementsTest extends BaseTest {
 
     @Test
     public void testFindElements() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         //Get all the links displayed on the Page
         List<WebElement> links = getWebDriver().findElements(By.tagName("a"));

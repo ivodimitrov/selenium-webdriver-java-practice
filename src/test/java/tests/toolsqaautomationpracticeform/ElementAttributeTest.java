@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
 public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementAttributeValue() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         // Get the Partial Link Test Element
         WebElement partialLink = getWebDriver().findElement(By.
@@ -26,7 +26,7 @@ public class ElementAttributeTest extends BaseTest {
     @Test
     public void testElementStyle() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         // Get the Partial Link Test Element
         WebElement partialLink = getWebDriver().findElement(By.

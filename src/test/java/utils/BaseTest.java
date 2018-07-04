@@ -6,11 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.Page;
 
 public class BaseTest {
 
-    private static Page homePage;
+    // private static Page homePage;
 
     private static WebDriver webDriver;
 
@@ -51,7 +50,7 @@ public class BaseTest {
 
         webDriver.manage().window().maximize();
 
-        homePage = new Page(webDriver);
+        // homePage = new Page(webDriver);
     }
 
     @After

@@ -8,14 +8,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.TABLE_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_TABLE_PAGE;
 
 public class WebTableTest extends BaseTest {
 
     @Test
     public void testWebTable() {
         // Go to page
-        goToPageAndWaitPageToLoad(TABLE_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_TABLE_PAGE);
 
         WebElement simpleTable = getWebDriver().findElement(By.id("content"));
 

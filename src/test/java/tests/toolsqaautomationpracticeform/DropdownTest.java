@@ -5,14 +5,14 @@ import pages.ToolsQaAutomationPracticeFormPage;
 import utils.BaseTest;
 
 import static org.junit.Assert.*;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
 public class DropdownTest extends BaseTest {
 
     @Test
     public void testDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
                 new ToolsQaAutomationPracticeFormPage(getWebDriver());
@@ -32,7 +32,7 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
                 new ToolsQaAutomationPracticeFormPage(getWebDriver());
@@ -50,7 +50,7 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
                 new ToolsQaAutomationPracticeFormPage(getWebDriver());

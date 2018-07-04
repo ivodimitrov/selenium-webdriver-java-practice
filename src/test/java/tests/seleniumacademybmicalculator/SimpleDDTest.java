@@ -1,4 +1,4 @@
-package tests.bmicalc;
+package tests.seleniumacademybmicalculator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.BMICALCULATOR_PAGE;
+import static utils.Links.SELENIUMACADEMY_BMICALCULATOR_PAGE;
 
 @RunWith(Parameterized.class)
 public class SimpleDDTest extends BaseTest {
@@ -39,7 +39,7 @@ public class SimpleDDTest extends BaseTest {
 
     @Test
     public void testBMICalculator() {
-        goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
+        goToPageAndWaitPageToLoad(SELENIUMACADEMY_BMICALCULATOR_PAGE);
 
         BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
 

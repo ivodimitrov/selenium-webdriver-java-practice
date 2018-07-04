@@ -12,14 +12,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.SELECTABLE_PAGE;
+import static utils.Links.DEMOQA_SELECTABLE_PAGE;
 
 public class KeyboardEventsTest extends BaseTest {
 
     @Test
     public void testRowSelectionUsingControlKey() {
         // Go to page
-        goToPageAndWaitPageToLoad(SELECTABLE_PAGE);
+        goToPageAndWaitPageToLoad(DEMOQA_SELECTABLE_PAGE);
 
         // Wait for the link to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).until((ExpectedCondition<WebElement>) d -> d.findElement(By.

@@ -8,14 +8,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.CONFIG_PAGE;
-import static utils.Links.IFRAME_PAGE;
+import static utils.Links.SELENIUMACADEMY_CONFIG_PAGE;
+import static utils.Links.TOOLSQA_IFRAME_PAGE;
 
 public class FramesTest extends BaseTest {
 
     @Test
     public void testFrameWithIdOrName() {
-        goToPageAndWaitPageToLoad(IFRAME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_IFRAME_PAGE);
 
         try {
             // Activate the frame on left side using it's id attribute
@@ -45,7 +45,7 @@ public class FramesTest extends BaseTest {
 
     @Test
     public void testFrameByIndex() {
-        goToPageAndWaitPageToLoad(IFRAME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_IFRAME_PAGE);
 
         try {
             // Activate the frame in middle using it's index. Index starts at 0
@@ -75,7 +75,7 @@ public class FramesTest extends BaseTest {
 
     @Test
     public void testFrameByContents() {
-        goToPageAndWaitPageToLoad(CONFIG_PAGE);
+        goToPageAndWaitPageToLoad(SELENIUMACADEMY_CONFIG_PAGE);
 
         // Get all iframes on the Page, created with <frame> tag
         List<WebElement> frames = getWebDriver().findElements(By.tagName("frame"));

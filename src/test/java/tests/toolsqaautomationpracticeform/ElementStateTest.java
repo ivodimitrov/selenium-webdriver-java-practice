@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static junit.framework.TestCase.fail;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
 public class ElementStateTest extends BaseTest {
 
     @Test
     public void testElementIsEnabled() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
 
         // Get the Checkbox as WebElement using it's name attribute
         WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.

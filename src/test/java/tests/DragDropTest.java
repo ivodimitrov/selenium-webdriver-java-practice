@@ -7,14 +7,14 @@ import org.openqa.selenium.interactions.Actions;
 import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.DRAG_DROP_PAGE;
+import static utils.Links.DEMOQA_DRAG_DROP_PAGE;
 
 public class DragDropTest extends BaseTest {
 
     @Test
     public void testDragDrop() {
         //Go to page
-        goToPageAndWaitPageToLoad(DRAG_DROP_PAGE);
+        goToPageAndWaitPageToLoad(DEMOQA_DRAG_DROP_PAGE);
 
         WebElement source = getWebDriver().findElement(By.id("draggableview"));
         WebElement target = getWebDriver().findElement(By.id("droppableview"));
