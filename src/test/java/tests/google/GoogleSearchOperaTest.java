@@ -2,7 +2,6 @@ package tests.google;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.GOOGLE_PAGE;
 
 public class GoogleSearchOperaTest {
 
@@ -39,10 +39,9 @@ public class GoogleSearchOperaTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("http://www.google.com/ncr");
+        driver.get(GOOGLE_PAGE);
     }
 
-    @Ignore
     @Test
     public void testGoogleSearch() {
         // Find the text input element by its name

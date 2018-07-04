@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
+import static utils.Links.GOOGLE_PAGE;
 
 public class GoogleSearchFireFoxTest {
 
@@ -32,7 +33,7 @@ public class GoogleSearchFireFoxTest {
         // Maximize the browser window
         driver.manage().window().maximize();
         // Navigate to page
-        driver.get("http://www.google.com/ncr");
+        driver.get(GOOGLE_PAGE);
     }
 
     @Test
