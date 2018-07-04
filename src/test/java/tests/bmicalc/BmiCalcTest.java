@@ -11,7 +11,6 @@ public class BmiCalcTest extends BaseTest {
 
     @Test
     public void testBmiCalculation() {
-
         goToPageAndWaitPageToLoad(BMICALCULATOR_PAGE);
 
         BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());

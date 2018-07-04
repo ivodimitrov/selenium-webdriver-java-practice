@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class BmiCalcPage extends Page {
 
-    public BmiCalcPage(WebDriver driver) {
-        super(driver);
+    public BmiCalcPage(WebDriver webDriver) {
+        super(webDriver);
     }
 
     @FindBy(id = "heightCMS")
