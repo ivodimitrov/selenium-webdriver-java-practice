@@ -24,6 +24,9 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     @FindBy(css = "#continents")
     private WebElement continents;
 
+    @FindBy(css = "#continents option")
+    private List<WebElement> continentsOptions;
+
     // Dropdown expected values in array
     public List<String> expectedOptions = Arrays.asList("Asia", "Europe",
             "Africa", "Australia", "South America", "North America", "Antartica");
@@ -34,12 +37,11 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
 
     // Dropdown actual options
     public List<String> actualOptions = new ArrayList<>();
+
     // Get the Dropdown as a Select
 //    public Select continentsSelect = new Select(getWebDriver().findElement(By
 //            .cssSelector("#continents")));
     public Select continentsSelect = new Select(continents);
-    @FindBy(css = "#continents option")
-    private List<WebElement> continentsOptions;
 
     //Check Checkbox if selected? If yes, deselect it
     //by calling click() method
@@ -72,5 +74,29 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         for (WebElement option : continentsSelectOptions) {
             actualOptions.add(option.getText().trim());
         }
+    }
+
+    // Simple logger
+    public void printContinentsSelectOptions() {
+
+        int continentsCounter = 0;
+
+        // Iterate though the list of continents and count each continent
+        for (WebElement continentsOption : getContinentsOptions()) {
+            System.out.println("Continent " + continentsOption.getText().trim() +
+                    " is at position: " + (continentsCounter + 1));
+
+            continentsCounter++;
+        }
+
+        System.out.println();
+        System.out.println("Number of all the continents displayed on the Page are: "
+                + continentsCounter);
+    }
+
+    // Simple logger
+    public void printContinentsSelectFirstSelectedOption() {
+        System.out.println("Selected option in Dropdown using Visible text is: " +
+                continentsSelect.getFirstSelectedOption().getText().trim());
     }
 }

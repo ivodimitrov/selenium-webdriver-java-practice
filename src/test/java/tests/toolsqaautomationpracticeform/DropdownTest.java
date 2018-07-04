@@ -1,7 +1,6 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 import pages.ToolsQaAutomationPracticeFormPage;
 import utils.BaseTest;
 
@@ -22,26 +21,12 @@ public class DropdownTest extends BaseTest {
         assertFalse(toolsQaAutomationPracticeFormPage.continentsSelect
                 .isMultiple());
 
-        int continentsCounter = 0;
+        toolsQaAutomationPracticeFormPage.printContinentsSelectOptions();
 
-        // Iterate though the list of continents and count each continent
-        // Simple logger
-        for (WebElement continentsOption :
-                toolsQaAutomationPracticeFormPage.getContinentsOptions()) {
-            System.out.println("Continent " + continentsOption.getText().trim() +
-                    " is at position: " + (continentsCounter + 1));
-
-            continentsCounter++;
-        }
         // Verify Dropdown has many options for selection
         assertEquals("Verify Dropdown has many options for selection",
                 7, toolsQaAutomationPracticeFormPage
                         .getContinentsOptions().size());
-
-        // Simple logger
-        System.out.println();
-        System.out.println("Number of all the continents displayed on the Page are: "
-                + continentsCounter);
     }
 
     @Test
@@ -55,10 +40,7 @@ public class DropdownTest extends BaseTest {
         // With Select class we can select an option in Dropdown using Visible text
         toolsQaAutomationPracticeFormPage.continentsSelect.selectByVisibleText("Asia");
 
-        // Simple logger
-        System.out.println("Selected option in Dropdown using Visible text is: " +
-                toolsQaAutomationPracticeFormPage.continentsSelect
-                        .getFirstSelectedOption().getText().trim());
+        toolsQaAutomationPracticeFormPage.printContinentsSelectFirstSelectedOption();
 
         assertEquals("Asia",
                 toolsQaAutomationPracticeFormPage.continentsSelect
