@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ToolsQaAutomationPracticeFormPage extends Page {
@@ -14,6 +15,9 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
 
     @FindBy(css = "#profession-0")
     private WebElement professionManualTesterCheckBox;
+
+    @FindBy(css = "#continents")
+    private WebElement continents;
 
     public WebElement getProfessionManualTesterCheckBox() {
         return professionManualTesterCheckBox;
@@ -38,4 +42,9 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
             professionManualTesterCheckBox.click();
         }
     }
+
+    // Get the Dropdown as a Select
+//    public Select continentsSelect = new Select(getWebDriver().findElement(By
+//            .cssSelector("#continents")));
+    public Select continentsSelect = new Select(continents);
 }

@@ -3,7 +3,7 @@ package tests.toolsqaautomationpracticeform;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import pages.ToolsQaAutomationPracticeFormPage;
 import utils.BaseTest;
 
 import java.util.ArrayList;
@@ -17,14 +17,16 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void testDropdownContinents() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
-        // Get the Dropdown as a Select
-        Select continents = new Select(getWebDriver().findElement(By.
-                cssSelector("#continents")));
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+
         // Verify Dropdown does not support multiple selection
-        assertFalse(continents.isMultiple());
+        assertFalse(toolsQaAutomationPracticeFormPage.continentsSelect
+                .isMultiple());
+
         // Get all Continents displayed on the Page
         List<WebElement> continentsOptions = getWebDriver().findElements(By.
                 cssSelector("#continents option"));
@@ -51,30 +53,32 @@ public class DropdownTest extends BaseTest {
 
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
-        // Get the Dropdown as a Select
-        Select continents = new Select(getWebDriver().findElement(By.
-                cssSelector("#continents")));
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+
         // With Select class we can select an option in Dropdown using Visible text
-        continents.selectByVisibleText("Asia");
+        toolsQaAutomationPracticeFormPage.continentsSelect.selectByVisibleText("Asia");
 
         System.out.println("Selected option in Dropdown using Visible text is: " +
-                continents.getFirstSelectedOption().getText().trim());
+                toolsQaAutomationPracticeFormPage.continentsSelect
+                        .getFirstSelectedOption().getText().trim());
 
         assertEquals("Asia",
-                continents.getFirstSelectedOption().getText().trim());
+                toolsQaAutomationPracticeFormPage.continentsSelect
+                        .getFirstSelectedOption().getText().trim());
     }
 
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
-        // Get the Dropdown as a Select
-        Select continents = new Select(getWebDriver().findElement(By.
-                cssSelector("#continents")));
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+
         // Verify Dropdown has expected values as listed in array
         List<String> expectedOptions = Arrays.asList("Asia", "Europe",
                 "Africa", "Australia", "South America", "North America", "Antartica");
@@ -82,7 +86,8 @@ public class DropdownTest extends BaseTest {
         List<String> actualOptions = new ArrayList<>();
 
         // Retrieve the option values from Dropdown using getOptions() method
-        List<WebElement> options = continents.getOptions();
+        List<WebElement> options = toolsQaAutomationPracticeFormPage.continentsSelect
+                .getOptions();
 
         for (WebElement option : options) {
             actualOptions.add(option.getText().trim());

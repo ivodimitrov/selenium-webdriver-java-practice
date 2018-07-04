@@ -13,10 +13,10 @@ public class GoogleSearchChromeTest extends BaseTest {
 
     @Test
     public void testGoogleSearch() {
-        GooglePage googlePage = new GooglePage(getWebDriver());
-
         goToPageAndWaitPageToLoad(GOOGLE_PAGE);
 
+        GooglePage googlePage = new GooglePage(getWebDriver());
+        
         googlePage.searchFor("Selenium");
 
         // Google's search is rendered dynamically with JavaScript.
