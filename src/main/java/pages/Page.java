@@ -11,4 +11,8 @@ public class Page {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
+
+    protected WebDriver getWebDriver() {
+        return webDriver;
+    }
 }

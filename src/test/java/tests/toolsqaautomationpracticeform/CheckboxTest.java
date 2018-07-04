@@ -1,10 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.ToolsQaAutomationPracticeFormPage;
 import utils.BaseTest;
 
 import static junit.framework.TestCase.assertTrue;
@@ -15,35 +12,20 @@ public class CheckboxTest extends BaseTest {
 
     @Test
     public void testCheckBox() {
-        // Go to page
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
-        WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
-        wait.until(ExpectedConditions.titleContains("Demo"));
-
-        //Get the Checkbox as WebElement using it's value attribute
-        WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.
-                cssSelector("#profession-0"));
-
-        //Check if its already selected? Otherwise select the Checkbox
-        //by calling click() method
-        if (!professionManualTesterCheckBox.isSelected()) {
-            professionManualTesterCheckBox.click();
-        }
-
-        wait.until(ExpectedConditions.elementToBeSelected(By.
-                cssSelector("#profession-0")));
+        toolsQaAutomationPracticeFormPage.selectCheckBox();
 
         //Verify Checkbox is Selected
-        assertTrue(professionManualTesterCheckBox.isSelected());
+        assertTrue(toolsQaAutomationPracticeFormPage
+                .professionManualTesterCheckBox.isSelected());
 
-        //Check Checkbox if selected? If yes, deselect it
-        //by calling click() method
-        if (professionManualTesterCheckBox.isSelected()) {
-            professionManualTesterCheckBox.click();
-        }
-
+        toolsQaAutomationPracticeFormPage.deselectCheckBox();
         //Verify Checkbox is Deselected
-        assertFalse(professionManualTesterCheckBox.isSelected());
+        assertFalse(toolsQaAutomationPracticeFormPage
+                .professionManualTesterCheckBox.isSelected());
     }
 }
