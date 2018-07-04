@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -8,14 +8,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class FindElementsTest extends BaseTest {
 
     @Test
     public void testFindElements() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         //Get all the links displayed on the Page
         List<WebElement> links = getWebDriver().findElements(By.tagName("a"));

@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -8,14 +8,14 @@ import utils.BaseTest;
 import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testRadioButton() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Radio Button as WebElement using it's value attribute
         WebElement yearsOfExperience = getWebDriver().findElement(By.
@@ -32,7 +32,7 @@ public class RadioButtonTest extends BaseTest {
     @Test
     public void testRadioGroup() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get all the Radio buttons from a Radio Group in a list
         // using findElements() method along with Radio Group identifier

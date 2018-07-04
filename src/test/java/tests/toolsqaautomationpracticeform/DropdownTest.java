@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -11,14 +11,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class DropdownTest extends BaseTest {
 
     @Test
     public void testDropdownContinents() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
@@ -52,7 +52,7 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
@@ -70,7 +70,7 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Dropdown as a Select
         Select continents = new Select(getWebDriver().findElement(By.
@@ -79,7 +79,7 @@ public class DropdownTest extends BaseTest {
         List<String> expectedOptions = Arrays.asList("Asia", "Europe",
                 "Africa", "Australia", "South America", "North America", "Antartica");
 
-        List<String> actualOptions = new ArrayList<String>();
+        List<String> actualOptions = new ArrayList<>();
 
         // Retrieve the option values from Dropdown using getOptions() method
         List<WebElement> options = continents.getOptions();

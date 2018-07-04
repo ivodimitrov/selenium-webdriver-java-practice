@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,14 +9,14 @@ import utils.BaseTest;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class CheckboxTest extends BaseTest {
 
     @Test
     public void testCheckBox() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
         wait.until(ExpectedConditions.titleContains("Demo"));

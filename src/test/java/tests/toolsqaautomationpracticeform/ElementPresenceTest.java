@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static junit.framework.TestCase.fail;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class ElementPresenceTest extends BaseTest {
 
@@ -23,7 +23,7 @@ public class ElementPresenceTest extends BaseTest {
     @Test
     public void testIsElementPresent() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Check if element with locator criteria exists on Page
         if (isElementPresent(By.

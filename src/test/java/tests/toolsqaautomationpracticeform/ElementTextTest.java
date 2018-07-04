@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.HOME_PAGE;
+import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM;
 
 public class ElementTextTest extends BaseTest {
 
     @Test
     public void testFirstNameElementText() {
         // Go to page
-        goToPageAndWaitPageToLoad(HOME_PAGE);
+        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the First name Element
         WebElement firstNameText = getWebDriver().findElement(By.
