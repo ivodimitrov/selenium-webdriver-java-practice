@@ -21,11 +21,11 @@ public class CheckboxTest extends BaseTest {
 
         //Verify Checkbox is Selected
         assertTrue(toolsQaAutomationPracticeFormPage
-                .professionManualTesterCheckBox.isSelected());
+                .getProfessionManualTesterCheckBox().isSelected());
 
         toolsQaAutomationPracticeFormPage.deselectCheckBox();
         //Verify Checkbox is Deselected
         assertFalse(toolsQaAutomationPracticeFormPage
-                .professionManualTesterCheckBox.isSelected());
+                .getProfessionManualTesterCheckBox().isSelected());
     }
 }

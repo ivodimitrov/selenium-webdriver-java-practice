@@ -13,7 +13,11 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     }
 
     @FindBy(css = "#profession-0")
-    public WebElement professionManualTesterCheckBox;
+    private WebElement professionManualTesterCheckBox;
+
+    public WebElement getProfessionManualTesterCheckBox() {
+        return professionManualTesterCheckBox;
+    }
 
     //Check if its already selected? Otherwise select the Checkbox
     //by calling click() method
