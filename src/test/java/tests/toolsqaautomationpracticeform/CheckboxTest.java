@@ -12,10 +12,11 @@ public class CheckboxTest extends BaseTest {
 
     @Test
     public void testCheckBox() {
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
-                new ToolsQaAutomationPracticeFormPage(getWebDriver());
 
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
+
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                new ToolsQaAutomationPracticeFormPage(getWebDriver());
 
         toolsQaAutomationPracticeFormPage.selectCheckBox();
 
@@ -24,6 +25,7 @@ public class CheckboxTest extends BaseTest {
                 .getProfessionManualTesterCheckBox().isSelected());
 
         toolsQaAutomationPracticeFormPage.deselectCheckBox();
+
         //Verify Checkbox is Deselected
         assertFalse(toolsQaAutomationPracticeFormPage
                 .getProfessionManualTesterCheckBox().isSelected());
