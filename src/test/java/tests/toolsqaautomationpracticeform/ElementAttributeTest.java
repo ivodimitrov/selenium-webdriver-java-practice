@@ -12,7 +12,7 @@ public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementAttributeValue() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Partial Link Test Element
@@ -25,7 +25,7 @@ public class ElementAttributeTest extends BaseTest {
 
     @Test
     public void testElementStyle() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Partial Link Test Element

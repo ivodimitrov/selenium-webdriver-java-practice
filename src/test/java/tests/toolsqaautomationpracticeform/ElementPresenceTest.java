@@ -22,7 +22,7 @@ public class ElementPresenceTest extends BaseTest {
 
     @Test
     public void testIsElementPresent() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Check if element with locator criteria exists on Page

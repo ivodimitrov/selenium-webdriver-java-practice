@@ -14,7 +14,7 @@ public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testRadioButton() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Radio Button as WebElement using it's value attribute
@@ -31,7 +31,7 @@ public class RadioButtonTest extends BaseTest {
 
     @Test
     public void testRadioGroup() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get all the Radio buttons from a Radio Group in a list

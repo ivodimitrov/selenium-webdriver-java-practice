@@ -11,7 +11,7 @@ public class JavascriptExecutorTest extends BaseTest {
 
     @Test
     public void testJavaScriptCalls() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         JavascriptExecutor js = (JavascriptExecutor) getWebDriver();

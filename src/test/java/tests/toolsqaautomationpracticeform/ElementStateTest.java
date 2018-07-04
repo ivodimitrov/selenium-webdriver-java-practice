@@ -12,7 +12,7 @@ public class ElementStateTest extends BaseTest {
 
     @Test
     public void testElementIsEnabled() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the Checkbox as WebElement using it's name attribute

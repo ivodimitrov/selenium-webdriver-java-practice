@@ -12,7 +12,7 @@ public class ElementTextTest extends BaseTest {
 
     @Test
     public void testFirstNameElementText() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         // Get the First name Element

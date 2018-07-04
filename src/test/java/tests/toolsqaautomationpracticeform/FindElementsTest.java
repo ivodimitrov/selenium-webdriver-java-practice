@@ -14,7 +14,7 @@ public class FindElementsTest extends BaseTest {
 
     @Test
     public void testFindElements() {
-        // Go to page
+
         goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM);
 
         //Get all the links displayed on the Page
