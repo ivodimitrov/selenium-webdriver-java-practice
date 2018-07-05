@@ -1,27 +1,22 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
-import utils.BaseTest;
+import pages.ToolsQaAutomationPracticeFormPage;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
-public class JavascriptExecutorTest extends BaseTest {
+public class JavascriptExecutorTest extends ToolsQaPracticeFormPageBaseTest {
 
     @Test
     public void testJavaScriptCalls() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                super.initLoad();
 
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        assertEquals("Demo Form for practicing Selenium Automation",
+                toolsQaAutomationPracticeFormPage.getPageTitle());
 
-        String title = (String) js.executeScript("return document.title");
-
-        assertEquals("Demo Form for practicing Selenium Automation", title);
-        long links = (Long) js
-                .executeScript("var links = document.getElementsByTagName('A'); return links.length");
-        assertEquals(219, links);
+        assertEquals(219, toolsQaAutomationPracticeFormPage.getJsLinks());
 
     }
 }

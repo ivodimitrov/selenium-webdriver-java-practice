@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +37,15 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
 
     @FindBy(css = "div.control-group:nth-child(11)")
     private WebElement firstNameElementText;
+
+    // Radio Button as WebElement
+    @FindBy(xpath = "//*[@id=\"exp-0\"]")
+    private WebElement yearsOfExperience;
+
+    @FindBy(css = "div.control-group:nth-child(23)")
+    private List<WebElement> yearsOfExperienceRadioButtons;
+    private WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
+    private JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
 
     //Get all the links displayed on the Page
     public List<WebElement> getLinks() {
@@ -92,6 +102,8 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         }
     }
 
+    private String pageTitle = (String) js.executeScript("return document.title");
+
     //Check if its already selected? Otherwise select the Checkbox
     //by calling click() method
     public void selectCheckBox() {
@@ -99,7 +111,6 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
             professionManualTesterCheckBox.click();
         }
 
-        WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
         wait.until(ExpectedConditions.elementToBeSelected(professionManualTesterCheckBox));
     }
 
@@ -112,14 +123,9 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         }
     }
 
-    private boolean isElementProfessionalManualTesterCheckBoxPresent() {
-        try {
-            getProfessionManualTesterCheckBox();
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
+    private long jsLinks = (Long) js
+            .executeScript(
+                    "var links = document.getElementsByTagName('A'); return links.length");
 
     public void doesProfessionalTesterCheckBoxExist() {
         if (isElementProfessionalManualTesterCheckBoxPresent()) {
@@ -129,6 +135,42 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         }
     }
 
+    // Get all the Radio buttons from a Radio Group in a list
+    public List<WebElement> getYearsOfExperienceRadioButtons() {
+        return yearsOfExperienceRadioButtons;
+    }
+
+    public WebElement getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    private boolean isElementProfessionalManualTesterCheckBoxPresent() {
+        try {
+            getProfessionManualTesterCheckBox().isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public String getPageTitle() {
+        return pageTitle;
+    }
+
+    public long getJsLinks() {
+        return jsLinks;
+    }
+
+    // select Radio Button
+    public void selectYearsOfExperienceRadioButton() {
+        // Check if its already selected? otherwise select the Radio Button
+        // by calling click() method
+        if (!yearsOfExperience.isSelected()) {
+            yearsOfExperience.click();
+        }
+
+        wait.until(ExpectedConditions.elementToBeSelected(yearsOfExperience));
+    }
 
     // Simple logger
     public void printContinentsSelectOptions() {
@@ -164,8 +206,7 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
 
         int linksCounter = 0;
 
-        // Iterate though the list of links and print
-        // target for each link
+        // Iterate though the list of links and print target for each link
         for (WebElement link : links) {
             System.out.println("Link displayed on the page is number: " + (linksCounter + 1));
 
