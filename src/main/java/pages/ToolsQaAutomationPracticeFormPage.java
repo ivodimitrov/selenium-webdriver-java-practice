@@ -31,6 +31,14 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     @FindBy(css = "div.control-group:nth-child(5) > a:nth-child(1)")
     private WebElement partialLink;
 
+    @FindBy(css = "div.control-group:nth-child(11)")
+    private WebElement firstNameElementText;
+
+    // Get the First name Element
+    public String getFirstNameElementText() {
+        return firstNameElementText.getText();
+    }
+
     // Get the Partial Link Test Element
     public WebElement getPartialLink() {
         return partialLink;
@@ -96,7 +104,6 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         }
     }
 
-
     private boolean isElementProfessionalManualTesterCheckBoxPresent() {
         try {
             getProfessionManualTesterCheckBox();
@@ -137,5 +144,10 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     public void printContinentsSelectFirstSelectedOption() {
         System.out.println("Selected option in Dropdown using Visible text is: " +
                 continentsSelect.getFirstSelectedOption().getText().trim());
+    }
+
+    // Simple logger
+    public void printFirstNameElementText() {
+        System.out.println("Element's text is: " + getFirstNameElementText());
     }
 }
