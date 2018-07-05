@@ -18,7 +18,7 @@ public class DropdownTest extends BaseTest {
                 new ToolsQaAutomationPracticeFormPage(getWebDriver());
 
         // Verify Dropdown does not support multiple selection
-        assertFalse(toolsQaAutomationPracticeFormPage.continentsSelect
+        assertFalse(toolsQaAutomationPracticeFormPage.getContinentsSelect()
                 .isMultiple());
 
         toolsQaAutomationPracticeFormPage.printContinentsSelectOptions();
@@ -38,12 +38,13 @@ public class DropdownTest extends BaseTest {
                 new ToolsQaAutomationPracticeFormPage(getWebDriver());
 
         // With Select class we can select an option in Dropdown using Visible text
-        toolsQaAutomationPracticeFormPage.continentsSelect.selectByVisibleText("Asia");
+        toolsQaAutomationPracticeFormPage.getContinentsSelect()
+                .selectByVisibleText("Asia");
 
         toolsQaAutomationPracticeFormPage.printContinentsSelectFirstSelectedOption();
 
         assertEquals("Asia",
-                toolsQaAutomationPracticeFormPage.continentsSelect
+                toolsQaAutomationPracticeFormPage.getContinentsSelect()
                         .getFirstSelectedOption().getText().trim());
     }
 
@@ -58,7 +59,7 @@ public class DropdownTest extends BaseTest {
         toolsQaAutomationPracticeFormPage.getActualContinentsSelectOptions();
 
         assertArrayEquals("Verify expected options array and actual options array match",
-                toolsQaAutomationPracticeFormPage.expectedOptions.toArray(),
-                toolsQaAutomationPracticeFormPage.actualOptions.toArray());
+                toolsQaAutomationPracticeFormPage.getExpectedOptions().toArray(),
+                toolsQaAutomationPracticeFormPage.getActualOptions().toArray());
     }
 }

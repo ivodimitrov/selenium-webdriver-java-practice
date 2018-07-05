@@ -28,20 +28,34 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     private List<WebElement> continentsOptions;
 
     // Dropdown expected values in array
-    public List<String> expectedOptions = Arrays.asList("Asia", "Europe",
+    private List<String> expectedOptions = Arrays.asList("Asia", "Europe",
             "Africa", "Australia", "South America", "North America", "Antartica");
+    // Dropdown actual options
+    private List<String> actualOptions = new ArrayList<>();
+    // Get the Dropdown as a Select
+    @SuppressWarnings("ConstantConditions")
+    private Select continentsSelect = new Select(continents);
 
     public WebElement getProfessionManualTesterCheckBox() {
         return professionManualTesterCheckBox;
     }
 
-    // Dropdown actual options
-    public List<String> actualOptions = new ArrayList<>();
+    // Get all Continents displayed on the Page
+    public List<WebElement> getContinentsOptions() {
+        return continentsOptions;
+    }
 
-    // Get the Dropdown as a Select
-//    public Select continentsSelect = new Select(getWebDriver().findElement(By
-//            .cssSelector("#continents")));
-    public Select continentsSelect = new Select(continents);
+    public List<String> getExpectedOptions() {
+        return expectedOptions;
+    }
+
+    public List<String> getActualOptions() {
+        return actualOptions;
+    }
+
+    public Select getContinentsSelect() {
+        return continentsSelect;
+    }
 
     //Check Checkbox if selected? If yes, deselect it
     //by calling click() method
@@ -49,11 +63,6 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         if (professionManualTesterCheckBox.isSelected()) {
             professionManualTesterCheckBox.click();
         }
-    }
-
-    // Get all Continents displayed on the Page
-    public List<WebElement> getContinentsOptions() {
-        return continentsOptions;
     }
 
     //Check if its already selected? Otherwise select the Checkbox
