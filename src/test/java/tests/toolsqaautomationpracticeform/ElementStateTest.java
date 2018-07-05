@@ -1,29 +1,23 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import utils.BaseTest;
+import pages.ToolsQaAutomationPracticeFormPage;
 
 import static junit.framework.TestCase.fail;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
-public class ElementStateTest extends BaseTest {
+public class ElementStateTest extends ToolsQaPracticeFormPageBaseTest {
 
     @Test
     public void testElementIsEnabled() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
+        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+                super.initLoad();
 
-        // Get the Checkbox as WebElement using it's name attribute
-        WebElement professionManualTesterCheckBox = getWebDriver().findElement(By.
-                cssSelector("#profession-0"));
         // Check if its enabled before selecting it
-        if (professionManualTesterCheckBox.isEnabled()) {
-            // Check if its already selected? otherwise select the Checkbox
-            if (!professionManualTesterCheckBox.isSelected()) {
-                professionManualTesterCheckBox.click();
-            }
+        if (toolsQaAutomationPracticeFormPage
+                .getProfessionManualTesterCheckBox().isEnabled()) {
+            // Check if its already selected? Otherwise select the Checkbox
+            toolsQaAutomationPracticeFormPage.selectCheckBox();
         } else {
             fail("Profession Manual tester Checkbox is disabled!");
         }
