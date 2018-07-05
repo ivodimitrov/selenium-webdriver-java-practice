@@ -5,14 +5,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Page {
 
-    private WebDriver webDriver;
+    private static WebDriver webDriver;
 
-    public Page(WebDriver webDriver) {
-        this.webDriver = webDriver;
+    Page(WebDriver webDriver) {
+        Page.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
-    protected WebDriver getWebDriver() {
+    protected static WebDriver getWebDriver() {
         return webDriver;
     }
 }
