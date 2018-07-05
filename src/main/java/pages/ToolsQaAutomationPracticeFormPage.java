@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static junit.framework.TestCase.fail;
 
 public class ToolsQaAutomationPracticeFormPage extends Page {
     public ToolsQaAutomationPracticeFormPage(WebDriver webDriver) {
@@ -90,6 +93,24 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
 
         for (WebElement option : continentsSelectOptions) {
             actualOptions.add(option.getText().trim());
+        }
+    }
+
+
+    private boolean isElementProfessionalManualTesterCheckBoxPresent() {
+        try {
+            getProfessionManualTesterCheckBox();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public void doesProfessionalTesterCheckBoxExist() {
+        if (isElementProfessionalManualTesterCheckBoxPresent()) {
+            selectCheckBox();
+        } else {
+            fail("Profession Manual tester Checkbox doesn't exists!!");
         }
     }
 
