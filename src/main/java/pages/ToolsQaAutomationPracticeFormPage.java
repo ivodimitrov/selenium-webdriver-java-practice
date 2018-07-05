@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.openqa.selenium.By.cssSelector;
-
 public class ToolsQaAutomationPracticeFormPage extends Page {
     public ToolsQaAutomationPracticeFormPage(WebDriver webDriver) {
         super(webDriver);
@@ -27,12 +25,22 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     @FindBy(css = "#continents option")
     private List<WebElement> continentsOptions;
 
+    @FindBy(css = "div.control-group:nth-child(5) > a:nth-child(1)")
+    private WebElement partialLink;
+
+    // Get the Partial Link Test Element
+    public WebElement getPartialLink() {
+        return partialLink;
+    }
+
     // Dropdown expected values in array
     private List<String> expectedOptions = Arrays.asList("Asia", "Europe",
             "Africa", "Australia", "South America", "North America", "Antartica");
+
     // Dropdown actual options
     private List<String> actualOptions = new ArrayList<>();
     // Get the Dropdown as a Select
+
     @SuppressWarnings("ConstantConditions")
     private Select continentsSelect = new Select(continents);
 
@@ -73,7 +81,7 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
         }
 
         WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
-        wait.until(ExpectedConditions.elementToBeSelected(cssSelector("#profession-0")));
+        wait.until(ExpectedConditions.elementToBeSelected(professionManualTesterCheckBox));
     }
 
     public void getActualContinentsSelectOptions() {
@@ -84,6 +92,7 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
             actualOptions.add(option.getText().trim());
         }
     }
+
 
     // Simple logger
     public void printContinentsSelectOptions() {

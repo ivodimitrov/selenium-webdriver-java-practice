@@ -2,21 +2,17 @@ package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import pages.ToolsQaAutomationPracticeFormPage;
-import utils.BaseTest;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertFalse;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
-public class CheckboxTest extends BaseTest {
+public class CheckboxTest extends ToolsQaPracticeFormPageBaseTest {
 
     @Test
     public void testCheckBox() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
-
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
-                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+                super.initLoad();
 
         toolsQaAutomationPracticeFormPage.selectCheckBox();
         //Verify Checkbox is Selected

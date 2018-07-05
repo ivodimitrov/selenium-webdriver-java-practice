@@ -2,20 +2,16 @@ package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import pages.ToolsQaAutomationPracticeFormPage;
-import utils.BaseTest;
 
 import static org.junit.Assert.*;
-import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
-public class DropdownTest extends BaseTest {
+public class DropdownTest extends ToolsQaPracticeFormPageBaseTest {
 
     @Test
     public void testDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
-
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
-                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+                super.initLoad();
 
         // Verify Dropdown does not support multiple selection
         assertFalse(toolsQaAutomationPracticeFormPage.getContinentsSelect()
@@ -32,10 +28,8 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
-
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
-                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+                super.initLoad();
 
         // With Select class we can select an option in Dropdown using Visible text
         toolsQaAutomationPracticeFormPage.getContinentsSelect()
@@ -51,10 +45,8 @@ public class DropdownTest extends BaseTest {
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
 
-        goToPageAndWaitPageToLoad(TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE);
-
         ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
-                new ToolsQaAutomationPracticeFormPage(getWebDriver());
+                super.initLoad();
 
         toolsQaAutomationPracticeFormPage.getActualContinentsSelectOptions();
 
