@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ToolsQaAlertsPage extends Page {
+
     @FindBy(xpath = "//*[@id='content']/p[4]/button")
     private WebElement simpleAlertButton;
     @FindBy(xpath = "//*[@id='content']/p[8]/button")
@@ -54,8 +56,50 @@ public class ToolsQaAlertsPage extends Page {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
-//    // Simple Logger
-//    public void printAlertText() {
-//        System.out.println("Alert text is: " + alertText);
+
+// TODO
+
+//    public String getAlertText() {
+//        return alertText;
 //    }
+
+    public Alert alert = new Alert() {
+        @Override
+        public void dismiss() {
+
+        }
+
+        @Override
+        public void accept() {
+
+        }
+
+        @Override
+        public String getText() {
+            return null;
+        }
+
+        @Override
+        public void sendKeys(String keysToSend) {
+
+        }
+    };
+    private String alertText;
+
+    public String getAlertText() {
+        return alert.getText();
+    }
+
+    public Alert getAlert() {
+        return alert;
+    }
+
+    public void switchToAlert() {
+        alert = getWebDriver().switchTo().alert();
+    }
+
+    // Simple Logger
+    public void printAlertText() {
+        System.out.println("Alert text is: " + getAlertText());
+    }
 }

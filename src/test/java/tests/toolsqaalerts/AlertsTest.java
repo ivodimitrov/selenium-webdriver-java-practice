@@ -4,12 +4,13 @@ import org.junit.Test;
 import org.openqa.selenium.Alert;
 import pages.ToolsQaAlertsPage;
 
+import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
 
 public class AlertsTest extends ToolsQaAlertsPageBaseTest {
 
     @Test
-    public void testSimpleAlert() {
+    public void testSimpleAlert() throws InterruptedException {
 
         ToolsQaAlertsPage toolsQaAlertsPage = super.initLoad();
 
@@ -18,15 +19,28 @@ public class AlertsTest extends ToolsQaAlertsPageBaseTest {
 
         // TODO
         // Get the Alert
-        Alert alert = getWebDriver().switchTo().alert();
+//         Alert alert = getWebDriver().switchTo().alert();
+
+        toolsQaAlertsPage.switchToAlert();
+
+        sleep(1000);
+
         // Get the text displayed on Alert
-        String textOnAlert = alert.getText();
-        // Simple Logger
-        System.out.println("Alert text is: " + textOnAlert);
+//        String textOnAlert = alert.getText();
+//        String textOnAlert = toolsQaAlertsPage.alert.getText();
+
+//        // Simple Logger
+//        System.out.println("Alert text is: " + textOnAlert);
+
+        toolsQaAlertsPage.printAlertText();
+
         // Check correct message is displayed to the user on Alert box
-        assertEquals("A simple Alert", textOnAlert);
+        assertEquals("A simple Alert",
+                toolsQaAlertsPage.getAlertText());
+
         // Click OK button, by calling accept method
-        alert.accept();
+//        alert.accept();
+        toolsQaAlertsPage.alert.accept();
     }
 
     @Test
