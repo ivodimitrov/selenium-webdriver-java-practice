@@ -28,11 +28,19 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     @FindBy(css = "#continents option")
     private List<WebElement> continentsOptions;
 
+    @FindBy(tagName = "a")
+    private List<WebElement> links;
+
     @FindBy(css = "div.control-group:nth-child(5) > a:nth-child(1)")
     private WebElement partialLink;
 
     @FindBy(css = "div.control-group:nth-child(11)")
     private WebElement firstNameElementText;
+
+    //Get all the links displayed on the Page
+    public List<WebElement> getLinks() {
+        return links;
+    }
 
     // Get the First name Element
     public String getFirstNameElementText() {
@@ -149,5 +157,24 @@ public class ToolsQaAutomationPracticeFormPage extends Page {
     // Simple logger
     public void printFirstNameElementText() {
         System.out.println("Element's text is: " + getFirstNameElementText());
+    }
+
+    // Simple logger
+    public void printLinks() {
+
+        int linksCounter = 0;
+
+        // Iterate though the list of links and print
+        // target for each link
+        for (WebElement link : links) {
+            System.out.println("Link displayed on the page is number: " + (linksCounter + 1));
+
+            System.out.println(link.getAttribute("href"));
+
+            linksCounter++;
+        }
+        // Verify there are many links displayed on the page
+        System.out.println();
+        System.out.println("Numbers of links displayed on the page are: " + links.size());
     }
 }
