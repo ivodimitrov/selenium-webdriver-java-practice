@@ -23,6 +23,8 @@ public class KeyboardEventsTest extends DemoQaSelectableBaseTest {
 
         DemoQaSelectablePage demoQaSelectablePage = new DemoQaSelectablePage(getWebDriver());
 
+
+        // TODO
         // Wait for the link to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).until((ExpectedCondition<WebElement>) d -> d.findElement(By.
                 cssSelector("#selectable")));
