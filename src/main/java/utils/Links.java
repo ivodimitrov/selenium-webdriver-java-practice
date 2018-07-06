@@ -11,7 +11,6 @@ public class Links {
     public static final String DEMOQA_DRAG_DROP_PAGE = "http://demoqa.com/droppable/";
     public static final String TOOLSQA_IFRAME_PAGE = "http://toolsqa.com/iframe-practice-page/";
     public static final String TOOLSQA_SWITCH_WINDOWS_PAGE = "http://toolsqa.com/automation-practice-switch-windows/";
-    public static final String GMAIL_PAGE = "https://www.google.com/gmail/about/";
     public static final String GOOGLE_PAGE = "http://www.google.com/ncr";
     public static final String SELENIUMACADEMY_CONFIG_PAGE = "http://cookbook.seleniumacademy.com/Config.html";
     public static final String SELENIUMACADEMY_BMICALCULATOR_PAGE = "http://cookbook.seleniumacademy.com/bmicalculator.html";
@@ -23,7 +22,6 @@ public class Links {
     private static final String DEMOQA_DRAG_DROP_PAGE_TITLE = "droppable";
     private static final String TOOLSQA_IFRAME_PAGE_TITLE = "toolsqa";
     private static final String TOOLSQA_SWITCH_WINDOWS_PAGE_TITLE = "a new title";
-    private static final String GMAIL_PAGE_TITLE = "gmail";
     private static final String GOOGLE_PAGE_TITLE = "google";
     private static final String SELENIUMACADEMY_CONFIG_PAGE_TITLE = "build my car";
     private static final String SELENIUMACADEMY_BMICALCULATOR_PAGE_TITLE = "bmi calculator";
@@ -39,7 +37,6 @@ public class Links {
         pagesMap.put(DEMOQA_DRAG_DROP_PAGE, DEMOQA_DRAG_DROP_PAGE_TITLE);
         pagesMap.put(TOOLSQA_IFRAME_PAGE, TOOLSQA_IFRAME_PAGE_TITLE);
         pagesMap.put(TOOLSQA_SWITCH_WINDOWS_PAGE, TOOLSQA_SWITCH_WINDOWS_PAGE_TITLE);
-        pagesMap.put(GMAIL_PAGE, GMAIL_PAGE_TITLE);
         pagesMap.put(GOOGLE_PAGE, GOOGLE_PAGE_TITLE);
         pagesMap.put(SELENIUMACADEMY_CONFIG_PAGE, SELENIUMACADEMY_CONFIG_PAGE_TITLE);
         pagesMap.put(SELENIUMACADEMY_BMICALCULATOR_PAGE, SELENIUMACADEMY_BMICALCULATOR_PAGE_TITLE);
