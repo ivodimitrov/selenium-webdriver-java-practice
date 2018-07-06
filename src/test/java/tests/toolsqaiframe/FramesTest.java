@@ -1,4 +1,4 @@
-package tests;
+package tests.toolsqaiframe;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

@@ -7,19 +7,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.BaseTest;
+import pages.DemoQaSelectablePage;
+import tests.demoqaselectable.DemoQaSelectableBaseTest;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static utils.Links.DEMOQA_SELECTABLE_PAGE;
 
-public class KeyboardEventsTest extends BaseTest {
+public class KeyboardEventsTest extends DemoQaSelectableBaseTest {
 
     @Test
     public void testRowSelectionUsingControlKey() {
-        // Go to page
-        goToPageAndWaitPageToLoad(DEMOQA_SELECTABLE_PAGE);
+
+        // goToPageAndWaitPageToLoad(DEMOQA_SELECTABLE_PAGE);
+
+        DemoQaSelectablePage demoQaSelectablePage = new DemoQaSelectablePage(getWebDriver());
 
         // Wait for the link to load, timeout after 10 seconds
         new WebDriverWait(getWebDriver(), 10).until((ExpectedCondition<WebElement>) d -> d.findElement(By.
