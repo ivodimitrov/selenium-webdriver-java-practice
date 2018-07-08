@@ -5,7 +5,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class FindElementsTest extends ToolsQaPracticeFormPageBaseTest {
+public class FindElementsTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testFindElements() {

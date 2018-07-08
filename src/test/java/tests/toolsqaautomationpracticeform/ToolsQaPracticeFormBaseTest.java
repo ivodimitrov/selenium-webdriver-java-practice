@@ -5,7 +5,7 @@ import utils.BaseTest;
 
 import static utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;
 
-class ToolsQaPracticeFormPageBaseTest extends BaseTest {
+class ToolsQaPracticeFormBaseTest extends BaseTest {
 
     ToolsQaAutomationPracticeFormPage initLoad() {
 

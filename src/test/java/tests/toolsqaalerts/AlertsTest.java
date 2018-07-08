@@ -7,7 +7,7 @@ import pages.ToolsQaAlertsPage;
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
 
-public class AlertsTest extends ToolsQaAlertsPageBaseTest {
+public class AlertsTest extends ToolsQaAlertsBaseTest {
 
     @Test
     public void testSimpleAlert() throws InterruptedException {

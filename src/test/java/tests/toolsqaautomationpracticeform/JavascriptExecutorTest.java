@@ -5,7 +5,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class JavascriptExecutorTest extends ToolsQaPracticeFormPageBaseTest {
+public class JavascriptExecutorTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testJavaScriptCalls() {
