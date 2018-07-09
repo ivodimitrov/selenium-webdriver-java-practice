@@ -56,13 +56,6 @@ public class ToolsQaAlertsPage extends Page {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
-
-// TODO
-
-//    public String getAlertText() {
-//        return alertText;
-//    }
-
     public Alert alert = new Alert() {
         @Override
         public void dismiss() {
@@ -84,6 +77,7 @@ public class ToolsQaAlertsPage extends Page {
 
         }
     };
+
     private String alertText;
 
     public String getAlertText() {

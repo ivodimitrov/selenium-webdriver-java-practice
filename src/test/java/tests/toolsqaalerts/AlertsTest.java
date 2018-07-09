@@ -1,7 +1,6 @@
 package tests.toolsqaalerts;
 
 import org.junit.Test;
-import org.openqa.selenium.Alert;
 import pages.ToolsQaAlertsPage;
 
 import static java.lang.Thread.sleep;
@@ -16,22 +15,13 @@ public class AlertsTest extends ToolsQaAlertsBaseTest {
 
         toolsQaAlertsPage.clickSimpleAlertButton();
 
-
-        // TODO
         // Get the Alert
-//         Alert alert = getWebDriver().switchTo().alert();
-
         toolsQaAlertsPage.switchToAlert();
 
+        // Thread sleep for 1 sec to see visual result
         sleep(1000);
 
-        // Get the text displayed on Alert
-//        String textOnAlert = alert.getText();
-//        String textOnAlert = toolsQaAlertsPage.alert.getText();
-
-//        // Simple Logger
-//        System.out.println("Alert text is: " + textOnAlert);
-
+        // Simple Logger
         toolsQaAlertsPage.printAlertText();
 
         // Check correct message is displayed to the user on Alert box
@@ -39,50 +29,60 @@ public class AlertsTest extends ToolsQaAlertsBaseTest {
                 toolsQaAlertsPage.getAlertText());
 
         // Click OK button, by calling accept method
-//        alert.accept();
         toolsQaAlertsPage.alert.accept();
     }
 
     @Test
-    public void testConfirmAccept() {
+    public void testConfirmAccept() throws InterruptedException {
 
         ToolsQaAlertsPage toolsQaAlertsPage = super.initLoad();
 
         toolsQaAlertsPage.clickConfirmPopUpButton();
 
-
-        // TODO
         // Get the Alert
-        Alert alert = getWebDriver().switchTo().alert();
-        // Get the text displayed on Alert
-        String textOnAlert = alert.getText();
+        toolsQaAlertsPage.switchToAlert();
+
+        // Thread sleep for 1 sec to see visual result
+        sleep(1000);
+
         // Simple Logger
-        System.out.println("Alert text is: " + textOnAlert);
+        toolsQaAlertsPage.printAlertText();
+
         // Check correct message is displayed to the user on Alert box
-        assertEquals("Confirm pop up with OK and Cancel button", textOnAlert);
+        assertEquals("Confirm pop up with OK and Cancel button",
+                toolsQaAlertsPage.getAlertText());
+
         // Click OK button, by calling accept method
-        alert.accept();
+        toolsQaAlertsPage.alert.accept();
     }
 
     @Test
-    public void testPrompt() {
+    public void testPrompt() throws InterruptedException {
 
         ToolsQaAlertsPage toolsQaAlertsPage = super.initLoad();
 
         toolsQaAlertsPage.clickPromptAlertBoxButton();
 
-
-        // TODO
         // Get the Alert
-        Alert alert = getWebDriver().switchTo().alert();
-        String textOnAlert = alert.getText();
-        // Check correct message is displayed to the user on Alert box
-        assertEquals("Do you like toolsqa?", textOnAlert);
+        toolsQaAlertsPage.switchToAlert();
+
+        // Thread sleep for 1 sec to see visual result
+        sleep(1000);
+
         // Simple Logger
-        System.out.println("Alert text is: " + textOnAlert);
+        toolsQaAlertsPage.printAlertText();
+
+        // Check correct message is displayed to the user on Alert box
+        assertEquals("Do you like toolsqa?",
+                toolsQaAlertsPage.getAlertText());
+
         // Enter some value on Prompt Alert box
-        alert.sendKeys("Yes");
+        toolsQaAlertsPage.alert.sendKeys("Yes");
+
+        // Thread sleep for 1 sec to see visual result
+        sleep(1000);
+
         // Click OK button, by calling accept method
-        alert.accept();
+        toolsQaAlertsPage.alert.accept();
     }
 }
