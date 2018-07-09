@@ -7,7 +7,7 @@ import static utils.Links.DEMOQA_SELECTABLE_PAGE;
 
 public class DemoQaSelectableBaseTest extends BaseTest {
 
-    DemoQaSelectablePage initLoad() {
+    protected DemoQaSelectablePage initLoad() {
 
         goToPageAndWaitPageToLoad(DEMOQA_SELECTABLE_PAGE);
 
