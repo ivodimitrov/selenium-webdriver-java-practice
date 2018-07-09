@@ -6,7 +6,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static junit.framework.TestCase.assertTrue;
 
-public class RadioButtonTest extends ToolsQaPracticeFormPageBaseTest {
+public class RadioButtonTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testRadioButton() {

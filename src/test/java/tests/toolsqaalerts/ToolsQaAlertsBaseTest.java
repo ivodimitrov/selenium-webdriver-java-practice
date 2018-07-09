@@ -5,7 +5,7 @@ import utils.BaseTest;
 
 import static utils.Links.TOOLSQA_ALERTS_PAGE;
 
-class ToolsQaAlertsPageBaseTest extends BaseTest {
+class ToolsQaAlertsBaseTest extends BaseTest {
 
     ToolsQaAlertsPage initLoad() {
 

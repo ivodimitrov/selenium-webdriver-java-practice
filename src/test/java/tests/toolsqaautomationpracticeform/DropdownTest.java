@@ -5,7 +5,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static org.junit.Assert.*;
 
-public class DropdownTest extends ToolsQaPracticeFormPageBaseTest {
+public class DropdownTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testDropdownContinents() {

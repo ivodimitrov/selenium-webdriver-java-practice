@@ -5,7 +5,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static junit.framework.TestCase.fail;
 
-public class ElementStateTest extends ToolsQaPracticeFormPageBaseTest {
+public class ElementStateTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testElementIsEnabled() {

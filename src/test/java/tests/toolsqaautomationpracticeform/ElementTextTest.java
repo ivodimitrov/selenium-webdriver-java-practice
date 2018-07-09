@@ -5,7 +5,7 @@ import pages.ToolsQaAutomationPracticeFormPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class ElementTextTest extends ToolsQaPracticeFormPageBaseTest {
+public class ElementTextTest extends ToolsQaPracticeFormBaseTest {
 
     @Test
     public void testFirstNameElementText() {
