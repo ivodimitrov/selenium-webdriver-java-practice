@@ -15,8 +15,8 @@ import java.util.List;
 
 import static junit.framework.TestCase.fail;
 
-public class ToolsQaAutomationPracticeFormPage extends Page {
-    public ToolsQaAutomationPracticeFormPage(WebDriver webDriver) {
+public class ToolsQaAutomationPracticePage extends Page {
+    public ToolsQaAutomationPracticePage(WebDriver webDriver) {
         super(webDriver);
     }
 

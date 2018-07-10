@@ -1,7 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static org.junit.Assert.*;
 
@@ -10,48 +10,48 @@ public class DropdownTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testDropdownContinents() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
         // Verify Dropdown does not support multiple selection
-        assertFalse(toolsQaAutomationPracticeFormPage.getContinentsSelect()
+        assertFalse(toolsQaAutomationPracticePage.getContinentsSelect()
                 .isMultiple());
 
-        toolsQaAutomationPracticeFormPage.printContinentsSelectOptions();
+        toolsQaAutomationPracticePage.printContinentsSelectOptions();
 
         // Verify Dropdown has many options for selection
         assertEquals("Verify Dropdown has many options for selection",
-                7, toolsQaAutomationPracticeFormPage
+                7, toolsQaAutomationPracticePage
                         .getContinentsOptions().size());
     }
 
     @Test
     public void testAnOptionIsSelectedInDropdownContinents() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
         // With Select class we can select an option in Dropdown using Visible text
-        toolsQaAutomationPracticeFormPage.getContinentsSelect()
+        toolsQaAutomationPracticePage.getContinentsSelect()
                 .selectByVisibleText("Asia");
 
-        toolsQaAutomationPracticeFormPage.printContinentsSelectFirstSelectedOption();
+        toolsQaAutomationPracticePage.printContinentsSelectFirstSelectedOption();
 
         assertEquals("Asia",
-                toolsQaAutomationPracticeFormPage.getContinentsSelect()
+                toolsQaAutomationPracticePage.getContinentsSelect()
                         .getFirstSelectedOption().getText().trim());
     }
 
     @Test
     public void testAnOptionsAreContainedInDropdownContinents() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
-        toolsQaAutomationPracticeFormPage.getActualContinentsSelectOptions();
+        toolsQaAutomationPracticePage.getActualContinentsSelectOptions();
 
         assertArrayEquals("Verify expected options array and actual options array match",
-                toolsQaAutomationPracticeFormPage.getExpectedOptions().toArray(),
-                toolsQaAutomationPracticeFormPage.getActualOptions().toArray());
+                toolsQaAutomationPracticePage.getExpectedOptions().toArray(),
+                toolsQaAutomationPracticePage.getActualOptions().toArray());
     }
 }

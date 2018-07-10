@@ -1,7 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,14 +10,14 @@ public class ElementTextTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testFirstNameElementText() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
-        toolsQaAutomationPracticeFormPage.printFirstNameElementText();
+        toolsQaAutomationPracticePage.printFirstNameElementText();
 
         // Verify message element's text
         assertEquals("Verify message element's text",
-                "First name:", toolsQaAutomationPracticeFormPage
+                "First name:", toolsQaAutomationPracticePage
                         .getFirstNameElementText());
     }
 }

@@ -1,7 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static junit.framework.TestCase.fail;
 
@@ -10,14 +10,14 @@ public class ElementStateTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testElementIsEnabled() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
         // Check if its enabled before selecting it
-        if (toolsQaAutomationPracticeFormPage
+        if (toolsQaAutomationPracticePage
                 .getProfessionManualTesterCheckBox().isEnabled()) {
             // Check if its already selected? Otherwise select the Checkbox
-            toolsQaAutomationPracticeFormPage.selectCheckBox();
+            toolsQaAutomationPracticePage.selectCheckBox();
         } else {
             fail("Profession Manual tester Checkbox is disabled!");
         }

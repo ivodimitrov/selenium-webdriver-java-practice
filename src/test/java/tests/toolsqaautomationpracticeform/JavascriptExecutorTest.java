@@ -1,7 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,13 +10,13 @@ public class JavascriptExecutorTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testJavaScriptCalls() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
         assertEquals("Demo Form for practicing Selenium Automation",
-                toolsQaAutomationPracticeFormPage.getPageTitle());
+                toolsQaAutomationPracticePage.getPageTitle());
 
-        assertEquals(219, toolsQaAutomationPracticeFormPage.getJsLinks());
+        assertEquals(219, toolsQaAutomationPracticePage.getJsLinks());
 
     }
 }

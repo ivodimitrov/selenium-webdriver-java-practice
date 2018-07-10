@@ -2,7 +2,7 @@ package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -11,23 +11,23 @@ public class RadioButtonTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testRadioButton() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
-        toolsQaAutomationPracticeFormPage.selectYearsOfExperienceRadioButton();
+        toolsQaAutomationPracticePage.selectYearsOfExperienceRadioButton();
 
         // Verify Radio Button is selected
-        assertTrue(toolsQaAutomationPracticeFormPage
+        assertTrue(toolsQaAutomationPracticePage
                 .getYearsOfExperience().isSelected());
     }
 
     @Test
     public void testRadioGroup() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
-        for (WebElement yearOfExperience : toolsQaAutomationPracticeFormPage
+        for (WebElement yearOfExperience : toolsQaAutomationPracticePage
                 .getYearsOfExperienceRadioButtons()) {
             // Search for Radio Button in the Radio Group and select it
             if (yearOfExperience.getAttribute("id").equals("exp-")) {

@@ -1,7 +1,7 @@
 package tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import pages.ToolsQaAutomationPracticeFormPage;
+import pages.ToolsQaAutomationPracticePage;
 
 import static org.junit.Assert.assertTrue;
 
@@ -10,12 +10,12 @@ public class ElementPresenceTest extends ToolsQaPracticeFormBaseTest {
     @Test
     public void testIsElementPresent() {
 
-        ToolsQaAutomationPracticeFormPage toolsQaAutomationPracticeFormPage =
+        ToolsQaAutomationPracticePage toolsQaAutomationPracticePage =
                 super.initLoad();
 
-        toolsQaAutomationPracticeFormPage.doesProfessionalTesterCheckBoxExist();
+        toolsQaAutomationPracticePage.doesProfessionalTesterCheckBoxExist();
 
-        assertTrue(toolsQaAutomationPracticeFormPage
+        assertTrue(toolsQaAutomationPracticePage
                 .getProfessionManualTesterCheckBox().isDisplayed());
     }
 }
