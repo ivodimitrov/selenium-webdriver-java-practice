@@ -11,7 +11,6 @@ class SeleniumAcademyConfigBaseTest extends BaseTest {
 
         goToPageAndWaitPageToLoad(SELENIUMACADEMY_CONFIG_PAGE);
 
-
         return new SeleniumAcademyConfigPage(getWebDriver());
     }
 }

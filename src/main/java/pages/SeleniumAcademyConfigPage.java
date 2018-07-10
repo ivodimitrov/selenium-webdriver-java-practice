@@ -65,6 +65,7 @@ public class SeleniumAcademyConfigPage extends Page {
             String pageSource = getWebDriver().getPageSource();
 
             if (pageSource.contains("Configuration - Online Chat")) {
+
                 wait.until(ExpectedConditions.visibilityOf(paragraphElement));
 
                 chatWindowText = paragraphElement.getText();

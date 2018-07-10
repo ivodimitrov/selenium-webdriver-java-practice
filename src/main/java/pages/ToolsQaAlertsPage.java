@@ -30,18 +30,10 @@ public class ToolsQaAlertsPage extends Page {
         waitForAlert();
     }
 
-    public WebElement getConfirmPopUpButton() {
-        return confirmPopUpButton;
-    }
-
     // Click Confirm button to show Confirmation Alert box
     public void clickConfirmPopUpButton() {
         confirmPopUpButton.click();
         waitForAlert();
-    }
-
-    public WebElement getPromptAlertBoxButton() {
-        return promptAlertBoxButton;
     }
 
     // Click Confirm button to show Prompt Alert box

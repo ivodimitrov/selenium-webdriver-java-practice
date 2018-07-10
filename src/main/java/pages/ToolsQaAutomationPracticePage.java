@@ -44,6 +44,7 @@ public class ToolsQaAutomationPracticePage extends Page {
 
     @FindBy(css = "div.control-group:nth-child(23)")
     private List<WebElement> yearsOfExperienceRadioButtons;
+
     private WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
     private JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
 
