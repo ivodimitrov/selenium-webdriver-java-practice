@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import seleniumtestingtoolscookbook.pages.GooglePage;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 import static seleniumtestingtoolscookbook.utils.Links.GOOGLE_PAGE;
@@ -37,6 +38,7 @@ public class GoogleSearchOperaTest {
 
         // Maximize the browser window
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // Navigate to page
         driver.get(GOOGLE_PAGE);
     }

@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTest {
 
     // private static Page homePage;
@@ -49,6 +51,8 @@ public class BaseTest {
         System.out.println("Started driver.");
 
         webDriver.manage().window().maximize();
+
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         // homePage = new Page(webDriver);
     }
