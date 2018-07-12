@@ -7,7 +7,7 @@ public class Page {
 
     private static WebDriver webDriver;
 
-    Page(WebDriver webDriver) {
+    protected Page(WebDriver webDriver) {
         Page.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }

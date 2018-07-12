@@ -1,10 +1,14 @@
 package seleniumtestingtoolscookbook.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import seleniumtestingtoolscookbook.utils.JQueryUITab;
+
+import java.util.List;
 
 public class SeleniumAcademyConfigPage extends Page {
 
@@ -78,5 +82,29 @@ public class SeleniumAcademyConfigPage extends Page {
     public void printChatWindowText() {
         System.out.println("Chat window text is: "
                 + chatWindowText);
+    }
+
+
+    private JQueryUITab tab = new JQueryUITab(getWebDriver().findElement(By
+            .cssSelector(".ui-tabs-nav")));
+    private String tabLocator = ".ui-tabs-nav > li";
+    // ".ui-tabs-nav"
+    private String selectedTabLocator = ".ui-tabs-nav > li.ui-tabs-selected";
+
+    // JQuery
+    public JQueryUITab getTab() {
+        return tab;
+    }
+
+    // Simple logger
+    public void printTabNames() {
+        List<WebElement> tabs = tab.getjQueryUITab().findElements(By
+                .cssSelector(tabLocator));
+
+        System.out.println();
+
+        for (WebElement tab : tabs) {
+            System.out.println(tab.getText());
+        }
     }
 }
