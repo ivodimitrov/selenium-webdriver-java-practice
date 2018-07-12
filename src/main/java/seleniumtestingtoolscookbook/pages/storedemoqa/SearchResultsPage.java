@@ -33,15 +33,23 @@ public class SearchResultsPage extends LoadableComponent<SearchResultsPage> {
     }
 
     public List<String> getProducts() {
+
         List<String> products = new ArrayList<>();
+
         List<WebElement> productList = driver.findElements(
                 By.cssSelector(".product_grid_display"));
 
         for (WebElement item : productList) {
             products.add(item.findElement(By
-                    .cssSelector("div.product_grid_item:nth-child(1) > div:nth-child(2) > h2:nth-child(1) > a:nth-child(1)"))
+                    .cssSelector("div.product_grid_item"))
                     .getText());
         }
+
+        for (WebElement item : productList) {
+            System.out.println(item);
+            System.out.println(products);
+        }
+
         return products;
     }
 

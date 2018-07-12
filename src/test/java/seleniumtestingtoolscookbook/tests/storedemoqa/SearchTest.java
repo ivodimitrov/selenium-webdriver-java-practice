@@ -6,6 +6,7 @@ import seleniumtestingtoolscookbook.pages.storedemoqa.HomePage;
 import seleniumtestingtoolscookbook.pages.storedemoqa.SearchResultsPage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SearchTest {
 
@@ -24,10 +25,12 @@ public class SearchTest {
             assertEquals("Products are not available nor match!",
                     1, searchResult.getProducts().size());
 
-            // assertTrue(searchResult.getProducts().contains("iPad"));
-
+            for (String resultText : searchResult.getProducts()) {
+                assertTrue(resultText.contains("iPad"));
+            }
         } finally {
             Browser.close();
         }
     }
 }
+
