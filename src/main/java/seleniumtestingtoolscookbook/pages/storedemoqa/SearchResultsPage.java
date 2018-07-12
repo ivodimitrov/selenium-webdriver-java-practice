@@ -52,8 +52,4 @@ public class SearchResultsPage extends LoadableComponent<SearchResultsPage> {
 
         return products;
     }
-
-    public SearchPage Search() {
-        return new SearchPage(driver);
-    }
 }

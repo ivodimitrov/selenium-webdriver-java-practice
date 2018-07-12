@@ -21,12 +21,13 @@ public class SearchTest {
             // Search for 'iPad', the searchInStore method will return SearchResultsPage
             SearchResultsPage searchResult = homePage.Search().searchInStore("iPad");
 
-            // Verify there are 2 products available with this search
-            assertEquals("Products are not available nor match!",
+            // Verify there are products available with this search
+            assertEquals("Products quantity does not match!",
                     1, searchResult.getProducts().size());
 
             for (String resultText : searchResult.getProducts()) {
-                assertTrue(resultText.contains("iPad"));
+                assertTrue("Products does not match!",
+                        resultText.contains("iPad"));
             }
         } finally {
             Browser.close();
