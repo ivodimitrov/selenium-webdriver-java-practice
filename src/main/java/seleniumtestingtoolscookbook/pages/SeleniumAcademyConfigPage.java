@@ -1,6 +1,5 @@
 package seleniumtestingtoolscookbook.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,12 +12,16 @@ import java.util.List;
 public class SeleniumAcademyConfigPage extends Page {
 
     private String chatWindowText;
+
     @FindBy(id = "chatbutton")
     private WebElement onlineChatSupportButton;
+
     @FindBy(id = "closebutton")
     private WebElement closeButton;
+
     @FindBy(tagName = "p")
     private WebElement paragraphElement;
+
     private String paragraphElementText;
     private String parentWindowId;
 
@@ -85,21 +88,41 @@ public class SeleniumAcademyConfigPage extends Page {
     }
 
 
-    private JQueryUITab tab = new JQueryUITab(getWebDriver().findElement(By
-            .cssSelector(".ui-tabs-nav")));
-    private String tabLocator = ".ui-tabs-nav > li";
-    // ".ui-tabs-nav"
-    private String selectedTabLocator = ".ui-tabs-nav > li.ui-tabs-selected";
+    @FindBy(css = ".ui-tabs-nav")
+    private WebElement tabsNavigation;
 
-    // JQuery
-    public JQueryUITab getTab() {
-        return tab;
+    @FindBy(css = ".ui-tabs-nav > li")
+    private List<WebElement> tabsLocator;
+
+    @FindBy(css = ".ui-tabs-nav > li.ui-tabs-selected")
+    private WebElement selectedTabLocator;
+    //    private JQueryUITab jQueryUITab = new JQueryUITab(getWebDriver().findElement(By
+//            .cssSelector(tabsNavigation)));
+
+    private JQueryUITab jQueryUITab = new JQueryUITab(tabsNavigation);
+
+    public List<WebElement> getTabsLocator() {
+        return tabsLocator;
+    }
+
+
+    //    private String tabsNavigation = ".ui-tabs-nav";
+//    private String tabsLocator = ".ui-tabs-nav > li";
+//    private String selectedTabLocator = ".ui-tabs-nav > li.ui-tabs-selected";
+
+    public WebElement getSelectedTabLocator() {
+        return selectedTabLocator;
+    }
+
+    public JQueryUITab getjQueryUITab() {
+        return jQueryUITab;
     }
 
     // Simple logger
-    public void printTabNames() {
-        List<WebElement> tabs = tab.getjQueryUITab().findElements(By
-                .cssSelector(tabLocator));
+    public void printTabsNames() {
+//        List<WebElement> tabs = jQueryUITab.getjQueryUITab().findElements(By
+//                .cssSelector(tabsLocator));
+        List<WebElement> tabs = tabsLocator;
 
         System.out.println();
 

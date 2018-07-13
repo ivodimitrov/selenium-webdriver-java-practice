@@ -16,9 +16,9 @@ public class JQueryUITab {
         setjQueryUITab(jQueryUITab);
     }
 
-    public WebElement getjQueryUITab() {
-        return jQueryUITab;
-    }
+//    public WebElement getjQueryUITab() {
+//        return jQueryUITab;
+//    }
 
     private void setjQueryUITab(WebElement jQueryUITab) {
         this.jQueryUITab = jQueryUITab;
@@ -54,15 +54,5 @@ public class JQueryUITab {
         // Throw an exception if specified tab is not found
         if (!found)
             throw new IllegalArgumentException("Could not find tab '" + tabName + "'");
-    }
-
-    // Simple logger
-    public void printTabNames() {
-        List<WebElement> tabs = jQueryUITab.findElements(By
-                .cssSelector(tabLocator));
-
-        for (WebElement tab : tabs) {
-            System.out.println(tab.getText());
-        }
     }
 }
