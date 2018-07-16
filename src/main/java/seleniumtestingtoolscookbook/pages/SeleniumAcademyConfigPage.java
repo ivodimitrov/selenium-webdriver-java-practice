@@ -21,7 +21,6 @@ public class SeleniumAcademyConfigPage extends Page {
     @FindBy(tagName = "p")
     private WebElement paragraphElement;
 
-    private String paragraphElementText;
     private String parentWindowId;
 
     private WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
@@ -85,10 +84,6 @@ public class SeleniumAcademyConfigPage extends Page {
         System.out.println("Chat window text is: "
                 + chatWindowText);
     }
-
-
-//    @FindBy(css = ".ui-tabs-nav")
-//    private WebElement tabsNavigation;
 
     @FindBy(css = ".ui-tabs-nav > li")
     private List<WebElement> tabsLocator;
