@@ -18,25 +18,28 @@ public class JQueryUITabWidgetTest extends SeleniumAcademyConfigBaseTest {
 
         // Verify Tab Widget has 3 Tabs
         assertEquals(3, seleniumAcademyConfigPage
-                .getjQueryUITab().getTabCount());
+                .getTabsCount());
 
         // Verify Configure Tab is selected
-        assertEquals("Configure", seleniumAcademyConfigPage.
-                getjQueryUITab().getSelectedTab());
+        assertEquals("Configure", seleniumAcademyConfigPage
+                .getSelectedTabText());
 
         // Select Your Details Tab and verify it is selected
-        seleniumAcademyConfigPage.getjQueryUITab().selectTab("Your Details");
+        seleniumAcademyConfigPage
+                .selectTab("Your Details");
         assertEquals("Your Details", seleniumAcademyConfigPage
-                .getjQueryUITab().getSelectedTab());
+                .getSelectedTabText());
 
         // Select Payment Tab and verify it is selected
-        seleniumAcademyConfigPage.getjQueryUITab().selectTab("Payment");
+        seleniumAcademyConfigPage
+                .selectTab("Payment");
         assertEquals("Payment", seleniumAcademyConfigPage
-                .getjQueryUITab().getSelectedTab());
+                .getSelectedTabText());
 
-        // Select Home Tab
-        seleniumAcademyConfigPage.getjQueryUITab().selectTab("Configure");
-        assertEquals("Configure", seleniumAcademyConfigPage.
-                getjQueryUITab().getSelectedTab());
+        // Select Home Tab and verify it is selected
+        seleniumAcademyConfigPage
+                .selectTab("Configure");
+        assertEquals("Configure", seleniumAcademyConfigPage
+                .getSelectedTabText());
     }
 }

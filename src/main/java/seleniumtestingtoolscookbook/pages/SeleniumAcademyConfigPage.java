@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import seleniumtestingtoolscookbook.utils.JQueryUITab;
 
 import java.util.List;
 
@@ -88,40 +87,44 @@ public class SeleniumAcademyConfigPage extends Page {
     }
 
 
-    @FindBy(css = ".ui-tabs-nav")
-    private WebElement tabsNavigation;
+//    @FindBy(css = ".ui-tabs-nav")
+//    private WebElement tabsNavigation;
 
     @FindBy(css = ".ui-tabs-nav > li")
     private List<WebElement> tabsLocator;
 
     @FindBy(css = ".ui-tabs-nav > li.ui-tabs-selected")
     private WebElement selectedTabLocator;
-    //    private JQueryUITab jQueryUITab = new JQueryUITab(getWebDriver().findElement(By
-//            .cssSelector(tabsNavigation)));
 
-    private JQueryUITab jQueryUITab = new JQueryUITab(tabsNavigation);
-
-    public List<WebElement> getTabsLocator() {
-        return tabsLocator;
+    public int getTabsCount() {
+        return tabsLocator.size();
     }
 
-
-    //    private String tabsNavigation = ".ui-tabs-nav";
-//    private String tabsLocator = ".ui-tabs-nav > li";
-//    private String selectedTabLocator = ".ui-tabs-nav > li.ui-tabs-selected";
-
-    public WebElement getSelectedTabLocator() {
-        return selectedTabLocator;
+    public String getSelectedTabText() {
+        return selectedTabLocator.getText();
     }
 
-    public JQueryUITab getjQueryUITab() {
-        return jQueryUITab;
+    public void selectTab(String tabName) {
+        int idx = 0;
+        boolean found = false;
+
+        List<WebElement> tabs = tabsLocator;
+
+        for (WebElement tab : tabs) {
+            if (tabName.equals(tab.getText())) {
+                tab.click();
+                found = true;
+                break;
+            }
+            idx++;
+        }
+        // Throw an exception if specified tab is not found
+        if (!found)
+            throw new IllegalArgumentException("Could not find tab '" + tabName + "'!");
     }
 
     // Simple logger
     public void printTabsNames() {
-//        List<WebElement> tabs = jQueryUITab.getjQueryUITab().findElements(By
-//                .cssSelector(tabsLocator));
         List<WebElement> tabs = tabsLocator;
 
         System.out.println();
