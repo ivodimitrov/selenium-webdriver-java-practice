@@ -9,18 +9,21 @@ import static java.lang.Thread.sleep;
 
 public class SeleniumAcademyHtml5VideoPage extends Page {
 
-    // Get the HTML5 Video Element
     @FindBy(id = "vplayer")
     private WebElement videoPlayer;
+
     // JavaScript Executor for interacting with Video Element's methods
     // and properties
     private JavascriptExecutor jsExecutor = (JavascriptExecutor) getWebDriver();
     // Get the Source of Video that will be played in Video Player
-    private String source = (String) jsExecutor.executeScript("return arguments[0].currentSrc;",
-            videoPlayer);
+
+    private String source = (String) jsExecutor
+            .executeScript("return arguments[0].currentSrc;",
+                    videoPlayer);
+
     // Get the Duration of Video
-    private long duration = (Long) jsExecutor.executeScript(
-            "return arguments[0].duration", videoPlayer);
+    private long duration = (Long) jsExecutor
+            .executeScript("return arguments[0].duration", videoPlayer);
 
     public SeleniumAcademyHtml5VideoPage(WebDriver webDriver) {
         super(webDriver);
@@ -43,12 +46,14 @@ public class SeleniumAcademyHtml5VideoPage extends Page {
     }
 
     public void playVideo() throws InterruptedException {
-        jsExecutor.executeScript("return arguments[0].play()",
-                videoPlayer);
+        jsExecutor
+                .executeScript("return arguments[0].play()",
+                        videoPlayer);
         sleep(5000);
     }
 
     public void pauseVideo() {
-        jsExecutor.executeScript("arguments[0].pause()", videoPlayer);
+        jsExecutor
+                .executeScript("arguments[0].pause()", videoPlayer);
     }
 }

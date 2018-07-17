@@ -16,6 +16,7 @@ public class Links {
     public static final String SELENIUMACADEMY_BMICALCULATOR_PAGE = "http://cookbook.seleniumacademy.com/bmicalculator.html";
     public static final String SELENIUMACADEMY_HTML5VIDEO_PAGE = "http://cookbook.seleniumacademy.com/html5video.html";
     public static final String SELENIUMACADEMY_HTML5CANVAS_PAGE = "http://cookbook.seleniumacademy.com/html5canvasdraw.html";
+    public static final String SELENIUMACADEMY_HTML5STORAGE_PAGE = "http://cookbook.seleniumacademy.com/html5storage.html";
 
     private static final String TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE_TITLE = "demo form";
     private static final String TOOLSQA_ALERTS_PAGE_TITLE = "toolsqa";
@@ -29,6 +30,7 @@ public class Links {
     private static final String SELENIUMACADEMY_BMICALCULATOR_PAGE_TITLE = "bmi calculator";
     private static final String SELENIUMACADEMY_HTML5VIDEO_PAGE_TITLE = "html5 test page - video player";
     private static final String SELENIUMACADEMY_HTML5CANVAS_PAGE_TITLE = "html5 test page - canvas drawing";
+    private static final String SELENIUMACADEMY_HTML5STORAGE_PAGE_TITLE = "html5 test page - video player";
 
     static HashMap<String, String> getPages() {
 
@@ -46,6 +48,7 @@ public class Links {
         pagesMap.put(SELENIUMACADEMY_BMICALCULATOR_PAGE, SELENIUMACADEMY_BMICALCULATOR_PAGE_TITLE);
         pagesMap.put(SELENIUMACADEMY_HTML5VIDEO_PAGE, SELENIUMACADEMY_HTML5VIDEO_PAGE_TITLE);
         pagesMap.put(SELENIUMACADEMY_HTML5CANVAS_PAGE, SELENIUMACADEMY_HTML5CANVAS_PAGE_TITLE);
+        pagesMap.put(SELENIUMACADEMY_HTML5STORAGE_PAGE, SELENIUMACADEMY_HTML5STORAGE_PAGE_TITLE);
 
         return pagesMap;
     }
