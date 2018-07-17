@@ -6,7 +6,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import seleniumtestingtoolscookbook.pages.BmiCalcPage;
+import seleniumtestingtoolscookbook.pages.SeleniumAcademyBmiCalcPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import java.util.concurrent.TimeUnit;
@@ -40,12 +40,12 @@ public class TestNGDDTest extends BaseTest {
     @Test(dataProvider = "testData")
     public void testBMICalculator(String height, String
             weight, String bmi, String category) {
-        BmiCalcPage bmiCalcPage = new BmiCalcPage(driver);
+        SeleniumAcademyBmiCalcPage seleniumAcademyBmiCalcPage = new SeleniumAcademyBmiCalcPage(driver);
 
-        bmiCalcPage.calculateBmi(height, weight);
+        seleniumAcademyBmiCalcPage.calculateBmi(height, weight);
         // Verify Bmi & Bmi Category values
-        assertEquals(bmiCalcPage.getBmi(), bmi, "BMI calculation is not correct!");
-        assertEquals(bmiCalcPage.getBmiCategory(), category, "BMI category is not correct!");
+        assertEquals(seleniumAcademyBmiCalcPage.getBmi(), bmi, "BMI calculation is not correct!");
+        assertEquals(seleniumAcademyBmiCalcPage.getBmiCategory(), category, "BMI category is not correct!");
     }
 
     @AfterTest

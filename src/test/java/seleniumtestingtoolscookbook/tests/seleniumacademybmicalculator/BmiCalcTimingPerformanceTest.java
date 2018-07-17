@@ -1,9 +1,10 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademybmicalculator;
 
 import org.junit.Test;
-import org.openqa.selenium.JavascriptExecutor;
+import seleniumtestingtoolscookbook.pages.SeleniumAcademyBmiCalcPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
+import static org.junit.Assert.assertTrue;
 import static seleniumtestingtoolscookbook.utils.Links.SELENIUMACADEMY_BMICALCULATOR_PAGE;
 
 public class BmiCalcTimingPerformanceTest extends BaseTest {
@@ -12,17 +13,15 @@ public class BmiCalcTimingPerformanceTest extends BaseTest {
     public void measureNavigationTiming() {
         goToPageAndWaitPageToLoad(SELENIUMACADEMY_BMICALCULATOR_PAGE);
 
-        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+        SeleniumAcademyBmiCalcPage seleniumAcademyBmiCalcPage =
+                new SeleniumAcademyBmiCalcPage(getWebDriver());
 
-        // Get the Load Event End
-        long loadEventEnd = (Long) js.executeScript("return window.performance.timing.loadEventEnd;");
+        seleniumAcademyBmiCalcPage.calculateLoadTime();
 
-        // Get the Navigation Event Start
-        long navigationStart = (Long) js.executeScript("return window.performance.timing.navigationStart;");
+        assertTrue("Load Time is more than 2 seconds!",
+                seleniumAcademyBmiCalcPage.calculateLoadTime() < 2);
 
-        // Difference between Load Event End and Navigation Event Start is
-        // Page Load Time
-        System.out.println("Page Load Time is " + (loadEventEnd -
-                navigationStart) / 1000 + " seconds.");
+        // Simple logger
+        seleniumAcademyBmiCalcPage.printLoadTime();
     }
 }

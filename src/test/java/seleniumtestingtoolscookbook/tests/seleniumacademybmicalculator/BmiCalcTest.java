@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademybmicalculator;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.BmiCalcPage;
+import seleniumtestingtoolscookbook.pages.SeleniumAcademyBmiCalcPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;
@@ -13,11 +13,11 @@ public class BmiCalcTest extends BaseTest {
     public void testBmiCalculation() {
         goToPageAndWaitPageToLoad(SELENIUMACADEMY_BMICALCULATOR_PAGE);
 
-        BmiCalcPage bmiCalcPage = new BmiCalcPage(getWebDriver());
+        SeleniumAcademyBmiCalcPage seleniumAcademyBmiCalcPage = new SeleniumAcademyBmiCalcPage(getWebDriver());
 
-        bmiCalcPage.calculateBmi("181", "80");
+        seleniumAcademyBmiCalcPage.calculateBmi("181", "80");
         // Verify Bmi & Bmi Category values
-        assertEquals("BMI calculation is not correct!", "24.4", bmiCalcPage.getBmi());
-        assertEquals("BMI category is not correct!", "Normal", bmiCalcPage.getBmiCategory());
+        assertEquals("BMI calculation is not correct!", "24.4", seleniumAcademyBmiCalcPage.getBmi());
+        assertEquals("BMI category is not correct!", "Normal", seleniumAcademyBmiCalcPage.getBmiCategory());
     }
 }

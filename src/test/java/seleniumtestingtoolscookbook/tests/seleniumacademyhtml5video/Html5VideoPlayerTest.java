@@ -5,7 +5,7 @@ import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5VideoPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class HTML5VideoPlayerTest extends SeleniumAcademyHtml5VideoBaseTest {
+public class Html5VideoPlayerTest extends SeleniumAcademyHtml5VideoBaseTest {
 
     @Test
     public void testHTML5VideoPlayer() {
