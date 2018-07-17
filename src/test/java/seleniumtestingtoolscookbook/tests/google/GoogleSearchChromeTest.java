@@ -3,7 +3,7 @@ package seleniumtestingtoolscookbook.tests.google;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import seleniumtestingtoolscookbook.pages.GooglePage;
+import seleniumtestingtoolscookbook.pages.google.GooglePage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static org.junit.Assert.assertEquals;

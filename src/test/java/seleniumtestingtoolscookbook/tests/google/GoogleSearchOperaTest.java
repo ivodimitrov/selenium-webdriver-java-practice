@@ -8,7 +8,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import seleniumtestingtoolscookbook.pages.GooglePage;
+import seleniumtestingtoolscookbook.pages.google.GooglePage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

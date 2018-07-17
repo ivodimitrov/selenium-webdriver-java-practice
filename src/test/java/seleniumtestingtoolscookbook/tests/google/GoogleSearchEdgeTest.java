@@ -8,7 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import seleniumtestingtoolscookbook.pages.GooglePage;
+import seleniumtestingtoolscookbook.pages.google.GooglePage;
 
 import java.util.concurrent.TimeUnit;
 
