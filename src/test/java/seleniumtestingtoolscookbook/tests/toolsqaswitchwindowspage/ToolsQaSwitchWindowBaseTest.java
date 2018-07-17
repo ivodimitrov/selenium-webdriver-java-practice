@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.toolsqaswitchwindowspage;
 
-import seleniumtestingtoolscookbook.pages.ToolsQaSwitchWindowsPage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaSwitchWindowsPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.TOOLSQA_SWITCH_WINDOWS_PAGE;

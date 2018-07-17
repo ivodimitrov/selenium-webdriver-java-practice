@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.toolsqaautomationpracticeform;
 
-import seleniumtestingtoolscookbook.pages.ToolsQaAutomationPracticePage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaAutomationPracticePage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.TOOLSQA_AUTOMATION_PRACTICE_FORM_PAGE;

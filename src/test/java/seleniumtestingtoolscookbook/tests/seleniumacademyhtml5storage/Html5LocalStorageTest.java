@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5storage;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5StoragePage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5StoragePage;
 
 import static org.junit.Assert.assertEquals;
 

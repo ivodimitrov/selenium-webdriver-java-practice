@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.toolsqaalerts;
 
-import seleniumtestingtoolscookbook.pages.ToolsQaAlertsPage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaAlertsPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.TOOLSQA_ALERTS_PAGE;

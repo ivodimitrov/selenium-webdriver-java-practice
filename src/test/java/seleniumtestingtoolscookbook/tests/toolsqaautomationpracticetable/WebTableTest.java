@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.toolsqaautomationpracticetable;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.ToolsQaTablePage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaTablePage;
 
 import static org.junit.Assert.assertEquals;
 

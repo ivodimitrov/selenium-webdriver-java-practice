@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyconfig;
 
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyConfigPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyConfigPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.SELENIUMACADEMY_CONFIG_PAGE;

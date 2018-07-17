@@ -2,7 +2,7 @@ package seleniumtestingtoolscookbook.tests.demoqadraganddrop;
 
 import org.junit.Test;
 import org.openqa.selenium.interactions.Actions;
-import seleniumtestingtoolscookbook.pages.DemoQaDragAndDropPage;
+import seleniumtestingtoolscookbook.pages.demoqa.DemoQaDragAndDropPage;
 
 import static org.junit.Assert.assertEquals;
 

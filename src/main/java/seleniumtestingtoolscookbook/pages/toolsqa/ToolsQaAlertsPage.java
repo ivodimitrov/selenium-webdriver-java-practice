@@ -1,4 +1,4 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.toolsqa;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -6,15 +6,38 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import seleniumtestingtoolscookbook.pages.Page;
 
 public class ToolsQaAlertsPage extends Page {
 
+    public Alert alert = new Alert() {
+        @Override
+        public void dismiss() {
+
+        }
+
+        @Override
+        public void accept() {
+
+        }
+
+        @Override
+        public String getText() {
+            return null;
+        }
+
+        @Override
+        public void sendKeys(String keysToSend) {
+
+        }
+    };
     @FindBy(xpath = "//*[@id='content']/p[4]/button")
     private WebElement simpleAlertButton;
     @FindBy(xpath = "//*[@id='content']/p[8]/button")
     private WebElement confirmPopUpButton;
     @FindBy(xpath = "//*[@id='content']/p[11]/button")
     private WebElement promptAlertBoxButton;
+    private String alertText;
 
     public ToolsQaAlertsPage(WebDriver webDriver) {
         super(webDriver);
@@ -47,30 +70,6 @@ public class ToolsQaAlertsPage extends Page {
         WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
         wait.until(ExpectedConditions.alertIsPresent());
     }
-
-    public Alert alert = new Alert() {
-        @Override
-        public void dismiss() {
-
-        }
-
-        @Override
-        public void accept() {
-
-        }
-
-        @Override
-        public String getText() {
-            return null;
-        }
-
-        @Override
-        public void sendKeys(String keysToSend) {
-
-        }
-    };
-
-    private String alertText;
 
     public String getAlertText() {
         return alert.getText();

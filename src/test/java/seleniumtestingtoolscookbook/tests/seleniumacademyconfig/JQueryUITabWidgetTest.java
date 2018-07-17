@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyconfig;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyConfigPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyConfigPage;
 
 import static org.junit.Assert.assertEquals;
 

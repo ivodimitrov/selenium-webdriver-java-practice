@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5video;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5VideoPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5VideoPage;
 
 import static org.junit.Assert.assertEquals;
 

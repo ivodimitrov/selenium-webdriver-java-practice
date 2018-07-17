@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.demoqaselectable;
 
-import seleniumtestingtoolscookbook.pages.DemoQaSelectablePage;
+import seleniumtestingtoolscookbook.pages.demoqa.DemoQaSelectablePage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.DEMOQA_SELECTABLE_PAGE;

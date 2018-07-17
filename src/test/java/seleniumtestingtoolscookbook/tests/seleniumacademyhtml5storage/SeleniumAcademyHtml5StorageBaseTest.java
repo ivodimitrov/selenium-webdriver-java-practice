@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5storage;
 
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5StoragePage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5StoragePage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.SELENIUMACADEMY_HTML5STORAGE_PAGE;

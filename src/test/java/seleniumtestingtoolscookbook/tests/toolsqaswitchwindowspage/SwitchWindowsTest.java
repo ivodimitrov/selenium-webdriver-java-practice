@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.toolsqaswitchwindowspage;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.ToolsQaSwitchWindowsPage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaSwitchWindowsPage;
 
 import static org.junit.Assert.assertTrue;
 

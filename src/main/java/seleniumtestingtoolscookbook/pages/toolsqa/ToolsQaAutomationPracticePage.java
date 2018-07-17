@@ -1,4 +1,4 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.toolsqa;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import seleniumtestingtoolscookbook.pages.Page;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,37 +17,41 @@ import java.util.List;
 import static junit.framework.TestCase.fail;
 
 public class ToolsQaAutomationPracticePage extends Page {
-    public ToolsQaAutomationPracticePage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(css = "#profession-0")
     private WebElement professionManualTesterCheckBox;
-
     @FindBy(css = "#continents")
     private WebElement continents;
-
     @FindBy(css = "#continents option")
     private List<WebElement> continentsOptions;
-
     @FindBy(tagName = "a")
     private List<WebElement> links;
-
     @FindBy(css = "div.control-group:nth-child(5) > a:nth-child(1)")
     private WebElement partialLink;
-
     @FindBy(css = "div.control-group:nth-child(11)")
     private WebElement firstNameElementText;
-
     // Radio Button as WebElement
     @FindBy(xpath = "//*[@id=\"exp-0\"]")
     private WebElement yearsOfExperience;
-
     @FindBy(css = "div.control-group:nth-child(23)")
     private List<WebElement> yearsOfExperienceRadioButtons;
-
     private WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
     private JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
+    // Dropdown expected values in array
+    private List<String> expectedOptions = Arrays.asList("Asia", "Europe",
+            "Africa", "Australia", "South America", "North America", "Antartica");
+    // Dropdown actual options
+    private List<String> actualOptions = new ArrayList<>();
+    @SuppressWarnings("ConstantConditions")
+    private Select continentsSelect = new Select(continents);
+    private String pageTitle = (String) js.executeScript("return document.title");
+    private long jsLinks = (Long) js
+            .executeScript(
+                    "var links = document.getElementsByTagName('A'); return links.length");
+
+    public ToolsQaAutomationPracticePage(WebDriver webDriver) {
+        super(webDriver);
+    }
+    // Get the Dropdown as a Select
 
     //Get all the links displayed on the Page
     public List<WebElement> getLinks() {
@@ -62,17 +67,6 @@ public class ToolsQaAutomationPracticePage extends Page {
     public WebElement getPartialLink() {
         return partialLink;
     }
-
-    // Dropdown expected values in array
-    private List<String> expectedOptions = Arrays.asList("Asia", "Europe",
-            "Africa", "Australia", "South America", "North America", "Antartica");
-
-    // Dropdown actual options
-    private List<String> actualOptions = new ArrayList<>();
-    // Get the Dropdown as a Select
-
-    @SuppressWarnings("ConstantConditions")
-    private Select continentsSelect = new Select(continents);
 
     public WebElement getProfessionManualTesterCheckBox() {
         return professionManualTesterCheckBox;
@@ -103,8 +97,6 @@ public class ToolsQaAutomationPracticePage extends Page {
         }
     }
 
-    private String pageTitle = (String) js.executeScript("return document.title");
-
     //Check if its already selected? Otherwise select the Checkbox
     //by calling click() method
     public void selectCheckBox() {
@@ -123,10 +115,6 @@ public class ToolsQaAutomationPracticePage extends Page {
             actualOptions.add(option.getText().trim());
         }
     }
-
-    private long jsLinks = (Long) js
-            .executeScript(
-                    "var links = document.getElementsByTagName('A'); return links.length");
 
     public void doesProfessionalTesterCheckBoxExist() {
         if (isElementProfessionalManualTesterCheckBoxPresent()) {

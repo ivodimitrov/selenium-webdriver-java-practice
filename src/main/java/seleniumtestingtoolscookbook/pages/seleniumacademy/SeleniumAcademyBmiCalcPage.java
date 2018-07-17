@@ -1,7 +1,8 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.seleniumacademy;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import seleniumtestingtoolscookbook.pages.Page;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +28,15 @@ public class SeleniumAcademyBmiCalcPage extends Page {
 
     @FindBy(id = "bmi_category")
     private WebElement bmiCategoryInput;
+    private String baseScrFile =
+            "target/screenshots/seleniumacademybmicalcpage/baseScreenshot.png";
+    private JavascriptExecutor jsExecutor = (JavascriptExecutor) getWebDriver();
+    private long loadEventEnd;
+    private long navigationStart;
+
+    public SeleniumAcademyBmiCalcPage(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     public void calculateBmi(String height, String weight) {
         heightInput.clear();
@@ -46,16 +56,6 @@ public class SeleniumAcademyBmiCalcPage extends Page {
         return bmiCategoryInput.getAttribute("value");
     }
 
-    private String baseScrFile =
-            "target/screenshots/seleniumacademybmicalcpage/baseScreenshot.png";
-    private JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-    private long loadEventEnd;
-    private long navigationStart;
-
-    public SeleniumAcademyBmiCalcPage(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     public String getScrFile() {
         return scrFile;
     }
@@ -71,12 +71,12 @@ public class SeleniumAcademyBmiCalcPage extends Page {
     }
 
     public Long getLoadEventEndTime() {
-        return loadEventEnd = (Long) js
+        return loadEventEnd = (Long) jsExecutor
                 .executeScript("return window.performance.timing.loadEventEnd;");
     }
 
     public Long getNavigationEventStartTime() {
-        return navigationStart = (Long) js
+        return navigationStart = (Long) jsExecutor
                 .executeScript("return window.performance.timing.navigationStart;");
     }
 

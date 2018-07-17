@@ -3,7 +3,7 @@ package seleniumtestingtoolscookbook.tests.seleniumacademybmicalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyBmiCalcPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyBmiCalcPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import java.util.Arrays;

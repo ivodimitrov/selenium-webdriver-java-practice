@@ -1,7 +1,8 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.seleniumacademy;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import seleniumtestingtoolscookbook.pages.Page;
 
 public class SeleniumAcademyHtml5StoragePage extends Page {
 

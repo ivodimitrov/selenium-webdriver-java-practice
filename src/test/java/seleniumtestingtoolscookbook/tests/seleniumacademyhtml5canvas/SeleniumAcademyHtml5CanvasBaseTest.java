@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5canvas;
 
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5CanvasPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5CanvasPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.SELENIUMACADEMY_HTML5CANVAS_PAGE;

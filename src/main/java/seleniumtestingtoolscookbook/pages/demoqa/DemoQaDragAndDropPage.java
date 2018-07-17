@@ -1,8 +1,9 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.demoqa;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import seleniumtestingtoolscookbook.pages.Page;
 
 public class DemoQaDragAndDropPage extends Page {
 

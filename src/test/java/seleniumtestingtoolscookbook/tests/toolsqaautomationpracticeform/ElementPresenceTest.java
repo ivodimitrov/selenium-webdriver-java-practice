@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.ToolsQaAutomationPracticePage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaAutomationPracticePage;
 
 import static org.junit.Assert.assertTrue;
 

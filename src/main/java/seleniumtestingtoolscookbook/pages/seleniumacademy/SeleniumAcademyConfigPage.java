@@ -1,10 +1,11 @@
-package seleniumtestingtoolscookbook.pages;
+package seleniumtestingtoolscookbook.pages.seleniumacademy;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import seleniumtestingtoolscookbook.pages.Page;
 
 import java.util.List;
 
@@ -24,6 +25,10 @@ public class SeleniumAcademyConfigPage extends Page {
     private String parentWindowId;
 
     private WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
+    @FindBy(css = ".ui-tabs-nav > li")
+    private List<WebElement> tabsLocator;
+    @FindBy(css = ".ui-tabs-nav > li.ui-tabs-selected")
+    private WebElement selectedTabLocator;
 
     public SeleniumAcademyConfigPage(WebDriver webDriver) {
         super(webDriver);
@@ -84,12 +89,6 @@ public class SeleniumAcademyConfigPage extends Page {
         System.out.println("Chat window text is: "
                 + chatWindowText);
     }
-
-    @FindBy(css = ".ui-tabs-nav > li")
-    private List<WebElement> tabsLocator;
-
-    @FindBy(css = ".ui-tabs-nav > li.ui-tabs-selected")
-    private WebElement selectedTabLocator;
 
     public int getTabsCount() {
         return tabsLocator.size();

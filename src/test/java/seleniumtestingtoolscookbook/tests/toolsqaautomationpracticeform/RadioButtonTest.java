@@ -2,7 +2,7 @@ package seleniumtestingtoolscookbook.tests.toolsqaautomationpracticeform;
 
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import seleniumtestingtoolscookbook.pages.ToolsQaAutomationPracticePage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaAutomationPracticePage;
 
 import static junit.framework.TestCase.assertTrue;
 

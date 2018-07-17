@@ -1,6 +1,6 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5video;
 
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5VideoPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5VideoPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static seleniumtestingtoolscookbook.utils.Links.SELENIUMACADEMY_HTML5VIDEO_PAGE;

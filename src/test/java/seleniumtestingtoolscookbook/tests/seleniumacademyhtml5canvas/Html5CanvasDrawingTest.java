@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademyhtml5canvas;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyHtml5CanvasPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5CanvasPage;
 import seleniumtestingtoolscookbook.utils.CompareUtil;
 
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.seleniumacademybmicalculator;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.SeleniumAcademyBmiCalcPage;
+import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyBmiCalcPage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
 import static org.junit.Assert.assertTrue;

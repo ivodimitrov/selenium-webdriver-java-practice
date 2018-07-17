@@ -1,7 +1,7 @@
 package seleniumtestingtoolscookbook.tests.toolsqaalerts;
 
 import org.junit.Test;
-import seleniumtestingtoolscookbook.pages.ToolsQaAlertsPage;
+import seleniumtestingtoolscookbook.pages.toolsqa.ToolsQaAlertsPage;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;

@@ -3,7 +3,7 @@ package seleniumtestingtoolscookbook.tests.demoqaselectable;
 import org.junit.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import seleniumtestingtoolscookbook.pages.DemoQaSelectablePage;
+import seleniumtestingtoolscookbook.pages.demoqa.DemoQaSelectablePage;
 
 import static org.junit.Assert.assertEquals;
 
