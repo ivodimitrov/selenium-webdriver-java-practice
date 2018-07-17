@@ -15,6 +15,12 @@ public class SeleniumAcademyHtml5StoragePage extends Page {
         super(webDriver);
     }
 
+    //    Added removeItem method to remove a specific Key along
+    //    with it's value from local storage
+    public void removeLastNameKeyValue() {
+        jsExecutor.executeScript("localStorage.clear();");
+    }
+
     public String getCurrentValueOfLocalStorage() {
         return lastName = (String) jsExecutor
                 .executeScript("return localStorage.lastname;");

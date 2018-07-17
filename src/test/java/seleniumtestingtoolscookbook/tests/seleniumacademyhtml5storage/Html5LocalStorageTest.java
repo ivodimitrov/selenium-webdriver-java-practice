@@ -4,6 +4,7 @@ import org.junit.Test;
 import seleniumtestingtoolscookbook.pages.seleniumacademy.SeleniumAcademyHtml5StoragePage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class Html5LocalStorageTest extends SeleniumAcademyHtml5StorageBaseTest {
 
@@ -19,5 +20,10 @@ public class Html5LocalStorageTest extends SeleniumAcademyHtml5StorageBaseTest {
 
         // Simple Logger
         seleniumAcademyHtml5StoragePage.printCurrentValueOfLocalStorage();
+
+        seleniumAcademyHtml5StoragePage.removeLastNameKeyValue();
+
+        assertNull("Current value of localStorage.lastname is not null!",
+                seleniumAcademyHtml5StoragePage.getCurrentValueOfLocalStorage());
     }
 }
