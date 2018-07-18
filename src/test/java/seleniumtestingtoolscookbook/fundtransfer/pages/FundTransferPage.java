@@ -31,14 +31,15 @@ public class FundTransferPage extends DriverFactory {
     }
 
     public void verifyPageIsDisplayed() {
-        waitVar.until(ExpectedConditions.visibilityOf(payeeField));
+        waitVar.until(ExpectedConditions.titleContains("Online Fund Transfers"));
         assertEquals("This is not Fund Transfer Page!",
                 "Online Fund Transfers", driver.getTitle());
         // Simple Logger
-        System.out.println("Page Title is: " + driver.getTitle() + ".");
+        System.out.println("Page Title is: " + driver.getTitle());
     }
 
     public void enterPayeeName(String payeeName) {
+        waitVar.until(ExpectedConditions.visibilityOf(payeeField));
         payeeField.sendKeys(payeeName);
     }
 
