@@ -54,7 +54,8 @@ public class FundTransferPage extends DriverFactory {
     public String getMessageText() {
         // Simple Logger
         System.out.println();
-        System.out.println("Message text is: " + messageLabel.getText() + ".");
+        System.out.println("Message text is: " + messageLabel.getText());
+        System.out.println();
         return messageLabel.getText();
     }
 }
