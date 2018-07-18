@@ -1,37 +1,21 @@
 package seleniumtestingtoolscookbook.fundtransfer.stepdefinitions;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import seleniumtestingtoolscookbook.fundtransfer.pages.FundTransferPage;
-
-import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
 
 public class FundTransferStepDefs {
 
-    private WebDriver driver;
-    private FundTransferPage fundTransferPage;
-
-    @Before
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        fundTransferPage = new FundTransferPage(driver);
-        fundTransferPage.goToPage();
-    }
+    private FundTransferPage fundTransferPage = new FundTransferPage();
 
     @Given("the user is on Fund Transfer Page")
     public void theUserIsOnFundTransferPage() {
+        fundTransferPage.goToPage();
         fundTransferPage.verifyPageIsDisplayed();
     }
 
@@ -64,10 +48,5 @@ public class FundTransferStepDefs {
         assertEquals("Message does not match!",
                 fundTransferPage.getMessageText(),
                 msg);
-    }
-
-    @After
-    public void tearDown() {
-        driver.close();
     }
 }

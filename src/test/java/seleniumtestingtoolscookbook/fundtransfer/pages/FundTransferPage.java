@@ -1,15 +1,14 @@
 package seleniumtestingtoolscookbook.fundtransfer.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import seleniumtestingtoolscookbook.fundtransfer.utils.DriverFactory;
 
 import static org.junit.Assert.assertEquals;
 
-public class FundTransferPage {
-
-    public WebDriver driver;
+public class FundTransferPage extends DriverFactory {
 
     @FindBy(id = "payee")
     private WebElement payeeField;
@@ -23,8 +22,7 @@ public class FundTransferPage {
     @FindBy(id = "message")
     private WebElement messageLabel;
 
-    public FundTransferPage(WebDriver driver) {
-        this.driver = driver;
+    public FundTransferPage() {
         PageFactory.initElements(driver, this);
     }
 
@@ -33,6 +31,7 @@ public class FundTransferPage {
     }
 
     public void verifyPageIsDisplayed() {
+        waitVar.until(ExpectedConditions.visibilityOf(payeeField));
         assertEquals("This is not Fund Transfer Page!",
                 "Online Fund Transfers", driver.getTitle());
         // Simple Logger

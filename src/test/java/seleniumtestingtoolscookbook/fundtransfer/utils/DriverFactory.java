@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverFactory {
     protected static WebDriver driver = null;
-    private static WebDriverWait waitVar = null;
+    protected static WebDriverWait waitVar = null;
 
     public void setUp() {
         driver = new ChromeDriver();
