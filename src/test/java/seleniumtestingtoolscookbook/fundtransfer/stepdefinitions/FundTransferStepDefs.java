@@ -21,7 +21,6 @@ public class FundTransferStepDefs {
 
     @When("he enters \"([^\"]*)\" as payee name")
     public void heEntersPayeeName(String payeeName) {
-        // driver.findElement(By.id("payee")).sendKeys(payeeName);
         fundTransferPage.enterPayeeName(payeeName);
     }
 

@@ -15,8 +15,7 @@ public class DriverFactory {
         // driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-//        String baseURL = "http://cookbook.seleniumacademy.com/fundTransfer.html";
-//        driver.get(baseURL);
+
         waitVar = new WebDriverWait(driver, 15);
     }
 

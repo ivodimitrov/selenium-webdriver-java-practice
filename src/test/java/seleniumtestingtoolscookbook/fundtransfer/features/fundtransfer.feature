@@ -21,4 +21,3 @@ Feature: Customer Transfer's Fund
       | payee | amount | message                                                              |
       | John  | 100    | Transfer failed!! 'John' is not approved. Please contact your branch |
       | Tim   | 100000 | Transfer failed!! account cannot be overdrawn                        |
-
