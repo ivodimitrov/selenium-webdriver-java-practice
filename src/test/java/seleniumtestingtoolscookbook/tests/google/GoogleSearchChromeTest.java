@@ -1,8 +1,6 @@
 package seleniumtestingtoolscookbook.tests.google;
 
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import seleniumtestingtoolscookbook.pages.google.GooglePage;
 import seleniumtestingtoolscookbook.utils.BaseTest;
 
@@ -16,14 +14,12 @@ public class GoogleSearchChromeTest extends BaseTest {
         goToPageAndWaitPageToLoad(GOOGLE_PAGE);
 
         GooglePage googlePage = new GooglePage(getWebDriver());
-        
-        googlePage.searchFor("Selenium");
 
-        // Google's search is rendered dynamically with JavaScript.
-        // Wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(getWebDriver(), 10)
-                .until((ExpectedCondition<Boolean>) d -> d.getTitle().toLowerCase()
-                        .startsWith("selenium"));
+        String keywordToSearch = "Selenium";
+
+        googlePage.searchFor(keywordToSearch);
+
+        googlePage.waitTitleToMatchWithKeyword(keywordToSearch);
 
         assertEquals("Selenium - Google Search",
                 getWebDriver().getTitle());

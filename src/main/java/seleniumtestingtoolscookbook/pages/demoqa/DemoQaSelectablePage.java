@@ -1,7 +1,9 @@
 package seleniumtestingtoolscookbook.pages.demoqa;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,5 +35,16 @@ public class DemoQaSelectablePage extends Page {
 
     public List<WebElement> getRows() {
         return rows;
+    }
+
+    public void selectTableRowsUsingControlKey() {
+        // Select second and fourth row from table using Control Key.
+        // Row Index start at 0
+        Actions builder = new Actions(getWebDriver());
+        builder.click(getTableRows().get(1))
+                .keyDown(Keys.CONTROL)
+                .click(getTableRows().get(3))
+                .keyUp(Keys.CONTROL)
+                .build().perform();
     }
 }

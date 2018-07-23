@@ -6,8 +6,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import seleniumtestingtoolscookbook.pages.google.GooglePage;
 
 import java.util.concurrent.TimeUnit;
@@ -30,18 +28,11 @@ public class GoogleSearchEdgeTest {
 
         EdgeOptions options = new EdgeOptions();
         options.setPageLoadStrategy("eager");
-
-        // Launch a new Edge instance
         System.out.println("Starting driver...");
-
         driver = new EdgeDriver(options);
-
         System.out.println("Started driver.");
-
-        // Maximize the browser window
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        // Navigate to page
         driver.get(GOOGLE_PAGE);
     }
 
@@ -49,13 +40,11 @@ public class GoogleSearchEdgeTest {
     public void testGoogleSearch() {
         GooglePage googlePage = new GooglePage(driver);
 
-        googlePage.searchFor("Selenium");
+        String keywordToSearch = "Selenium";
 
-        // Google's search is rendered dynamically with JavaScript.
-        // wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) d ->
-                d.getTitle().toLowerCase()
-                        .startsWith("selenium"));
+        googlePage.searchFor(keywordToSearch);
+
+        googlePage.waitTitleToMatchWithKeyword(keywordToSearch);
 
         assertEquals("Selenium - Google Search",
                 driver.getTitle());
@@ -63,9 +52,7 @@ public class GoogleSearchEdgeTest {
 
     @After
     public void tearDown() {
-        // Close the browser
         driver.quit();
-
         System.out.println();
         System.out.println("Driver quit.");
     }

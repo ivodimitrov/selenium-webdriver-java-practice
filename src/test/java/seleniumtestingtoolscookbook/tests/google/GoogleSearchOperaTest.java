@@ -6,8 +6,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import seleniumtestingtoolscookbook.pages.google.GooglePage;
 
 import java.io.File;
@@ -28,18 +26,12 @@ public class GoogleSearchOperaTest {
         OperaOptions options = new OperaOptions();
         options.setBinary(new File("C:\\Program Files\\Opera\\launcher.exe"));
 
-
-        // Launch a new Opera instance
         System.out.println("Starting driver...");
-
         driver = new OperaDriver(options);
-
         System.out.println("Started driver.");
 
-        // Maximize the browser window
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        // Navigate to page
         driver.get(GOOGLE_PAGE);
     }
 
@@ -47,12 +39,11 @@ public class GoogleSearchOperaTest {
     public void testGoogleSearch() {
         GooglePage googlePage = new GooglePage(driver);
 
-        googlePage.searchFor("Selenium");
-        // Google's search is rendered dynamically with JavaScript.
-        // wait for the page to load, timeout after 10 seconds
-        new WebDriverWait(driver, 10).until((ExpectedCondition<Boolean>) d ->
-                d.getTitle().toLowerCase()
-                        .startsWith("selenium"));
+        String keywordToSearch = "Selenium";
+
+        googlePage.searchFor(keywordToSearch);
+
+        googlePage.waitTitleToMatchWithKeyword(keywordToSearch);
 
         assertEquals("Selenium - Google Search",
                 driver.getTitle());
@@ -60,9 +51,7 @@ public class GoogleSearchOperaTest {
 
     @After
     public void tearDown() throws Exception {
-        // Close the browser
         driver.quit();
-
         System.out.println();
         System.out.println("Driver quit.");
         // Opera browser does not close. Solution for windows:

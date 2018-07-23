@@ -1,7 +1,6 @@
 package seleniumtestingtoolscookbook.tests.demoqadraganddrop;
 
 import org.junit.Test;
-import org.openqa.selenium.interactions.Actions;
 import seleniumtestingtoolscookbook.pages.demoqa.DemoQaDragAndDropPage;
 
 import static org.junit.Assert.assertEquals;
@@ -14,9 +13,7 @@ public class DragDropTest extends DemoQaDragAndDropBaseTest {
         DemoQaDragAndDropPage demoQaDragAndDropPage =
                 super.initLoad();
 
-        Actions builder = new Actions(getWebDriver());
-        builder.dragAndDrop(demoQaDragAndDropPage.getSource(),
-                demoQaDragAndDropPage.getTarget()).perform();
+        demoQaDragAndDropPage.dragAndDrop();
         assertEquals("Dropped!",
                 demoQaDragAndDropPage.getTarget().getText());
     }
