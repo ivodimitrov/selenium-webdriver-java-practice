@@ -13,7 +13,6 @@ public class SearchTest {
     @Test
     public void testProductSearch() {
         try {
-            // Create an instance of Home page
             HomePage homePage = new HomePage(Browser.driver);
 
             homePage.get();

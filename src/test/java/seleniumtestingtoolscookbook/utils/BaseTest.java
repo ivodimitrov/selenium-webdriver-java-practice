@@ -42,22 +42,17 @@ public class BaseTest {
     public void setUp() {
         // Setting up Browser
         setChromeDriverProperty();
-        // Launch a new Chrome instance
         System.out.println("Starting driver...");
         webDriver = new ChromeDriver();
         // webDriver = new FirefoxDriver();
         System.out.println("Started driver.");
 
         webDriver.manage().window().maximize();
-
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        // homePage = new Page(webDriver);
     }
 
     @After
     public void tearDown() {
-        // Close the browser
         webDriver.quit();
 
         System.out.println();
