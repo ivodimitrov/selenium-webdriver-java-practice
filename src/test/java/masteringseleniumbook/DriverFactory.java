@@ -1,36 +1,29 @@
 package masteringseleniumbook;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeSuite;
 
 public class DriverFactory {
 
-    private final String operatingSystem =
-            System.getProperty("os.name").toUpperCase();
-    private final String systemArchitecture =
-            System.getProperty("os.arch");
-    private WebDriver webdriver;
+    private static ThreadLocal<WebDriverThread> driverThread;
 
-    public WebDriver getDriver() {
-        if (null == webdriver) {
-            System.out.println(" ");
-            System.out.println("Current Operating System: " +
-                    operatingSystem);
-            System.out.println("Current Architecture: " +
-                    systemArchitecture);
-            System.out.println("Current Browser Selection: Firefox");
-            System.out.println(" ");
-            // TODO
-            webdriver = new FirefoxDriver(DesiredCapabilities.firefox());
-        }
-        return webdriver;
+    @BeforeSuite
+    public static void instantiateDriverObject() {
+        driverThread = new ThreadLocal<WebDriverThread>() {
+            @Override
+            protected WebDriverThread initialValue() {
+                return new WebDriverThread();
+            }
+        };
     }
 
-    public void quitDriver() {
-        if (null != webdriver) {
-            webdriver.quit();
-            webdriver = null;
-        }
+    public static WebDriver getDriver() {
+        return driverThread.get().getDriver();
+    }
+
+    @AfterMethod
+    public static void quitDriver() {
+        driverThread.get().quitDriver();
     }
 }
