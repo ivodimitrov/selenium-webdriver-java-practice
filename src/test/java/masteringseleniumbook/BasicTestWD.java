@@ -32,7 +32,9 @@ public class BasicTestWD extends DriverFactory {
         });
 
         System.out.println("Page title is: " + driver.getTitle());
-        driver.quit();
+
+        // removed the driver.quit() from each test as this is all done by
+        // DriverFactory class now
     }
 
     @Test
