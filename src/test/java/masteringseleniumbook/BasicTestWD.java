@@ -46,4 +46,10 @@ public class BasicTestWD extends DriverFactory {
     public void googleMilkExample() {
         googleExampleThatSearchesFor("Milk!");
     }
+
+    // specify threads by performing this:
+    // mvn clean install -Dthreads=2
+
+    // Firefox browsers open, both tests run in parallel,
+    // and then both browsers are closed again.
 }

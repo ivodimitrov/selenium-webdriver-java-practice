@@ -22,6 +22,7 @@
         <cucumber.version>2.4.0</cucumber.version>
         <!-- Configurable variables -->
         <threads>1</threads>
+        <browser>firefox</browser>
     </properties>
     <!-- https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html -->
     <build>
@@ -42,6 +43,9 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <threadCount>${threads}</threadCount>
+                    <systemProperties>
+                        <browser>${browser}</browser>
+                    </systemProperties>
                     <includes>
                         <include>**/*WD.java</include>
                     </includes>

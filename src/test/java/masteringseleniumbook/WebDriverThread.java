@@ -25,6 +25,8 @@ public class WebDriverThread {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.setCapability("marionette", true);
             webdriver = new FirefoxDriver(firefoxOptions);
+
+            // webdriver = new ChromeDriver();
         }
         return webdriver;
     }
