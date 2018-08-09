@@ -22,9 +22,9 @@ public class BaseTest {
         if (System.getProperty("os.name").contains("Windows")) {
             System.setProperty("webdriver.chrome.driver",
                     "./src/test/resources/drivers/chromedriver.exe");
-        } else {
+        } else if (System.getProperty("os.name").contains("Mac")) {
             System.setProperty("webdriver.chrome.driver",
-                    "./src/test/resources/drivers/chromedriver.exe");
+                    "./src/test/resources/drivers/chromedriver");
         }
     }
 
@@ -40,7 +40,6 @@ public class BaseTest {
 
     @Before
     public void setUp() {
-        // Setting up Browser
         setChromeDriverProperty();
         System.out.println("Starting driver...");
         webDriver = new ChromeDriver();

@@ -5,10 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaOptions;
 import seleniumtestingtoolscookbook.pages.google.GooglePage;
 
-import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
@@ -21,13 +19,24 @@ public class GoogleSearchOperaTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.opera.driver",
-                ".\\src\\test\\resources\\drivers\\operadriver.exe");
-        OperaOptions options = new OperaOptions();
-        options.setBinary(new File("C:\\Program Files\\Opera\\launcher.exe"));
+        if (System.getProperty("os.name").contains("Windows")) {
+            System.setProperty("webdriver.opera.driver",
+                    "./src/test/resources/drivers/operadriver.exe");
+        } else if (System.getProperty("os.name").contains("Mac")) {
+            System.setProperty("webdriver.opera.driver",
+                    "./src/test/resources/drivers/operadriver");
+        }
+
+        // When OS is Windows
+        // OperaOptions options = new OperaOptions();
+        // options.setBinary(new File("C:\\Program Files\\Opera\\launcher.exe"));
+
+        // System.out.println("Starting driver...");
+        // driver = new OperaDriver(options);
+        // System.out.println("Started driver.");
 
         System.out.println("Starting driver...");
-        driver = new OperaDriver(options);
+        driver = new OperaDriver();
         System.out.println("Started driver.");
 
         driver.manage().window().maximize();
@@ -54,9 +63,12 @@ public class GoogleSearchOperaTest {
         driver.quit();
         System.out.println();
         System.out.println("Driver quit.");
-        // Opera browser does not close. Solution for windows:
-        Runtime.getRuntime().exec("taskkill /f /im opera.exe");
-        // For MacOS:
-        // Runtime.getRuntime().exec("pgrep 'Opera' | xargs kill");
+
+        // Opera browser does not close. Solution:
+        if (System.getProperty("os.name").contains("Windows")) {
+            Runtime.getRuntime().exec("taskkill /f /im opera.exe");
+        } else if (System.getProperty("os.name").contains("Mac")) {
+            Runtime.getRuntime().exec("pgrep 'Opera' | xargs kill");
+        }
     }
 }

@@ -19,8 +19,14 @@ public class GoogleSearchFireFoxTest {
     @Before
     public void setUp() {
         // Setting up Browser Desired Capabilities
-        System.setProperty("webdriver.gecko.driver",
-                "./src/test/resources/drivers/geckodriver.exe");
+        if (System.getProperty("os.name").contains("Windows")) {
+            System.setProperty("webdriver.gecko.driver",
+                    "./src/test/resources/drivers/geckodriver.exe");
+        } else if (System.getProperty("os.name").contains("Mac")) {
+            System.setProperty("webdriver.gecko.driver",
+                    "./src/test/resources/drivers/geckodriver");
+        }
+
 
         System.out.println("Starting driver...");
         driver = new FirefoxDriver();
