@@ -1,8 +1,7 @@
 package masteringseleniumbook;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverThread {
 
@@ -19,14 +18,23 @@ public class WebDriverThread {
                     operatingSystem);
             System.out.println("Current Architecture: " +
                     systemArchitecture);
-            System.out.println("Current Browser Selection: Firefox");
             System.out.println(" ");
 
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setCapability("marionette", true);
-            webdriver = new FirefoxDriver(firefoxOptions);
+//            FirefoxOptions firefoxOptions = new FirefoxOptions();
+//            firefoxOptions.setCapability("marionette", true);
+//            webdriver = new FirefoxDriver(firefoxOptions);
 
-            // webdriver = new ChromeDriver();
+//            System.setProperty("webdriver.gecko.driver",
+//                    "./src/test/resources/drivers/geckodriver");
+
+//            webdriver = new FirefoxDriver();
+
+            webdriver = new ChromeDriver();
+            // webdriver = new SafariDriver();
+
+            System.out.println("Current Browser Selection: " +
+                    webdriver);
+            System.out.println(" ");
         }
         return webdriver;
     }
