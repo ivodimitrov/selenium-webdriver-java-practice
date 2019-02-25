@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ipd.qa</groupId>
-    <artifactId>SeleniumTests</artifactId>
+    <artifactId>selenium-practice-tasks-and-solutions</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Mastering Selenium TestNG</name>
-    <description>A basic Selenium POM file</description>
+    <name>Mastering Selenium</name>
+    <description>Selenium POM file</description>
     <url>n/a</url>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
