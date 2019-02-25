@@ -17,10 +17,16 @@ public class SearchTest {
 
   @BeforeMethod
   public void setup() {
+
+    // Set path of drivers executable
     System.setProperty("webdriver.chrome.driver",
             "./src/test/resources/drivers/chromedriver");
+
+    // Initialize new WebDriver session
     driver = new ChromeDriver();
+    // Maximize browser window
     driver.manage().window().maximize();
+    // Navigate to the web site
     driver.get("http://demo-store.seleniumacademy.com/");
   }
 
@@ -38,6 +44,7 @@ public class SearchTest {
 
   @AfterMethod
   public void tearDown() {
+    // Close and quit the browser
     driver.quit();
   }
 }

@@ -1,19 +1,13 @@
-package seleniumwebdriver3practicalguide.chapter1;
+package seleniumwebdriver3practicalguide.config;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
+public class DriverFactory {
 
-public class NavigationTest {
-
-  private WebDriver driver;
+  protected WebDriver driver;
 
   @BeforeMethod
   public void beforeMethod() {
@@ -31,16 +25,12 @@ public class NavigationTest {
 //    driver = new FirefoxDriver();
 //    driver = new SafariDriver();
 //    driver = new OperaDriver();
-  }
 
-  @Test
-  public void navigateToUrl() {
     // Maximize browser window
     driver.manage().window().maximize();
+
     // Navigate to the web site
     driver.get("http://demo-store.seleniumacademy.com/");
-    // Validate page title
-    assertEquals(driver.getTitle(), "Madison Island");
   }
 
   @AfterMethod
