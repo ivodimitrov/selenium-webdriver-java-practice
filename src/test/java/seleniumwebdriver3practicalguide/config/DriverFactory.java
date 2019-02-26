@@ -1,7 +1,8 @@
 package seleniumwebdriver3practicalguide.config;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -22,10 +23,15 @@ public class DriverFactory {
             "./src/test/resources/drivers/operadriver");
 
     // Initialize new WebDriver session
-//    driver = new ChromeDriver();
+    ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.setHeadless(false);
+
+    driver = new ChromeDriver(chromeOptions);
+
     FirefoxOptions firefoxOptions = new FirefoxOptions();
     firefoxOptions.setHeadless(false);
-    driver = new FirefoxDriver(firefoxOptions);
+
+//    driver = new FirefoxDriver(firefoxOptions);
 //    driver = new SafariDriver();
 //    driver = new OperaDriver();
 
