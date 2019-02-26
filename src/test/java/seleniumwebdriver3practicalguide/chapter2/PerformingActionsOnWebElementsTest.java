@@ -7,10 +7,13 @@ import seleniumwebdriver3practicalguide.config.DriverFactory;
 
 import static org.testng.Assert.assertTrue;
 
-public class PerformingActionsOnWebElements extends DriverFactory {
+public class PerformingActionsOnWebElementsTest extends DriverFactory {
 
   @Test
   public void elementSendKeysExample() {
+
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
 
     WebElement searchBox = driver.findElement(By.name("q"));
     searchBox.sendKeys("Phones");
@@ -21,6 +24,9 @@ public class PerformingActionsOnWebElements extends DriverFactory {
 
   @Test
   public void elementStateExample() {
+
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
 
     WebElement searchBox = driver.findElement(By.name("q"));
 

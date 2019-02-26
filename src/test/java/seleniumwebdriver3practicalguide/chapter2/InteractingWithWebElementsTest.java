@@ -11,6 +11,9 @@ public class InteractingWithWebElementsTest extends DriverFactory {
   @Test
   public void elementGetAttributesExample() {
 
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
+
     WebElement searchBox = driver.findElement(By.name("q"));
 
     System.out.println("Name of the box is: "
@@ -25,6 +28,9 @@ public class InteractingWithWebElementsTest extends DriverFactory {
   @Test
   public void elementGetTextExample() {
 
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
+
     WebElement siteNotice = driver.findElement(By
             .className("global-site-notice"));
 
@@ -35,6 +41,9 @@ public class InteractingWithWebElementsTest extends DriverFactory {
   @Test
   public void elementGetCssValueExample() {
 
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
+
     WebElement searchBox = driver.findElement(By.name("q"));
 
     System.out.println("Font of the box is: "
@@ -43,6 +52,9 @@ public class InteractingWithWebElementsTest extends DriverFactory {
 
   @Test
   public void elementGetLocationAndSizeExample() {
+
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
 
     WebElement searchBox = driver.findElement(By.name("q"));
 
@@ -54,6 +66,9 @@ public class InteractingWithWebElementsTest extends DriverFactory {
 
   @Test
   public void elementGetTagNameExample() {
+
+    // Navigate to the web site
+    driver.get("http://demo-store.seleniumacademy.com/");
 
     WebElement searchButton = driver.findElement(By.className("search-button"));
 

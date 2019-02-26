@@ -38,8 +38,9 @@ public class DriverFactory {
     // Maximize browser window
     driver.manage().window().maximize();
 
-    // Navigate to the web site
-    driver.get("http://demo-store.seleniumacademy.com/");
+    // Take screenshot of the web page and save it to a file
+//    File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//    FileUtils.copyFile(scrFile, new File("./target/screenshot.png"));
   }
 
   @AfterMethod
