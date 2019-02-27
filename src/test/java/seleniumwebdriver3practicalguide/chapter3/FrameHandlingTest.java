@@ -17,6 +17,8 @@ public class FrameHandlingTest extends DriverFactory {
 
     WebElement firstField = driver.findElement(By.name("1"));
     firstField.sendKeys("I'm Frame One");
+
+    // Switching to the default content
     driver.switchTo().defaultContent();
 
     // Second Frame
