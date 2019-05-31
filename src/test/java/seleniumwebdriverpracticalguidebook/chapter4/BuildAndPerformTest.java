@@ -1,4 +1,4 @@
-package seleniumwebdriver3practicalguide.chapter4;
+package seleniumwebdriverpracticalguidebook.chapter4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-import seleniumwebdriver3practicalguide.config.DriverFactory;
+import seleniumwebdriverpracticalguidebook.config.DriverFactory;
 
 public class BuildAndPerformTest extends DriverFactory {
 

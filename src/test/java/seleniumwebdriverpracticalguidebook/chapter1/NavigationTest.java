@@ -1,7 +1,7 @@
-package seleniumwebdriver3practicalguide.chapter1;
+package seleniumwebdriverpracticalguidebook.chapter1;
 
 import org.testng.annotations.Test;
-import seleniumwebdriver3practicalguide.config.DriverFactory;
+import seleniumwebdriverpracticalguidebook.config.DriverFactory;
 
 import static org.testng.Assert.assertEquals;
 

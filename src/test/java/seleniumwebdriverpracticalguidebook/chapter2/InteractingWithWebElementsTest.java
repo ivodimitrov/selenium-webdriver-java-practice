@@ -1,9 +1,9 @@
-package seleniumwebdriver3practicalguide.chapter2;
+package seleniumwebdriverpracticalguidebook.chapter2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import seleniumwebdriver3practicalguide.config.DriverFactory;
+import seleniumwebdriverpracticalguidebook.config.DriverFactory;
 
 
 public class InteractingWithWebElementsTest extends DriverFactory {
