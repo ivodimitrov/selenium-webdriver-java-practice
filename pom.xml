@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Dependency versions -->
         <selenium.version>3.13.0</selenium.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <testng.version>6.14.3</testng.version>
         <cucumber.version>2.4.0</cucumber.version>
         <!-- Configurable variables -->
